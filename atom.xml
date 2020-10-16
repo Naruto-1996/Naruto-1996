@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2020-10-16T06:24:29.056Z</updated>
+  <updated>2020-10-16T09:49:04.251Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -21,11 +21,19 @@
     <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/ce-shi/"/>
     <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/ce-shi/</id>
     <published>2020-10-16T06:23:47.000Z</published>
-    <updated>2020-10-16T06:24:29.056Z</updated>
+    <updated>2020-10-16T09:49:04.251Z</updated>
     
     
     
     
+    <category term="web前端" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="jQuery" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/jQuery/"/>
+    
+    <category term="表格" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E8%A1%A8%E6%A0%BC/"/>
+    
+    <category term="表单验证" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
     
   </entry>
   
