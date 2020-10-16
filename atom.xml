@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2020-10-16T09:49:04.251Z</updated>
+  <updated>2020-10-16T10:58:35.790Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -17,32 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/ce-shi/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/ce-shi/</id>
-    <published>2020-10-16T06:23:47.000Z</published>
-    <updated>2020-10-16T09:49:04.251Z</updated>
+    <title>hexo+github搭建一个博客</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/hexo-github-da-jian-yi-ge-bo-ke/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/hexo-github-da-jian-yi-ge-bo-ke/</id>
+    <published>2020-10-16T10:57:25.000Z</published>
+    <updated>2020-10-16T10:58:35.790Z</updated>
     
     
     
     
-    <category term="web前端" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
+    <category term="Mac" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Mac/"/>
     
     
-    <category term="jQuery" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/jQuery/"/>
+    <category term="hexo" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/hexo/"/>
     
-    <category term="表格" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E8%A1%A8%E6%A0%BC/"/>
-    
-    <category term="表单验证" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
+    <category term="github" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/15/hello-world/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/15/hello-world/</id>
-    <published>2020-10-15T08:24:38.388Z</published>
-    <updated>2020-10-15T08:24:38.388Z</updated>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/hello-world/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/hello-world/</id>
+    <published>2020-10-16T06:23:47.000Z</published>
+    <updated>2020-10-16T10:56:12.252Z</updated>
     
     
       
@@ -55,6 +53,14 @@
     
     
     
+    <category term="web前端" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="jQuery" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/jQuery/"/>
+    
+    <category term="表格" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E8%A1%A8%E6%A0%BC/"/>
+    
+    <category term="表单验证" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
     
   </entry>
   
