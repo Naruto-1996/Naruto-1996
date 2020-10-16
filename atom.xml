@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>李文洋</title>
+  
+  <subtitle>Android开发、Ruby程序员、目前正在学习Rust</subtitle>
+  <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
+  <updated>2020-10-15T08:24:38.388Z</updated>
+  <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
+  
+  <author>
+    <name>李文洋</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/15/hello-world/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/15/hello-world/</id>
+    <published>2020-10-15T08:24:38.388Z</published>
+    <updated>2020-10-15T08:24:38.388Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
