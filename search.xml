@@ -4,11 +4,40 @@
   
     
     <entry>
+      <title>picture_bed</title>
+      <link href="2020/10/18/picture-bed/"/>
+      <url>2020/10/18/picture-bed/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Mac环境–如何做一个自用的图床"><a href="#Mac环境–如何做一个自用的图床" class="headerlink" title="Mac环境–如何做一个自用的图床"></a>Mac环境–如何做一个自用的图床</h3><h4 id="1、下载PicGo"><a href="#1、下载PicGo" class="headerlink" title="1、下载PicGo"></a>1、下载PicGo</h4><p>PicGo<a href="https://github.com/Molunerfinn/picgo/releases">下载地址</a></p><h4 id="2、创建一个Github仓库并进行设置"><a href="#2、创建一个Github仓库并进行设置" class="headerlink" title="2、创建一个Github仓库并进行设置"></a>2、创建一个Github仓库并进行设置</h4><h5 id="（1）创建仓库"><a href="#（1）创建仓库" class="headerlink" title="（1）创建仓库"></a>（1）创建仓库</h5><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018155437.png"></p><h5 id="2-点击头像-点击Settings"><a href="#2-点击头像-点击Settings" class="headerlink" title="(2) 点击头像 点击Settings"></a>(2) 点击头像 点击Settings</h5><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018160141.png"></p><h5 id="3-再点-Developer-settings"><a href="#3-再点-Developer-settings" class="headerlink" title="(3) 再点 Developer settings"></a>(3) 再点 Developer settings</h5><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018160243.png"></p><h5 id="4-再点-Personal-access-tokens"><a href="#4-再点-Personal-access-tokens" class="headerlink" title="(4) 再点 Personal access tokens"></a>(4) 再点 Personal access tokens</h5><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018160353.png"></p><h5 id="5-填写内容"><a href="#5-填写内容" class="headerlink" title="(5) 填写内容"></a>(5) 填写内容</h5><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018160722.png"></p><h5 id="6-复制生成的token-注意：网页关闭后就再也看不到这个token了"><a href="#6-复制生成的token-注意：网页关闭后就再也看不到这个token了" class="headerlink" title="(6) 复制生成的token (注意：网页关闭后就再也看不到这个token了)"></a>(6) 复制生成的token (注意：网页关闭后就再也看不到这个token了)</h5><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018161000.png"></p><h4 id="3、在刚才创建的仓库中新增一个项目"><a href="#3、在刚才创建的仓库中新增一个项目" class="headerlink" title="3、在刚才创建的仓库中新增一个项目"></a>3、在刚才创建的仓库中新增一个项目</h4><pre><code>git initgit add .git commit -m "备注"git remote add origin 仓库地址git push -u origin master</code></pre><p>下面是我的项目：<br><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018162357.png"></p><h4 id="4、配置刚才下载的PicGo"><a href="#4、配置刚才下载的PicGo" class="headerlink" title="4、配置刚才下载的PicGo"></a>4、配置刚才下载的PicGo</h4><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018161711.png"></p><p>设置自定义域名：<br>    <a href="https://cdn.jsdelivr.net/gh/Naruto-1996/picture">https://cdn.jsdelivr.net/gh/Naruto-1996/picture</a><br>    <a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D">https://cdn.jsdelivr.net/gh/用户名/仓库名</a></p><p>配置完就可以在PicGo中上传图片了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 图床 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+            <tag> jsDelivr </tag>
+            
+            <tag> PicGo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo+github搭建一个博客</title>
       <link href="2020/10/16/hexo-github-da-jian-yi-ge-bo-ke/"/>
       <url>2020/10/16/hexo-github-da-jian-yi-ge-bo-ke/</url>
       
-        <content type="html"><![CDATA[<h3 id="使用Hexo-Github-搭建一个博客网站"><a href="#使用Hexo-Github-搭建一个博客网站" class="headerlink" title="使用Hexo + Github 搭建一个博客网站"></a>使用Hexo + Github 搭建一个博客网站</h3><p>1、创建Github仓库</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="使用Hexo-Github-搭建一个博客网站"><a href="#使用Hexo-Github-搭建一个博客网站" class="headerlink" title="使用Hexo + Github 搭建一个博客网站"></a>使用Hexo + Github 搭建一个博客网站</h3><h4 id="1、创建Github仓库"><a href="#1、创建Github仓库" class="headerlink" title="1、创建Github仓库"></a>1、创建Github仓库</h4><h4 id="2、安装博客需要的博客网站"><a href="#2、安装博客需要的博客网站" class="headerlink" title="2、安装博客需要的博客网站"></a>2、安装博客需要的博客网站</h4><h4 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h4>]]></content>
       
       
       <categories>
