@@ -481,8 +481,9 @@
             <div id="articleContent">
                 <h3 id="使用Hexo-Github-搭建一个博客网站-Mac环境"><a href="#使用Hexo-Github-搭建一个博客网站-Mac环境" class="headerlink" title="使用Hexo + Github 搭建一个博客网站 [Mac环境]"></a>使用Hexo + Github 搭建一个博客网站 [Mac环境]</h3><h4 id="1、创建Github仓库"><a href="#1、创建Github仓库" class="headerlink" title="1、创建Github仓库"></a>1、创建Github仓库</h4><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018163610.png"></p>
 <ul>
-<li>注意Repository name 中一定要输入：你的用户名.github.io其他地方不用修改，然后直接点 ”Create repository“ 按钮完成创建即可<h4 id="2、安装博客需要的框架"><a href="#2、安装博客需要的框架" class="headerlink" title="2、安装博客需要的框架"></a>2、安装博客需要的框架</h4><pre class="line-numbers language-安装"><code class="language-安装">$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>注意Repository name 中一定要输入：你的用户名.github.io其他地方不用修改，然后直接点 ”Create repository“ 按钮完成创建即可<h4 id="2、安装博客需要的框架"><a href="#2、安装博客需要的框架" class="headerlink" title="2、安装博客需要的框架"></a>2、安装博客需要的框架</h4><pre><code>安装 Homebrew
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</code></pre>
 </li>
 </ul>
 <p>查询Homebrew是否安装成功的命令<br>$ brew -v</p>
@@ -493,130 +494,112 @@
 <p>安装 hexo<br>$ npm install -g hexo</p>
 <p>查询hexo是否安装成功的命令<br>$ hexo -v</p>
 <pre><code>#### 3、安装博客相关的插件
-```自动部署到Github上的插件
-$ npm install hexo-deployer-git --save
+</code></pre>
+<p>自动部署到Github上的插件<br>$ npm install hexo-deployer-git –save</p>
+<p>安装博客首页生成插件<br>$ npm install hexo-generator-index –save</p>
+<p>安装tag生成插件<br>$ npm install hexo-generator-tag –save</p>
+<pre><code>* 到此为止，安装完毕
 
-安装博客首页生成插件
-$ npm install hexo-generator-index --save
+#### 4、创建博客、调试、发布
+* 创建本地一个目录，用来创建博客  
+    `$ hexo init Blog`   
+执行成功后会在本地创建一个Blog的文件夹
+* cd 到Blog中
+    `$ hexo new firstBlog`  
+在Blog/source/_posts中就会新建一个firstBlog.md的文件，然后你就可以编辑你的博客内容了，Visual Studio Code编辑器支持预览，还可以和印象笔记同步
 
-安装tag生成插件
-$ npm install hexo-generator-tag --save</code></pre>
-<p>到此为止，安装完毕</p>
-<h4 id="4、创建博客、调试、发布"><a href="#4、创建博客、调试、发布" class="headerlink" title="4、创建博客、调试、发布"></a>4、创建博客、调试、发布</h4><ul>
-<li><p>创建本地一个目录，用来创建博客<br>  <code>$ hexo init Blog</code><br>执行成功后会在本地创建一个Blog的文件夹</p>
-</li>
-<li><p>cd 到Blog中<br>  <code>$ hexo new firstBlog</code><br>在Blog/source/_posts中就会新建一个firstBlog.md的文件，然后你就可以编辑你的博客内容了，Visual Studio Code编辑器支持预览，还可以和印象笔记同步</p>
-</li>
-<li><p>本地调试<br>  <code>$ sudo hexo server 或 $ sudo hexo s</code><br>然后可以访问<a href="http://localhost:4000来查看结果">http://localhost:4000来查看结果</a>  </p>
-</li>
-<li><p>安装发布插件<br>在博客文件夹运行下面命令<br><code>$ npm install hexo-deployer-git --save</code><br>然后在Blog文件夹下的_config.yml文件修改发布的配置，最后一行改为（注意替换yourusername）  </p>
-<pre><code># Site
-title: "李文洋"            
-subtitle: 'Android开发、Ruby程序员、目前正在学习Rust'
-description: '单身可撩、帅气的程序员小哥哥'
-keywords:                  
-author: 李文洋
-language: zh-CN            
-timezone: ''
-deploy:
-type: git  #使用Git 发布
-repo: https://github.com/Naruto-1996/Naruto-1996.github.io.git  #自己的Github仓库地址
-branch: master</code></pre>
-</li>
-<li><p>运行生成发布</p>
-<pre><code>$ sudo hexo g
-$ sudo hexo d</code></pre>
-<p>如果改动了站点的源码，需要在发布之前  </p>
-</li>
-</ul>
-<p><code>$ sudo hexo clean</code>  </p>
-<p>如果成功了就可以通过yourusername.github.io来访问你的博客了</p>
-<h4 id="5、新建分类页面"><a href="#5、新建分类页面" class="headerlink" title="5、新建分类页面"></a>5、新建分类页面</h4><p>categories 页是用来展示所有分类的页面，如果在你的博客 source 目录下还没有 categories/index.md 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page "categories"</code></pre>
-<p>编辑你刚刚新建的页面文件 /source/categories/index.md，至少需要以下内容：</p>
-<pre><code>---
-title: categories
-date: 2018-09-30 17:25:30
-type: "categories"
-layout: "categories"
----</code></pre>
-<h4 id="6、新建标签页面-tags"><a href="#6、新建标签页面-tags" class="headerlink" title="6、新建标签页面 tags"></a>6、新建标签页面 tags</h4><p>tags 页是用来展示所有标签的页面，如果在你的博客 source 目录下还没有 tags/index.md 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page "tags"</code></pre>
-<p>编辑你刚刚新建的页面文件 /source/tags/index.md，至少需要以下内容：</p>
-<pre><code>---
-title: tags
-date: 2018-09-30 17:25:30
-type: "tags"
-layout: "tags"
----</code></pre>
-<h4 id="7、新建关于我-about-页面"><a href="#7、新建关于我-about-页面" class="headerlink" title="7、新建关于我 about 页面"></a>7、新建关于我 about 页面</h4><p>about 页是用来展示关于我和我的博客信息的，如果在你的博客 source 目录下还没有 about/index.md 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page "about"</code></pre>
-<p>编辑你刚刚新建的页面文件 /source/about/index.md，至少需要以下内容：</p>
-<pre><code>---
-title: about
-date: 2018-09-30 17:25:30
-type: "about"
-layout: "about"
----</code></pre>
-<h4 id="8、新建留言板-contact-页（可选的）"><a href="#8、新建留言板-contact-页（可选的）" class="headerlink" title="8、新建留言板 contact 页（可选的）"></a>8、新建留言板 contact 页（可选的）</h4><p>contact 页是用来展示留言板信息的，如果在你的博客 source 目录下还没有 contact/index.md 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page "contact"</code></pre>
-<p>编辑你刚刚新建的页面文件 /source/contact/index.md，至少需要以下内容：</p>
-<pre><code>---
-title: contact
-date: 2018-09-30 17:25:30
-type: "contact"
-layout: "contact"
----</code></pre>
+* 本地调试  
+    `$ sudo hexo server 或 $ sudo hexo s`  
+然后可以访问http://localhost:4000来查看结果  
+* 安装发布插件  
+在博客文件夹运行下面命令  
+`$ npm install hexo-deployer-git --save`  
+然后在Blog文件夹下的_config.yml文件修改发布的配置，最后一行改为（注意替换yourusername）  </code></pre>
+<h1 id="Site"><a href="#Site" class="headerlink" title="Site"></a>Site</h1><p> title: “李文洋”<br> subtitle: ‘Android开发、Ruby程序员、目前正在学习Rust’<br> description: ‘单身可撩、帅气的程序员小哥哥’<br> keywords:<br>author: 李文洋<br>language: zh-CN<br>timezone: ‘’<br>deploy:<br>  type: git  #使用Git 发布<br>  repo: <a href="https://github.com/Naruto-1996/Naruto-1996.github.io.git">https://github.com/Naruto-1996/Naruto-1996.github.io.git</a>  #自己的Github仓库地址<br>  branch: master</p>
+<pre><code>* 运行生成发布</code></pre>
+<p>$ sudo hexo g<br>$ sudo hexo d</p>
+<pre><code>如果改动了站点的源码，需要在发布之前  
+
+`$ sudo hexo clean`  
+
+如果成功了就可以通过yourusername.github.io来访问你的博客了
+#### 5、新建分类页面
+
+categories 页是用来展示所有分类的页面，如果在你的博客 source 目录下还没有 categories/index.md 文件，那么你就需要新建一个，命令如下：</code></pre>
+<p>hexo new page “categories”</p>
+<pre><code>
+编辑你刚刚新建的页面文件 /source/categories/index.md，至少需要以下内容：</code></pre>
+<hr>
+<p>title: categories<br>date: 2018-09-30 17:25:30<br>type: “categories”<br>layout: “categories”</p>
+<hr>
+<pre><code>#### 6、新建标签页面 tags
+
+tags 页是用来展示所有标签的页面，如果在你的博客 source 目录下还没有 tags/index.md 文件，那么你就需要新建一个，命令如下：</code></pre>
+<p>hexo new page “tags”</p>
+<pre><code>
+编辑你刚刚新建的页面文件 /source/tags/index.md，至少需要以下内容：</code></pre>
+<hr>
+<p>title: tags<br>date: 2018-09-30 17:25:30<br>type: “tags”<br>layout: “tags”</p>
+<hr>
+<pre><code>
+#### 7、新建关于我 about 页面
+
+about 页是用来展示关于我和我的博客信息的，如果在你的博客 source 目录下还没有 about/index.md 文件，那么你就需要新建一个，命令如下：</code></pre>
+<p>hexo new page “about”</p>
+<pre><code>
+编辑你刚刚新建的页面文件 /source/about/index.md，至少需要以下内容：</code></pre>
+<hr>
+<p>title: about<br>date: 2018-09-30 17:25:30<br>type: “about”<br>layout: “about”</p>
+<hr>
+<pre><code>
+#### 8、新建留言板 contact 页（可选的）
+
+contact 页是用来展示留言板信息的，如果在你的博客 source 目录下还没有 contact/index.md 文件，那么你就需要新建一个，命令如下：</code></pre>
+<p>hexo new page “contact”</p>
+<pre><code>
+编辑你刚刚新建的页面文件 /source/contact/index.md，至少需要以下内容：</code></pre>
+<hr>
+<p>title: contact<br>date: 2018-09-30 17:25:30<br>type: “contact”<br>layout: “contact”</p>
+<hr>
+<pre><code>
+* 注：本留言板功能依赖于第三方评论系统，请激活你的评论系统才有效果。并且在主题的 _config.yml 文件中，第 19至 21 行的“菜单”配置，取消关于留言板的注释即可。
+
+#### 9、新建友情链接页面 friends
+
+friends 页是用来展示好友的，如果在你的博客 source 目录下还没有 friends/index.md 文件，那么你就需要新建一个，命令如下：</code></pre>
+<p>hexo new page “friends”</p>
+<pre><code>
+编辑你刚刚新建的页面文件 /source/friends/index.md，至少需要以下内容：</code></pre>
+<hr>
+<p>title: friends<br>date: 2018-09-30 17:25:30<br>type: “friends”<br>layout: “friends”</p>
+<hr>
+<pre><code>
+同时，在你的博客 source 目录下新建 _data 目录，在 _data 目录中新建 friends.json 文件，文件内容如下所示：
+</code></pre>
+<p>[{<br>    “avatar”: “<a target="_blank" rel="noopener" href="http://image.luokangyuan.com/1_qq_27922023.jpg&quot;">http://image.luokangyuan.com/1_qq_27922023.jpg"</a>,<br>    “name”: “码酱”,<br>    “introduction”: “我不是大佬，只是在追寻大佬的脚步”,<br>    “url”: “<a target="_blank" rel="noopener" href="http://luokangyuan.com/&quot;">http://luokangyuan.com/"</a>,<br>    “title”: “前去学习”<br>}, {<br>    “avatar”: “<a target="_blank" rel="noopener" href="http://image.luokangyuan.com/4027734.jpeg&quot;">http://image.luokangyuan.com/4027734.jpeg"</a>,<br>    “name”: “闪烁之狐”,<br>    “introduction”: “编程界大佬，技术牛，人还特别好，不懂的都可以请教大佬”,<br>    “url”: “<a target="_blank" rel="noopener" href="https://blinkfox.github.io/&quot;">https://blinkfox.github.io/"</a>,<br>    “title”: “前去学习”<br>}, {<br>    “avatar”: “<a target="_blank" rel="noopener" href="http://image.luokangyuan.com/avatar.jpg&quot;">http://image.luokangyuan.com/avatar.jpg"</a>,<br>    “name”: “ja_rome”,<br>    “introduction”: “平凡的脚步也可以走出伟大的行程”,<br>    “url”: “<a target="_blank" rel="noopener" href="https://me.csdn.net/jlh912008548&quot;">https://me.csdn.net/jlh912008548"</a>,<br>    “title”: “前去学习”<br>}]</p>
+<pre><code>
+#### 10、接下来就是如何写博客了
+`sudo hexo new "第一个博客" `
+
+就会在Blog文件夹中的 source/_posts 文件夹下创建出一个 第一个博客.md 文件</code></pre>
+<hr>
+<p>title: 第一个博客<br>date: 2020-10-16 18:57:25<br>categories:</p>
 <ul>
-<li>注：本留言板功能依赖于第三方评论系统，请激活你的评论系统才有效果。并且在主题的 _config.yml 文件中，第 19至 21 行的“菜单”配置，取消关于留言板的注释即可。</li>
+<li>Mac<br>tags:</li>
+<li>hexo</li>
+<li>github</li>
 </ul>
-<h4 id="9、新建友情链接页面-friends"><a href="#9、新建友情链接页面-friends" class="headerlink" title="9、新建友情链接页面 friends"></a>9、新建友情链接页面 friends</h4><p>friends 页是用来展示好友的，如果在你的博客 source 目录下还没有 friends/index.md 文件，那么你就需要新建一个，命令如下：</p>
-<pre><code>hexo new page "friends"</code></pre>
-<p>编辑你刚刚新建的页面文件 /source/friends/index.md，至少需要以下内容：</p>
-<pre><code>---
-title: friends
-date: 2018-09-30 17:25:30
-type: "friends"
-layout: "friends"
----</code></pre>
-<p>同时，在你的博客 source 目录下新建 _data 目录，在 _data 目录中新建 friends.json 文件，文件内容如下所示：</p>
-<pre><code>[{
-    "avatar": "http://image.luokangyuan.com/1_qq_27922023.jpg",
-    "name": "码酱",
-    "introduction": "我不是大佬，只是在追寻大佬的脚步",
-    "url": "http://luokangyuan.com/",
-    "title": "前去学习"
-}, {
-    "avatar": "http://image.luokangyuan.com/4027734.jpeg",
-    "name": "闪烁之狐",
-    "introduction": "编程界大佬，技术牛，人还特别好，不懂的都可以请教大佬",
-    "url": "https://blinkfox.github.io/",
-    "title": "前去学习"
-}, {
-    "avatar": "http://image.luokangyuan.com/avatar.jpg",
-    "name": "ja_rome",
-    "introduction": "平凡的脚步也可以走出伟大的行程",
-    "url": "https://me.csdn.net/jlh912008548",
-    "title": "前去学习"
-}]</code></pre>
-<h4 id="10、接下来就是如何写博客了"><a href="#10、接下来就是如何写博客了" class="headerlink" title="10、接下来就是如何写博客了"></a>10、接下来就是如何写博客了</h4><p><code>sudo hexo new "第一个博客" </code></p>
-<p>就会在Blog文件夹中的 source/_posts 文件夹下创建出一个 第一个博客.md 文件</p>
-<pre><code>---
-title: 第一个博客
-date: 2020-10-16 18:57:25
-categories:
-- Mac
-tags:
-- hexo
-- github
----</code></pre>
-<ul>
-<li>注意这里的 categories 和 tag 标签 就是对文章的分类和标签 写了这些就会在前端展示出来<br><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018172533.png"></li>
-</ul>
-<p>然后就可以运行一下命令来生成和发布文章到github上了  </p>
-<pre><code>sudo hexo g
-sudo hexo d</code></pre>
-<h4 id="11、关于主题的配置我这里就不在说了可以自行Google一下-hexo主题配置"><a href="#11、关于主题的配置我这里就不在说了可以自行Google一下-hexo主题配置" class="headerlink" title="11、关于主题的配置我这里就不在说了可以自行Google一下 hexo主题配置"></a>11、关于主题的配置我这里就不在说了可以自行Google一下 hexo主题配置</h4><p>留个传送门供我自己使用<br><a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题传送门</a></p>
+<hr>
+<pre><code>* 注意这里的 categories 和 tag 标签 就是对文章的分类和标签 写了这些就会在前端展示出来
+![](https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018172533.png)
+
+然后就可以运行一下命令来生成和发布文章到github上了  </code></pre>
+<p>sudo hexo g<br>sudo hexo d</p>
+<pre><code>#### 11、关于主题的配置我这里就不在说了可以自行Google一下 hexo主题配置  
+留个传送门供我自己使用   
+[主题传送门](https://hexo.io/themes/)
+
+</code></pre>
 
             </div>
             <hr/>
