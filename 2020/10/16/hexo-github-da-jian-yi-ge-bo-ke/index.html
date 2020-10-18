@@ -481,20 +481,29 @@
             <div id="articleContent">
                 <h3 id="使用Hexo-Github-搭建一个博客网站-Mac环境"><a href="#使用Hexo-Github-搭建一个博客网站-Mac环境" class="headerlink" title="使用Hexo + Github 搭建一个博客网站 [Mac环境]"></a>使用Hexo + Github 搭建一个博客网站 [Mac环境]</h3><h4 id="1、创建Github仓库"><a href="#1、创建Github仓库" class="headerlink" title="1、创建Github仓库"></a>1、创建Github仓库</h4><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201018163610.png"></p>
 <ul>
-<li><p>注意Repository name 中一定要输入：你的用户名.github.io其他地方不用修改，然后直接点 ”Create repository“ 按钮完成创建即可</p>
-<h4 id="2、安装博客需要的框架"><a href="#2、安装博客需要的框架" class="headerlink" title="2、安装博客需要的框架"></a>2、安装博客需要的框架</h4><p>  安装 Homebrew<br>  $ ruby -e “$(curl -fsSL <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;">https://raw.githubusercontent.com/Homebrew/install/master/install)"</a></p>
-<p>  查询Homebrew是否安装成功的命令<br>  $ brew -v</p>
-<p>  安装 git<br>  $ brew install git</p>
-<p>  查询git是否安装成功的命令<br>  $ git –version</p>
-<p>  安装 node.js<br>  $ brew install node</p>
-<p>  查询node是否安装成功的命令<br>  $ node -v</p>
-<p>  安装 hexo<br>  $ npm install -g hexo</p>
-<p>  查询hexo是否安装成功的命令<br>  $ hexo -v</p>
-<h4 id="3、安装博客相关的插件"><a href="#3、安装博客相关的插件" class="headerlink" title="3、安装博客相关的插件"></a>3、安装博客相关的插件</h4><p>  自动部署到Github上的插件<br>  $ npm install hexo-deployer-git –save</p>
-<p>  安装博客首页生成插件<br>  $ npm install hexo-generator-index –save</p>
-<p>  安装tag生成插件<br>  $ npm install hexo-generator-tag –save</p>
-<p>  *到此为止，安装完毕**</p>
-<h4 id="4、创建博客、调试、发布"><a href="#4、创建博客、调试、发布" class="headerlink" title="4、创建博客、调试、发布"></a>4、创建博客、调试、发布</h4></li>
+<li>注意Repository name 中一定要输入：你的用户名.github.io其他地方不用修改，然后直接点 ”Create repository“ 按钮完成创建即可<h4 id="2、安装博客需要的框架"><a href="#2、安装博客需要的框架" class="headerlink" title="2、安装博客需要的框架"></a>2、安装博客需要的框架</h4><pre class="line-numbers language-安装"><code class="language-安装">$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<p>查询Homebrew是否安装成功的命令<br>$ brew -v</p>
+<p>安装 git<br>$ brew install git</p>
+<p>查询git是否安装成功的命令<br>$ git –version</p>
+<p>安装 node.js<br>$ brew install node</p>
+<p>查询node是否安装成功的命令<br>$ node -v</p>
+<p>安装 hexo<br>$ npm install -g hexo</p>
+<pre><code>查询hexo是否安装成功的命令
+$ hexo -v
+#### 3、安装博客相关的插件
+```自动部署到Github上的插件
+$ npm install hexo-deployer-git --save
+
+安装博客首页生成插件
+$ npm install hexo-generator-index --save
+
+安装tag生成插件
+$ npm install hexo-generator-tag --save</code></pre>
+<p>*到此为止，安装完毕**</p>
+<h4 id="4、创建博客、调试、发布"><a href="#4、创建博客、调试、发布" class="headerlink" title="4、创建博客、调试、发布"></a>4、创建博客、调试、发布</h4><ul>
 <li><p>创建本地一个目录，用来创建博客<br>  <code>$ hexo init Blog</code><br>执行成功后会在本地创建一个Blog的文件夹</p>
 </li>
 <li><p>cd 到Blog中<br>  <code>$ hexo new firstBlog</code><br>在Blog/source/_posts中就会新建一个firstBlog.md的文件，然后你就可以编辑你的博客内容了，Visual Studio Code编辑器支持预览，还可以和印象笔记同步</p>
