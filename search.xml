@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>rust 0u8在rust中是什么意思</title>
+      <link href="2020/10/19/rust-0u8-zai-rust-zhong-shi-shi-me-yi-si/"/>
+      <url>2020/10/19/rust-0u8-zai-rust-zhong-shi-shi-me-yi-si/</url>
+      
+        <content type="html"><![CDATA[<h4 id="rust-0u8在rust中是什么意思"><a href="#rust-0u8在rust中是什么意思" class="headerlink" title="rust 0u8在rust中是什么意思"></a>rust 0u8在rust中是什么意思</h4><h6 id="当我在学习Rust-编程语言"><a href="#当我在学习Rust-编程语言" class="headerlink" title="当我在学习Rust 编程语言"></a>当我在学习<a href="https://learnku.com/docs/rust-lang/2018/ch06-03-if-let/4515">Rust 编程语言</a></h6><ul><li>遇到了如下这种问题：  <pre><code>let some_u8_value = Some(0u8);match some_u8_value {  Some(3) =&gt; println!("three"),  _ =&gt; (),}</code></pre>0u8 是什么意思，在我的印象中应该是这么写<br><code>let some_u8_value = Some(0 :u8)</code><br>然而并没有这种写法，直到我在 <a href="https://rustwiki.org/zh-CN/rust-by-example/types/literals.html">rust_by_example</a> 中看到了答案，</li></ul><h3 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h3><ul><li><p>对数值字面量，只要把类型作为后缀加上去，就完成了类型说明。比如指定字面量 42 的 类型是 i32，只需要写 42i32。</p></li><li><p>无后缀的数值字面量，其类型取决于怎样使用它们。如果没有限制，编译器会对整数使用 i32，对浮点数使用 f64。</p></li></ul><pre><code>fn main() {    // 带后缀的字面量，其类型在初始化时已经知道了。    let x = 1u8;    let y = 2u32;    let z = 3f32;    // 无后缀的字面量，其类型取决于如何使用它们。    let i = 1;    let f = 1.0;    // `size_of_val` 返回一个变量所占的字节数    println!("size of `x` in bytes: {}", std::mem::size_of_val(&amp;x));    println!("size of `y` in bytes: {}", std::mem::size_of_val(&amp;y));    println!("size of `z` in bytes: {}", std::mem::size_of_val(&amp;z));    println!("size of `i` in bytes: {}", std::mem::size_of_val(&amp;i));    println!("size of `f` in bytes: {}", std::mem::size_of_val(&amp;f));}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Rust </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Rust </tag>
+            
+            <tag> 0u8 </tag>
+            
+            <tag> 字面量 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>picture_bed</title>
       <link href="2020/10/18/picture-bed/"/>
       <url>2020/10/18/picture-bed/</url>
