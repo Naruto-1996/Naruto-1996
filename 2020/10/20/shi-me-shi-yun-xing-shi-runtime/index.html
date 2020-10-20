@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 李文洋">
+    <meta name="keywords" content="什么是运行时(Runtime), 李文洋">
     <meta name="description" content="单身可撩、帅气的程序员小哥哥">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 李文洋</title>
+    <title>什么是运行时(Runtime) | 李文洋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">什么是运行时(Runtime)</h1>
                 </div>
             </div>
         </div>
@@ -434,16 +434,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/jQuery/">
-                                <span class="chip bg-color">jQuery</span>
+                            <a href="/tags/Runtime/">
+                                <span class="chip bg-color">Runtime</span>
                             </a>
                         
-                            <a href="/tags/%E8%A1%A8%E6%A0%BC/">
-                                <span class="chip bg-color">表格</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/">
-                                <span class="chip bg-color">表单验证</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -454,8 +450,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                web前端
+                            <a href="/categories/Java/" class="post-category">
+                                Java
                             </a>
                         
                     </div>
@@ -467,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-16
+                    2020-10-20
                 </div>
                 
 
@@ -483,15 +479,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h3 id="什么是运行时（Runtime）"><a href="#什么是运行时（Runtime）" class="headerlink" title="什么是运行时（Runtime）"></a>什么是运行时（Runtime）</h3><p>任何语言要运行都需要自己的运行时，Java 程序的运行时叫 Java Runtime，Android 程序的运行时叫 Android Runtime，而具体 Runtime 是个什么东西呢，<br>就是说一个程序要在一个硬件或者平台上跑，就必须要有一个中间层用来把程序语言转换为机器能听懂的机器语言。</p>
+<p>Java Runtime 的左右就是如此，如我们编写好了 Java 的 Hello World 程序.</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span>  <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>代码我们认识，作用就是输出一个 “hello world”，但是要在一个冷冰冰的机器上，让机器能读懂并运行这段代码，就需要一个 Java 语言的运行时环境，只有这个环境才能读懂它，并能让代码更机器进行打交道。</p>
+<p>到这里我们已经明白，<strong>如果一个电脑要能运行 Java 程序就必须安装有 Java Runtime</strong>。对于其他语言也是如此，要在平台上运行就必须要有对应平台上的 Runtime 组件，这也是开发一个新语言必须要做的事。</p>
+<p>说道 Runtime，在 Java 发展的过程中，Java 一下子火了有一个很重要原因，就是在 90 年代，微软的 IE 浏览器为了打败网景浏览器，曾经就在 IE 中默认安装 Java 运行时，再加上 IE 浏览器内置在 Windows 操作系统中，使得 IE 装机量特别大，同样这对 Java 也是一个非常大的促进作用。由于 IE 内置 Java Runtime，使得在 IE 浏览器中开发 Java 程序变得更加简单。如出名的 Java Applet（Java 小程序）开发。</p>
+<p>后来因为 Sun 跟 微软之间诉讼等事情，这个合作也没多久，现在 IE 已经默认禁用了 Java Applet。</p>
+<p>说道 <strong>Java Runtime（简称 JRE）</strong> ，曾经在一开始开发 Java 程序时，经常把 JRE 跟 JDK 搞混。</p>
+<p>JRE 是一个独立的东西，就是 Java 程序的运行环境，其中包含一个 JAVA 虚拟机（JVM）以及一些标准的函数类库。</p>
+<p>而 JDK 是 Sun 公司专门给开发人员准备的 Java 开发工具集。它其中就包含了 JRE，所以配置好 JDK，自然就可以在电脑上运行 Java 程序了。除此之外，JDK 还包含了源码、API 文档、编译工具等等。</p>
 
             </div>
             <hr/>
@@ -517,7 +518,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/hello-world/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/hello-world/</a>
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/20/shi-me-shi-yun-xing-shi-runtime/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/20/shi-me-shi-yun-xing-shi-runtime/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -555,16 +556,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/jQuery/">
-                                    <span class="chip bg-color">jQuery</span>
+                                <a href="/tags/Runtime/">
+                                    <span class="chip bg-color">Runtime</span>
                                 </a>
                             
-                                <a href="/tags/%E8%A1%A8%E6%A0%BC/">
-                                    <span class="chip bg-color">表格</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/">
-                                    <span class="chip bg-color">表单验证</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -735,7 +732,7 @@
         repo: 'Naruto-1996.github.io',
         owner: 'Naruto-1996',
         admin: ["Naruto-1996"],
-        id: '2020-10-16T14-23-47',
+        id: '2020-10-20T15-41-33',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -759,52 +756,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/10/16/hexo-github-da-jian-yi-ge-bo-ke/">
+                <a href="/2020/10/20/shi-me-shi-yun-xing-shi-runtime/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="hexo+github搭建一个博客">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="什么是运行时(Runtime)">
                         
-                        <span class="card-title">hexo+github搭建一个博客</span>
+                        <span class="card-title">什么是运行时(Runtime)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用Hexo + Github 搭建一个博客网站 [Mac环境]1、创建Github仓库
-
-注意Repository name 中一定要输入：你的用户名.github.io其他地方不用修改，然后直接点 ”Create repository“
+                            什么是运行时（Runtime）任何语言要运行都需要自己的运行时，Java 程序的运行时叫 Java Runtime，Android 程序的运行时叫 Android Runtime，而具体 Runtime 是个什么东西呢，就是说一个程序要在一
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Mac/" class="post-category">
-                                    Mac
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/Runtime/">
+                        <span class="chip bg-color">Runtime</span>
                     </a>
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -815,54 +812,56 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/16/hello-world/">
+                <a href="/2020/10/19/rust-0u8-zai-rust-zhong-shi-shi-me-yi-si/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="rust 0u8在rust中是什么意思">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">rust 0u8在rust中是什么意思</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            rust 0u8在rust中是什么意思当我在学习Rust 编程语言
+遇到了如下这种问题：  let some_u8_value = Some(0u8);
+match some_u8_value {
+  Some(3) =&gt; print
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    web前端
+                            <a href="/categories/Rust/" class="post-category">
+                                    Rust
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jQuery/">
-                        <span class="chip bg-color">jQuery</span>
+                    <a href="/tags/Rust/">
+                        <span class="chip bg-color">Rust</span>
                     </a>
                     
-                    <a href="/tags/%E8%A1%A8%E6%A0%BC/">
-                        <span class="chip bg-color">表格</span>
+                    <a href="/tags/0u8/">
+                        <span class="chip bg-color">0u8</span>
                     </a>
                     
-                    <a href="/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/">
-                        <span class="chip bg-color">表单验证</span>
+                    <a href="/tags/%E5%AD%97%E9%9D%A2%E9%87%8F/">
+                        <span class="chip bg-color">字面量</span>
                     </a>
                     
                 </div>
