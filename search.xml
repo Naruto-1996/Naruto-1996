@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Android ImageView设置background和src的区别</title>
+      <link href="2020/10/21/android-imageview-she-zhi-background-he-src-de-qu-bie/"/>
+      <url>2020/10/21/android-imageview-she-zhi-background-he-src-de-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<h4 id="一、ImageView设置background和src的区别。"><a href="#一、ImageView设置background和src的区别。" class="headerlink" title="一、ImageView设置background和src的区别。"></a>一、ImageView设置background和src的区别。</h4><ul><li>1.src是图片内容（前景），bg是背景，可以同时使用。</li><li>2.background会根据ImageView组件给定的长宽进行拉伸，而src就存放的是原图的大小，不会进行拉伸 。</li><li>3.scaleType只对src起作用；bg可设置透明度。</li></ul><h4 id="二、ImageView几种不同的设置图片的方式。"><a href="#二、ImageView几种不同的设置图片的方式。" class="headerlink" title="二、ImageView几种不同的设置图片的方式。"></a>二、ImageView几种不同的设置图片的方式。</h4><p>设置background：</p><pre class="line-numbers language-java"><code class="language-java">image<span class="token punctuation">.</span><span class="token function">setBackground</span><span class="token punctuation">(</span><span class="token function">getResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>black<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//变形</span>image<span class="token punctuation">.</span><span class="token function">setBackgroundResource</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>black<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//变形 </span>image<span class="token punctuation">.</span><span class="token function">setBackgroundDrawable</span><span class="token punctuation">(</span><span class="token function">getResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>black<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">////变形</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>设置src:</p><pre class="line-numbers language-java"><code class="language-java">image<span class="token punctuation">.</span><span class="token function">setImageDrawable</span><span class="token punctuation">(</span><span class="token function">getResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>blackk<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//不会变形</span>Stringpath <span class="token operator">=</span> Environment<span class="token punctuation">.</span><span class="token function">getExternalStorageDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>File<span class="token punctuation">.</span>separator<span class="token operator">+</span><span class="token string">"test1.jpg"</span><span class="token punctuation">;</span>Bitmap bm <span class="token operator">=</span> BitmapFactory<span class="token punctuation">.</span><span class="token function">decodeFile</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>image<span class="token punctuation">.</span><span class="token function">setImageBitmap</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//不会变形</span>image<span class="token punctuation">.</span><span class="token function">setImageResource</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>blackk<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//不会变形</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ImageView </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android-如何监听前后台</title>
       <link href="2020/10/21/android-ru-he-jian-ting-qian-hou-tai/"/>
       <url>2020/10/21/android-ru-he-jian-ting-qian-hou-tai/</url>

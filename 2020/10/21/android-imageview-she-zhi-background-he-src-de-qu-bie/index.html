@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Android-RecycleView内部item点击事件, 李文洋">
+    <meta name="keywords" content="Android ImageView设置background和src的区别, 李文洋">
     <meta name="description" content="单身可撩、帅气的程序员小哥哥">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Android-RecycleView内部item点击事件 | 李文洋</title>
+    <title>Android ImageView设置background和src的区别 | 李文洋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Android-RecycleView内部item点击事件</h1>
+                    <h1 class="description center-align post-title">Android ImageView设置background和src的区别</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">安卓开发</span>
-                            </a>
-                        
-                            <a href="/tags/RecycleView/">
-                                <span class="chip bg-color">RecycleView</span>
+                            <a href="/tags/ImageView/">
+                                <span class="chip bg-color">ImageView</span>
                             </a>
                         
                     </div>
@@ -479,38 +475,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="RecyclerView的使用——Item内部控件的点击事件"><a href="#RecyclerView的使用——Item内部控件的点击事件" class="headerlink" title="RecyclerView的使用——Item内部控件的点击事件"></a>RecyclerView的使用——Item内部控件的点击事件</h4><h5 id="一、在adapter中写item点击事件的接口供外部的activity使用"><a href="#一、在adapter中写item点击事件的接口供外部的activity使用" class="headerlink" title="一、在adapter中写item点击事件的接口供外部的activity使用"></a>一、在adapter中写item点击事件的接口供外部的activity使用</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
-* item内部的监听接口
-*/</span>
+                <h4 id="一、ImageView设置background和src的区别。"><a href="#一、ImageView设置background和src的区别。" class="headerlink" title="一、ImageView设置background和src的区别。"></a>一、ImageView设置background和src的区别。</h4><ul>
+<li>1.src是图片内容（前景），bg是背景，可以同时使用。</li>
+<li>2.background会根据ImageView组件给定的长宽进行拉伸，而src就存放的是原图的大小，不会进行拉伸 。</li>
+<li>3.scaleType只对src起作用；bg可设置透明度。</li>
+</ul>
+<h4 id="二、ImageView几种不同的设置图片的方式。"><a href="#二、ImageView几种不同的设置图片的方式。" class="headerlink" title="二、ImageView几种不同的设置图片的方式。"></a>二、ImageView几种不同的设置图片的方式。</h4><p>设置background：</p>
+<pre class="line-numbers language-java"><code class="language-java">image<span class="token punctuation">.</span><span class="token function">setBackground</span><span class="token punctuation">(</span><span class="token function">getResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>black<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//变形</span>
+image<span class="token punctuation">.</span><span class="token function">setBackgroundResource</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>black<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//变形 </span>
+image<span class="token punctuation">.</span><span class="token function">setBackgroundDrawable</span><span class="token punctuation">(</span><span class="token function">getResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>black<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">////变形</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>设置src:</p>
+<pre class="line-numbers language-java"><code class="language-java">image<span class="token punctuation">.</span><span class="token function">setImageDrawable</span><span class="token punctuation">(</span><span class="token function">getResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDrawable</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>blackk<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//不会变形</span>
 
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ItemInnerOnclickListener</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 这个String id 是点击item是想要传的参数</span>
-    <span class="token keyword">void</span> <span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> String id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+Stringpath <span class="token operator">=</span> Environment<span class="token punctuation">.</span><span class="token function">getExternalStorageDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>File<span class="token punctuation">.</span>separator<span class="token operator">+</span><span class="token string">"test1.jpg"</span><span class="token punctuation">;</span>
+Bitmap bm <span class="token operator">=</span> BitmapFactory<span class="token punctuation">.</span><span class="token function">decodeFile</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+image<span class="token punctuation">.</span><span class="token function">setImageBitmap</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//不会变形</span>
 
-<span class="token keyword">private</span> ItemInnerOnclickListener mItemInnerOnclickListener<span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setOnItemOnClickListener</span><span class="token punctuation">(</span>ItemInnerOnclickListener mItemInnerOnclickListener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>mItemInnerOnclickListener <span class="token operator">=</span> mItemInnerOnclickListener<span class="token punctuation">;</span>
-
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在holder中就可以这么去写：(这里我使用了CommonAdapter 所以holder的代码可能不太一样)</p>
-<pre class="line-numbers language-java"><code class="language-java">holder<span class="token punctuation">.</span><span class="token function">setOnClickListener</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>cancel_withdraw<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">OnMultiClickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token annotation punctuation">@Override</span>
-  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMultiClick</span><span class="token punctuation">(</span>View v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// record.id 是activity那边拿到数据后用bean来解析的 传递过来的数据</span>
-    <span class="token comment" spellcheck="true">// public class WithdrawRecordsAdapter extends CommonAdapter&lt;WithdrawRecordBean.Record></span>
-    mItemInnerOnclickListener<span class="token punctuation">.</span><span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span>position<span class="token punctuation">,</span> record<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="二、在activity中我们就可以这么去写"><a href="#二、在activity中我们就可以这么去写" class="headerlink" title="二、在activity中我们就可以这么去写"></a>二、在activity中我们就可以这么去写</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> WithdrawRecordsAdapter withdrawRecordsAdapter<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java">withdrawRecordsAdapter<span class="token punctuation">.</span><span class="token function">setOnItemOnClickListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WithdrawRecordsAdapter<span class="token punctuation">.</span>ItemInnerOnclickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token annotation punctuation">@Override</span>
-          <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> String id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token function">showDialog</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这里我们设置点击事件的时候去new了一个adapter中点击事件的接口，并且我们还可以拿到adapter中点击时想要传递的String id 去做一些事情</p>
+image<span class="token punctuation">.</span><span class="token function">setImageResource</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>blackk<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//不会变形</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -536,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-recycleview-nei-bu-item-dian-ji-shi-jian/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-recycleview-nei-bu-item-dian-ji-shi-jian/</a>
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-imageview-she-zhi-background-he-src-de-qu-bie/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-imageview-she-zhi-background-he-src-de-qu-bie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,12 +557,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">安卓开发</span>
-                                </a>
-                            
-                                <a href="/tags/RecycleView/">
-                                    <span class="chip bg-color">RecycleView</span>
+                                <a href="/tags/ImageView/">
+                                    <span class="chip bg-color">ImageView</span>
                                 </a>
                             
                         </div>
@@ -750,7 +729,7 @@
         repo: 'Naruto-1996.github.io',
         owner: 'Naruto-1996',
         admin: ["Naruto-1996"],
-        id: '2020-10-21T16-11-14',
+        id: '2020-10-21T17-03-01',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -774,9 +753,62 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/10/21/android-imageview-she-zhi-background-he-src-de-qu-bie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Android ImageView设置background和src的区别">
+                        
+                        <span class="card-title">Android ImageView设置background和src的区别</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、ImageView设置background和src的区别。
+1.src是图片内容（前景），bg是背景，可以同时使用。
+2.background会根据ImageView组件给定的长宽进行拉伸，而src就存放的是原图的大小，不会进行拉伸 。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Android/" class="post-category">
+                                    Android
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ImageView/">
+                        <span class="chip bg-color">ImageView</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/10/21/android-ru-he-jian-ting-qian-hou-tai/">
                     <div class="card-image">
@@ -794,9 +826,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -814,67 +846,6 @@
                     
                     <a href="/tags/Android/">
                         <span class="chip bg-color">Android</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/10/21/rust-bi-bao/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Rust 闭包">
-                        
-                        <span class="card-title">Rust 闭包</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            快速掌握Rust闭包闭包(Closure) : 也叫Lambda表达式或匿名函数。
-不像普通函数，闭包可以对参数和返回类型进行推断，大多数时候都不需要写出来。以下定义都是合法的：
-|| 42;
-|x| x + 1;
-|x:i32| x + 
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Rust/" class="post-category">
-                                    Rust
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/closure/">
-                        <span class="chip bg-color">closure</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">函数式编程</span>
-                    </a>
-                    
-                    <a href="/tags/Rust-%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">Rust 编程</span>
                     </a>
                     
                 </div>
