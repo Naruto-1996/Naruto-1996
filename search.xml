@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Android intent.setFlags方法中参数值的含义</title>
+      <link href="2020/10/21/android-intent-setflags-fang-fa-zhong-can-shu-zhi-de-han-yi/"/>
+      <url>2020/10/21/android-intent-setflags-fang-fa-zhong-can-shu-zhi-de-han-yi/</url>
+      
+        <content type="html"><![CDATA[<h4 id="Android中intent-setFlags方法中参数值的含义"><a href="#Android中intent-setFlags方法中参数值的含义" class="headerlink" title="Android中intent.setFlags方法中参数值的含义"></a>Android中intent.setFlags方法中参数值的含义</h4><h5 id="一、FLAG-ACTIVITY-NEW-TASK"><a href="#一、FLAG-ACTIVITY-NEW-TASK" class="headerlink" title="一、FLAG_ACTIVITY_NEW_TASK:"></a>一、FLAG_ACTIVITY_NEW_TASK:</h5><p>例如现在栈一的情况是：A    B   C(C位于栈顶)，C通过intent跳转到D，并且这个Intent添加了FLAG_ACTIVITY_NEW_TASK标记，<br>如果D这个Activity在Manifest.xml中声明了添加Task affinity，系统首先会查找有没有和D的Task affinity相同的task栈存在，<br>如果存在，就将D压入那个栈，如果不存在则会新建一个D的affinity的栈将其压入。如果D的Task affinity默认没有设置，则会将其压入栈1，变成A B C D，<br>这样就和不加FLAG_ACTIVITY_NEW_TASK标记效果是一样的了。但如果试图从非Activity的非正常途径启动一个activity，<br>比如从一个service、BroadcastReceiver等中启动一个Activity，则intent要设置Intent.FLAG_ACTIVITY_NEW_TASK标记。<br>Activity要存在于Activity栈中，而非Activity的途径启动Activity时必然不存在一个Activity的栈，<br>所以要新建一个Activity栈来存放要启动的Activity。</p><h5 id="二、FLAG-ACTIVITY-CLEAR-TOP"><a href="#二、FLAG-ACTIVITY-CLEAR-TOP" class="headerlink" title="二、FLAG_ACTIVITY_CLEAR_TOP:"></a>二、FLAG_ACTIVITY_CLEAR_TOP:</h5><p>例如现在的栈情况为A B C D, D此时通过intent跳转到B，如果这个intent设置FLAG_ACTIVITY_CLEAR_TOP标记，则栈情况变为:A B。如果没有添加这个标记，则栈的情况将会变为：A B C D B 。<br>也就是说，如果设置了FLAG_ACTIVITY_CLEAR_TOP标记，并且目标Activity在栈中已存在，<br>则会把位于该目标Activity之上的Activity从栈中弹出销毁。</p><h5 id="三、FLAG-ACTIVITY-NO-HISTORY"><a href="#三、FLAG-ACTIVITY-NO-HISTORY" class="headerlink" title="三、FLAG_ACTIVITY_NO_HISTORY:"></a>三、FLAG_ACTIVITY_NO_HISTORY:</h5><p>例如现在栈的情况为：A B C 。C通过intent跳转到D，这个intent添加FLAG_ACTIVITY_NO_HISTORY标志，此时界面显示D的内容，但是它并不会压入栈中。<br>如果按返回键，返回到C，栈的情况是：A  B  C。如果D中又跳转到E，栈的情况为：A B C E,此时按返回键会回到C，因为D根本就没有被压入栈中。</p><h5 id="四、FLAG-ACTIVITY-SINGLE-TOP"><a href="#四、FLAG-ACTIVITY-SINGLE-TOP" class="headerlink" title="四、FLAG_ACTIVITY_SINGLE_TOP:"></a>四、FLAG_ACTIVITY_SINGLE_TOP:</h5><p>和Activity的Launch mode的singleTop类似。如果某个intent设置了这个标志，并且这个intent的目标Activity就是栈顶的Activity，那么将不会新建一个实例压入栈中。<br>简言之，目标Activity已在栈顶则跳转过去，不在栈顶则在栈顶新建Activity。</p><ul><li>如果遇到这种错误</li></ul><pre class="line-numbers language-java"><code class="language-java">Caused by<span class="token operator">:</span> android<span class="token punctuation">.</span>util<span class="token punctuation">.</span>AndroidRuntimeException<span class="token operator">:</span> Calling <span class="token function">startActivity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> from outside of an Activity  context requires the FLAG_ACTIVITY_NEW_TASK flag<span class="token punctuation">.</span> Is <span class="token keyword">this</span> really what you want<span class="token operator">?</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>Context中有一个startActivity方法，Activity继承自Context，覆写了startActivity方法。<br>如果使用Activity的startActivity方法，不会有任何问题，而如果使用Context的startActivity方法，<br>就必须新建一个Activity栈，遇到上面的异常，是因为使用了Context的startActivity方法。</p><p>解决的办法是：为intent设置一个flag，即</p><pre class="line-numbers language-java"><code class="language-java">intent<span class="token punctuation">.</span><span class="token function">setFlags</span><span class="token punctuation">(</span>Intent<span class="token punctuation">.</span>FLAG_ACTIVITY_NEW_TASK<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这样就可以在新的Activity栈里启动这个Activity了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Intent </tag>
+            
+            <tag> setFlags </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android ImageView设置background和src的区别</title>
       <link href="2020/10/21/android-imageview-she-zhi-background-he-src-de-qu-bie/"/>
       <url>2020/10/21/android-imageview-she-zhi-background-he-src-de-qu-bie/</url>

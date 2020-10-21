@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2020-10-21T09:16:22.392Z</updated>
+  <updated>2020-10-21T09:26:50.698Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android intent.setFlags方法中参数值的含义</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-intent-setflags-fang-fa-zhong-can-shu-zhi-de-han-yi/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-intent-setflags-fang-fa-zhong-can-shu-zhi-de-han-yi/</id>
+    <published>2020-10-21T09:17:58.000Z</published>
+    <updated>2020-10-21T09:26:50.698Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;Android中intent-setFlags方法中参数值的含义&quot;&gt;&lt;a href=&quot;#Android中intent-setFlags方法中参数值的含义&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Android" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Android/"/>
+    
+    
+    <category term="Intent" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Intent/"/>
+    
+    <category term="setFlags" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/setFlags/"/>
+    
+  </entry>
   
   <entry>
     <title>Android ImageView设置background和src的区别</title>
