@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>Rust 琐碎知识记录板</title>
+      <link href="2020/10/21/rust-suo-sui-zhi-shi-ji-lu-ban/"/>
+      <url>2020/10/21/rust-suo-sui-zhi-shi-ji-lu-ban/</url>
+      
+        <content type="html"><![CDATA[<h3 id="下面是Rust的一些琐碎知识"><a href="#下面是Rust的一些琐碎知识" class="headerlink" title="下面是Rust的一些琐碎知识"></a>下面是Rust的一些琐碎知识</h3><h5 id="1、format-宏"><a href="#1、format-宏" class="headerlink" title="1、format!宏"></a>1、format!宏</h5><ul><li>format!: write formatted text to String  这个宏可以将一个文本格式化成String类型（可变字符串，在堆上面分配空间），类似于C#中的String.Format方法。</li></ul><pre class="line-numbers language-rust"><code class="language-rust"><span class="token keyword">let</span> world <span class="token operator">=</span> <span class="token string">"world"</span><span class="token punctuation">;</span><span class="token keyword">let</span> text <span class="token operator">=</span> <span class="token function">format!</span><span class="token punctuation">(</span><span class="token string">"Hello {}!"</span><span class="token punctuation">,</span> world<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>这样text的类型就会是String</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Rust </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Rust </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用命令</title>
+      <link href="2020/10/21/chang-yong-ming-ling/"/>
+      <url>2020/10/21/chang-yong-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<h3 id="下面总结一下常用的命令"><a href="#下面总结一下常用的命令" class="headerlink" title="下面总结一下常用的命令"></a>下面总结一下常用的命令</h3><ul><li>1、Mac系统查看端口占用和杀死进程</li></ul><pre><code>lsof -i tcp:8080</code></pre><p>该命令会显示8080端口的占用情况，有pid，可以根据pid关掉该进程</p><pre><code>kill -9 pid号</code></pre><ul><li>2、</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Mac </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 常用命令 </tag>
+            
+            <tag> Linux </tag>
+            
+            <tag> MacOs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>什么是运行时(Runtime)</title>
       <link href="2020/10/20/shi-me-shi-yun-xing-shi-runtime/"/>
       <url>2020/10/20/shi-me-shi-yun-xing-shi-runtime/</url>

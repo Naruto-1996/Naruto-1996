@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="rust 0u8在rust中是什么意思, 李文洋">
+    <meta name="keywords" content="Rust 琐碎知识记录板, 李文洋">
     <meta name="description" content="单身可撩、帅气的程序员小哥哥">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>rust 0u8在rust中是什么意思 | 李文洋</title>
+    <title>Rust 琐碎知识记录板 | 李文洋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">rust 0u8在rust中是什么意思</h1>
+                    <h1 class="description center-align post-title">Rust 琐碎知识记录板</h1>
                 </div>
             </div>
         </div>
@@ -438,14 +438,6 @@
                                 <span class="chip bg-color">Rust</span>
                             </a>
                         
-                            <a href="/tags/0u8/">
-                                <span class="chip bg-color">0u8</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%AD%97%E9%9D%A2%E9%87%8F/">
-                                <span class="chip bg-color">字面量</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -467,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-19
+                    2020-10-21
                 </div>
                 
 
@@ -483,37 +475,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="rust-0u8在rust中是什么意思"><a href="#rust-0u8在rust中是什么意思" class="headerlink" title="rust 0u8在rust中是什么意思"></a>rust 0u8在rust中是什么意思</h4><h6 id="当我在学习Rust-编程语言"><a href="#当我在学习Rust-编程语言" class="headerlink" title="当我在学习Rust 编程语言"></a>当我在学习<a target="_blank" rel="noopener" href="https://learnku.com/docs/rust-lang/2018/ch06-03-if-let/4515">Rust 编程语言</a></h6><ul>
-<li>遇到了如下这种问题：  <pre><code>let some_u8_value = Some(0u8);
-match some_u8_value {
-  Some(3) =&gt; println!("three"),
-  _ =&gt; (),
-}</code></pre>
-0u8 是什么意思，在我的印象中应该是这么写<br><code>let some_u8_value = Some(0 :u8)</code><br>然而并没有这种写法，直到我在 <a target="_blank" rel="noopener" href="https://rustwiki.org/zh-CN/rust-by-example/types/literals.html">rust_by_example</a> 中看到了答案，</li>
+                <h3 id="下面是Rust的一些琐碎知识"><a href="#下面是Rust的一些琐碎知识" class="headerlink" title="下面是Rust的一些琐碎知识"></a>下面是Rust的一些琐碎知识</h3><h5 id="1、format-宏"><a href="#1、format-宏" class="headerlink" title="1、format!宏"></a>1、format!宏</h5><ul>
+<li>format!: write formatted text to String  这个宏可以将一个文本格式化成String类型（可变字符串，在堆上面分配空间），类似于C#中的String.Format方法。</li>
 </ul>
-<h3 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h3><ul>
-<li><p>对数值字面量，只要把类型作为后缀加上去，就完成了类型说明。比如指定字面量 42 的 类型是 i32，只需要写 42i32。</p>
-</li>
-<li><p>无后缀的数值字面量，其类型取决于怎样使用它们。如果没有限制，编译器会对整数使用 i32，对浮点数使用 f64。</p>
-</li>
-</ul>
-<pre><code>fn main() {
-    // 带后缀的字面量，其类型在初始化时已经知道了。
-    let x = 1u8;
-    let y = 2u32;
-    let z = 3f32;
-
-    // 无后缀的字面量，其类型取决于如何使用它们。
-    let i = 1;
-    let f = 1.0;
-
-    // `size_of_val` 返回一个变量所占的字节数
-    println!("size of `x` in bytes: {}", std::mem::size_of_val(&amp;x));
-    println!("size of `y` in bytes: {}", std::mem::size_of_val(&amp;y));
-    println!("size of `z` in bytes: {}", std::mem::size_of_val(&amp;z));
-    println!("size of `i` in bytes: {}", std::mem::size_of_val(&amp;i));
-    println!("size of `f` in bytes: {}", std::mem::size_of_val(&amp;f));
-}</code></pre>
+<pre class="line-numbers language-rust"><code class="language-rust"><span class="token keyword">let</span> world <span class="token operator">=</span> <span class="token string">"world"</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> text <span class="token operator">=</span> <span class="token function">format!</span><span class="token punctuation">(</span><span class="token string">"Hello {}!"</span><span class="token punctuation">,</span> world<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这样text的类型就会是String</p>
 
             </div>
             <hr/>
@@ -539,7 +506,7 @@ match some_u8_value {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/19/rust-0u8-zai-rust-zhong-shi-shi-me-yi-si/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/19/rust-0u8-zai-rust-zhong-shi-shi-me-yi-si/</a>
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/rust-suo-sui-zhi-shi-ji-lu-ban/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/rust-suo-sui-zhi-shi-ji-lu-ban/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,14 +546,6 @@ match some_u8_value {
                             
                                 <a href="/tags/Rust/">
                                     <span class="chip bg-color">Rust</span>
-                                </a>
-                            
-                                <a href="/tags/0u8/">
-                                    <span class="chip bg-color">0u8</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%AD%97%E9%9D%A2%E9%87%8F/">
-                                    <span class="chip bg-color">字面量</span>
                                 </a>
                             
                         </div>
@@ -757,7 +716,7 @@ match some_u8_value {
         repo: 'Naruto-1996.github.io',
         owner: 'Naruto-1996',
         admin: ["Naruto-1996"],
-        id: '2020-10-19T11-00-27',
+        id: '2020-10-21T11-03-59',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -781,50 +740,49 @@ match some_u8_value {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/10/20/shi-me-shi-yun-xing-shi-runtime/">
+                <a href="/2020/10/21/rust-suo-sui-zhi-shi-ji-lu-ban/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="什么是运行时(Runtime)">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Rust 琐碎知识记录板">
                         
-                        <span class="card-title">什么是运行时(Runtime)</span>
+                        <span class="card-title">Rust 琐碎知识记录板</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            什么是运行时（Runtime）任何语言要运行都需要自己的运行时，Java 程序的运行时叫 Java Runtime，Android 程序的运行时叫 Android Runtime，而具体 Runtime 是个什么东西呢，就是说一个程序要在一
+                            下面是Rust的一些琐碎知识1、format!宏
+format!: write formatted text to String  这个宏可以将一个文本格式化成String类型（可变字符串，在堆上面分配空间），类似于C#中的String.F
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/Rust/" class="post-category">
+                                    Rust
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Runtime/">
-                        <span class="chip bg-color">Runtime</span>
-                    </a>
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Rust/">
+                        <span class="chip bg-color">Rust</span>
                     </a>
                     
                 </div>
@@ -838,35 +796,40 @@ match some_u8_value {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/18/picture-bed/">
+                <a href="/2020/10/21/chang-yong-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="picture_bed">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="常用命令">
                         
-                        <span class="card-title">picture_bed</span>
+                        <span class="card-title">常用命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Mac环境–如何做一个自用的图床1、下载PicGoPicGo下载地址
-2、创建一个Github仓库并进行设置（1）创建仓库
-(2) 点击头像 点击Settings
-(3) 再点 Developer settings
-(4) 再点 Perso
+                            下面总结一下常用的命令
+1、Mac系统查看端口占用和杀死进程
+
+lsof -i tcp:8080
+该命令会显示8080端口的占用情况，有pid，可以根据pid关掉该进程
+kill -9 pid号
+
+2、
+
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9B%BE%E5%BA%8A/" class="post-category">
-                                    图床
+                            <a href="/categories/Mac/" class="post-category">
+                                    Mac
                                 </a>
                             
                             
@@ -876,16 +839,16 @@ match some_u8_value {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">常用命令</span>
                     </a>
                     
-                    <a href="/tags/jsDelivr/">
-                        <span class="chip bg-color">jsDelivr</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/PicGo/">
-                        <span class="chip bg-color">PicGo</span>
+                    <a href="/tags/MacOs/">
+                        <span class="chip bg-color">MacOs</span>
                     </a>
                     
                 </div>
