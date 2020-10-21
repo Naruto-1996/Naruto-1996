@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2020-10-21T05:10:46.645Z</updated>
+  <updated>2020-10-21T07:45:24.464Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Rust 闭包</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/rust-bi-bao/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/rust-bi-bao/</id>
+    <published>2020-10-21T07:04:15.000Z</published>
+    <updated>2020-10-21T07:45:24.464Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;快速掌握Rust闭包&quot;&gt;&lt;a href=&quot;#快速掌握Rust闭包&quot; class=&quot;headerlink&quot; title=&quot;快速掌握Rust闭包&quot;&gt;&lt;/a&gt;快速掌握Rust闭包&lt;/h4&gt;&lt;p&gt;&lt;em&gt;闭包(Closure) :</summary>
+        
+      
+    
+    
+    
+    <category term="Rust" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Rust/"/>
+    
+    
+    <category term="closure" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/closure/"/>
+    
+    <category term="函数式编程" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Rust 编程" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Rust-%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>IDEA 破解</title>
