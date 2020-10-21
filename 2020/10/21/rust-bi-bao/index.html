@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="李文洋" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="李文洋" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -491,10 +491,11 @@
 <span class="token closure-params"><span class="token punctuation">|</span>x<span class="token punctuation">:</span>i32<span class="token punctuation">|</span></span> <span class="token punctuation">-></span> i32 <span class="token punctuation">{</span> x <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在上面的例子中，如果是单行语句且没有标注返回类型的时候，花括号是可选的。</p>
 <ul>
-<li>闭包可以像任何其他对象一样绑定到某个变量,然后可以像调用函数一样调用闭包<pre class="line-numbers language-rust"><code class="language-rust"><span class="token keyword">let</span> f <span class="token operator">=</span> <span class="token operator">|</span>x<span class="token operator">|</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token function">println!</span><span class="token punctuation">(</span><span class="token string">"x is {}"</span><span class="token punctuation">,</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-打印结果如下：</li>
+<li>闭包可以像任何其他对象一样绑定到某个变量,然后可以像调用函数一样调用闭包</li>
 </ul>
+<pre class="line-numbers language-rust"><code class="language-rust"><span class="token keyword">let</span> f <span class="token operator">=</span> <span class="token operator">|</span>x<span class="token operator">|</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token function">println!</span><span class="token punctuation">(</span><span class="token string">"x is {}"</span><span class="token punctuation">,</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>打印结果如下：</p>
 <pre class="line-numbers language-rust"><code class="language-rust">x is <span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>也可以在定义的地方直接调用:</p>
 <pre class="line-numbers language-rust"><code class="language-rust"><span class="token keyword">let</span> r <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">|</span>x<span class="token operator">|</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// r == 3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
