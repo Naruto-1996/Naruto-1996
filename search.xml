@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Android-RecycleView内部item点击事件</title>
+      <link href="2020/10/21/android-recycleview-nei-bu-item-dian-ji-shi-jian/"/>
+      <url>2020/10/21/android-recycleview-nei-bu-item-dian-ji-shi-jian/</url>
+      
+        <content type="html"><![CDATA[<h4 id="RecyclerView的使用——Item内部控件的点击事件"><a href="#RecyclerView的使用——Item内部控件的点击事件" class="headerlink" title="RecyclerView的使用——Item内部控件的点击事件"></a>RecyclerView的使用——Item内部控件的点击事件</h4><h5 id="一、在adapter中写item点击事件的接口供外部的activity使用"><a href="#一、在adapter中写item点击事件的接口供外部的activity使用" class="headerlink" title="一、在adapter中写item点击事件的接口供外部的activity使用"></a>一、在adapter中写item点击事件的接口供外部的activity使用</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*** item内部的监听接口*/</span><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ItemInnerOnclickListener</span> <span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">// 这个String id 是点击item是想要传的参数</span>    <span class="token keyword">void</span> <span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> String id<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">private</span> ItemInnerOnclickListener mItemInnerOnclickListener<span class="token punctuation">;</span><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setOnItemOnClickListener</span><span class="token punctuation">(</span>ItemInnerOnclickListener mItemInnerOnclickListener<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">this</span><span class="token punctuation">.</span>mItemInnerOnclickListener <span class="token operator">=</span> mItemInnerOnclickListener<span class="token punctuation">;</span>  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>在holder中就可以这么去写：(这里我使用了CommonAdapter 所以holder的代码可能不太一样)</p><pre class="line-numbers language-java"><code class="language-java">holder<span class="token punctuation">.</span><span class="token function">setOnClickListener</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>cancel_withdraw<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">OnMultiClickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token annotation punctuation">@Override</span>  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMultiClick</span><span class="token punctuation">(</span>View v<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">// record.id 是activity那边拿到数据后用bean来解析的 传递过来的数据</span>    <span class="token comment" spellcheck="true">// public class WithdrawRecordsAdapter extends CommonAdapter&lt;WithdrawRecordBean.Record></span>    mItemInnerOnclickListener<span class="token punctuation">.</span><span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span>position<span class="token punctuation">,</span> record<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="二、在activity中我们就可以这么去写"><a href="#二、在activity中我们就可以这么去写" class="headerlink" title="二、在activity中我们就可以这么去写"></a>二、在activity中我们就可以这么去写</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> WithdrawRecordsAdapter withdrawRecordsAdapter<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-java"><code class="language-java">withdrawRecordsAdapter<span class="token punctuation">.</span><span class="token function">setOnItemOnClickListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WithdrawRecordsAdapter<span class="token punctuation">.</span>ItemInnerOnclickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>          <span class="token annotation punctuation">@Override</span>          <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> String id<span class="token punctuation">)</span> <span class="token punctuation">{</span>            <span class="token function">showDialog</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token punctuation">}</span>        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这里我们设置点击事件的时候去new了一个adapter中点击事件的接口，并且我们还可以拿到adapter中点击时想要传递的String id 去做一些事情</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 安卓开发 </tag>
+            
+            <tag> RecycleView </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Rust 闭包</title>
       <link href="2020/10/21/rust-bi-bao/"/>
       <url>2020/10/21/rust-bi-bao/</url>
