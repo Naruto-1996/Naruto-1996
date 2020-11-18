@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>zsh: permission denied: 解决办法</title>
+      <link href="2020/11/18/zsh-permission-denied-jie-jue-ban-fa/"/>
+      <url>2020/11/18/zsh-permission-denied-jie-jue-ban-fa/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1、出现原因"><a href="#1、出现原因" class="headerlink" title="1、出现原因"></a>1、出现原因</h3><pre class="line-numbers language-java"><code class="language-java">用户没有权限，所以才出现了这个错误，所以只需要用chmod修改一下权限<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="2、解决办法"><a href="#2、解决办法" class="headerlink" title="2、解决办法"></a>2、解决办法</h3><pre><code>chmod u+x *.sh</code></pre><h3 id="3、说明"><a href="#3、说明" class="headerlink" title="3、说明"></a>3、说明</h3><pre><code>chmod是权限管理命令change the permissions mode of a file的缩写。u代表所有者。x代表执行权限。’+’ 表示增加权限。chmod u+x file.sh 就表示对当前目录下的file.sh文件的所有者增加可执行权限。</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Mac </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> zsh </tag>
+            
+            <tag> chmod </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android intent.setFlags方法中参数值的含义</title>
       <link href="2020/10/21/android-intent-setflags-fang-fa-zhong-can-shu-zhi-de-han-yi/"/>
       <url>2020/10/21/android-intent-setflags-fang-fa-zhong-can-shu-zhi-de-han-yi/</url>
