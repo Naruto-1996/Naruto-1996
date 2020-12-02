@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Linux 运维方面的知识</title>
+      <link href="2020/12/02/linux-yun-wei-fang-mian-de-zhi-shi/"/>
+      <url>2020/12/02/linux-yun-wei-fang-mian-de-zhi-shi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h3><h5 id="1、怎么看Linux系统版本"><a href="#1、怎么看Linux系统版本" class="headerlink" title="1、怎么看Linux系统版本"></a>1、怎么看Linux系统版本</h5><p>登陆Linux，在终端输入</p><pre class="line-numbers language-Linux"><code class="language-Linux">cat /proc/version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="2、查看服务器内存使用情况"><a href="#2、查看服务器内存使用情况" class="headerlink" title="2、查看服务器内存使用情况"></a>2、查看服务器内存使用情况</h5><pre class="line-numbers language-linux"><code class="language-linux">free -m<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201202120027.png"></p><h4 id="参数解释："><a href="#参数解释：" class="headerlink" title="参数解释："></a>参数解释：</h4><p>Mem行（单位均为M）：</p><ul><li>total：内存总数</li><li>used：已使用内存数</li><li>free：空闲内存数</li><li>shared：当前废弃不用</li><li>buffers：缓存内存数（Buffer）</li><li>cached：缓存内舒数（Page）</li></ul><p>(-/+ buffers/cache)行：</p><ul><li>（-buffers/cache）: 真正使用的内存数，指的是第一部分的 used - buffers - cached</li><li>（+buffers/cache）: 可用的内存数，指的是第一部分的 free + buffers + cached</li></ul><p>Swap行指交换分区。</p><p>实际上不要看free少就觉得内存不足了，buffers和cached都是可以在使用内存时拿来用的，应该以(-/+ buffers/cache)行的free和used来看。只要没发现swap的使用，就不用太担心，如果swap用了很多，那就要考虑增加物理内存了。</p><h4 id="3、-查看CPU使用情况"><a href="#3、-查看CPU使用情况" class="headerlink" title="3、 查看CPU使用情况"></a>3、 查看CPU使用情况</h4><pre><code>top</code></pre><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201202120433.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+            <tag> 防火墙 </tag>
+            
+            <tag> Linux命令 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>rails 连接多个数据库</title>
       <link href="2020/12/01/rails-lian-jie-duo-ge-shu-ju-ku/"/>
       <url>2020/12/01/rails-lian-jie-duo-ge-shu-ju-ku/</url>
