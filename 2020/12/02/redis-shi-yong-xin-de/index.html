@@ -482,46 +482,40 @@
                 <h3 id="Redis-使用"><a href="#Redis-使用" class="headerlink" title="Redis 使用"></a>Redis 使用</h3><h4 id="1、在本地使用"><a href="#1、在本地使用" class="headerlink" title="1、在本地使用"></a>1、在本地使用</h4><p>进入到redis的src目录中</p>
 <pre><code>./redis-cli </code></pre>
 <ul>
-<li>一些常规操作<pre><code>LPUSH 是把新的元素从右侧插入到数组中
+<li>一些常规操作</li>
+</ul>
+<pre><code>LPUSH 是把新的元素从右侧插入到数组中
 LPUSH fruits apple   # =&gt; ["apple"]   把元素从左边插入到数组中
 &gt; LPUSH  fruits banana   # =&gt; ["banana", "apple"]  
-</code></pre>
-</li>
-</ul>
-<p>RPUSH 是把新的元素从右侧插入到数组中</p>
-<blockquote>
-<p>LINDEX fruits 0     # =&gt; “banana”<br>LINDEX fruits 1    # =&gt;  “apple”<br>LRANGE fruits 0 1  #=&gt; [‘banana’, ‘apple’]   ， 注意只有lrange, 没有 rrange. </p>
-</blockquote>
-<pre><code>
-* 获取所有的key
-</code></pre>
-<p>keys *   这个<em>号是匹配所有的key 可以拼接 比如 fruits</em></p>
-<pre><code></code></pre>
-<p>127.0.0.1:6379&gt; keys *</p>
-<ol>
-<li>“fruits”<pre><code></code></pre>
-</li>
-</ol>
+
+RPUSH 是把新的元素从右侧插入到数组中
+&gt; LINDEX fruits 0     # =&gt; "banana"
+&gt; LINDEX fruits 1    # =&gt;  "apple"
+&gt; LRANGE fruits 0 1  #=&gt; ['banana', 'apple']   ， 注意只有lrange, 没有 rrange. </code></pre>
 <ul>
-<li>查看某个key下的值:<pre><code>lrange fruits 0 -1</code></pre>
-</li>
+<li>获取所有的key</li>
 </ul>
+<pre><code>keys *   这个*号是匹配所有的key 可以拼接 比如 fruits*</code></pre>
+<pre><code>127.0.0.1:6379&gt; keys *
+1) "fruits"</code></pre>
+<ul>
+<li>查看某个key下的值:</li>
+</ul>
+<pre><code>lrange fruits 0 -1</code></pre>
 <pre><code>127.0.0.1:6379&gt; lrange fruits 0 -1
 1) "def"
 2) "abc"
 3) "banana"
 4) "apple"</code></pre>
 <ul>
-<li>截断 保留trim中参数部分<pre><code>ltrim fruits 0 2</code></pre>
-```<br>我们看到 这里只保留了0-2剩下的都删除了</li>
+<li>截断 保留trim中参数部分</li>
 </ul>
-<p>127.0.0.1:6379&gt; lrange fruits 0 -1</p>
-<ol>
-<li>“def”</li>
-<li>“abc”</li>
-<li>“banana”<pre><code></code></pre>
-</li>
-</ol>
+<pre><code>ltrim fruits 0 2</code></pre>
+<pre><code>我们看到 这里只保留了0-2剩下的都删除了
+127.0.0.1:6379&gt; lrange fruits 0 -1
+1) "def"
+2) "abc"
+3) "banana"</code></pre>
 
             </div>
             <hr/>
