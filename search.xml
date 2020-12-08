@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>在linux服务器上安装vim</title>
+      <link href="2020/12/08/zai-linux-fu-wu-qi-shang-an-zhuang-vim/"/>
+      <url>2020/12/08/zai-linux-fu-wu-qi-shang-an-zhuang-vim/</url>
+      
+        <content type="html"><![CDATA[<h4 id="在Linux服务器上-安装-vim-及-vundle-install-vim-and-vundle"><a href="#在Linux服务器上-安装-vim-及-vundle-install-vim-and-vundle" class="headerlink" title="在Linux服务器上 安装 vim 及 vundle ( install vim and vundle)"></a>在Linux服务器上 安装 vim 及 vundle ( install vim and vundle)</h4><h5 id="1、-直接下载-这个文件-并且解压-成为-home目录下的-vim-即可"><a href="#1、-直接下载-这个文件-并且解压-成为-home目录下的-vim-即可" class="headerlink" title="1、 直接下载 这个文件 ,  并且解压,成为 home目录下的 .vim 即可."></a>1、 直接下载 <a href="http://siwei.me/system/resources/W1siZiIsIjIwMTQvMTAvMjEvMDlfNTdfMDdfODA3X2RvdF92aW1fZm9sZGVyLnppcCJdXQ/dot_vim_folder.zip">这个文件</a> ,  并且解压,成为 home目录下的 .vim 即可.</h5><h5 id="2、-下载-vimrc-保存到-home目录下。"><a href="#2、-下载-vimrc-保存到-home目录下。" class="headerlink" title="2、 下载  .vimrc, 保存到 home目录下。"></a>2、 下载  <a href="http://siwei.me/system/resources/BAhbBlsHOgZmSSIjMjAxNC8wMS8xOS8wNV81MV8zOF82NjVfLnZpbXJjBjoGRVQ/.vimrc">.vimrc</a>, 保存到 home目录下。</h5><p>可以使用scp 命令将下载的压缩包传到Linux服务器上</p><pre><code>scp ~/Downloads/dot_vim_folder.zip ubuntu@85.136.62.11:~</code></pre><p>传上去后进入到Linux服务器home目录 </p><pre><code>unzip dot_vim_folder.zip</code></pre><p>将vimrc文件重命令一下 改为.vimrc</p><pre><code>mv vimrc .vimrc</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Vim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>redis使用心得</title>
       <link href="2020/12/02/redis-shi-yong-xin-de/"/>
       <url>2020/12/02/redis-shi-yong-xin-de/</url>
