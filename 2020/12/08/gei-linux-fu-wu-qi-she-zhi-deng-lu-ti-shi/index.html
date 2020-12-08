@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="在linux服务器上安装vim, 李文洋">
+    <meta name="keywords" content="给Linux服务器设置登录提示, 李文洋">
     <meta name="description" content="单身可撩、帅气的程序员小哥哥">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>在linux服务器上安装vim | 李文洋</title>
+    <title>给Linux服务器设置登录提示 | 李文洋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">在linux服务器上安装vim</h1>
+                    <h1 class="description center-align post-title">给Linux服务器设置登录提示</h1>
                 </div>
             </div>
         </div>
@@ -438,10 +438,6 @@
                                 <span class="chip bg-color">Linux</span>
                             </a>
                         
-                            <a href="/tags/Vim/">
-                                <span class="chip bg-color">Vim</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -479,12 +475,30 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="在Linux服务器上-安装-vim-及-vundle-install-vim-and-vundle"><a href="#在Linux服务器上-安装-vim-及-vundle-install-vim-and-vundle" class="headerlink" title="在Linux服务器上 安装 vim 及 vundle ( install vim and vundle)"></a>在Linux服务器上 安装 vim 及 vundle ( install vim and vundle)</h4><h5 id="1、-直接下载-这个文件-并且解压-成为-home目录下的-vim-即可"><a href="#1、-直接下载-这个文件-并且解压-成为-home目录下的-vim-即可" class="headerlink" title="1、 直接下载 这个文件 ,  并且解压,成为 home目录下的 .vim 即可."></a>1、 直接下载 <a target="_blank" rel="noopener" href="http://siwei.me/system/resources/W1siZiIsIjIwMTQvMTAvMjEvMDlfNTdfMDdfODA3X2RvdF92aW1fZm9sZGVyLnppcCJdXQ/dot_vim_folder.zip">这个文件</a> ,  并且解压,成为 home目录下的 .vim 即可.</h5><h5 id="2、-下载-vimrc-保存到-home目录下。"><a href="#2、-下载-vimrc-保存到-home目录下。" class="headerlink" title="2、 下载  .vimrc, 保存到 home目录下。"></a>2、 下载  <a target="_blank" rel="noopener" href="http://siwei.me/system/resources/BAhbBlsHOgZmSSIjMjAxNC8wMS8xOS8wNV81MV8zOF82NjVfLnZpbXJjBjoGRVQ/.vimrc">.vimrc</a>, 保存到 home目录下。</h5><p>可以使用scp 命令将下载的压缩包传到Linux服务器上</p>
-<pre><code>scp ~/Downloads/dot_vim_folder.zip ubuntu@85.136.62.11:~</code></pre>
-<p>传上去后进入到Linux服务器home目录 </p>
-<pre><code>unzip dot_vim_folder.zip</code></pre>
-<p>将vimrc文件重命令一下 改为.vimrc</p>
-<pre><code>mv vimrc .vimrc</code></pre>
+                <h5 id="1、给Linux设置登录提示"><a href="#1、给Linux设置登录提示" class="headerlink" title="1、给Linux设置登录提示"></a>1、给Linux设置登录提示</h5><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201208180823.png"></p>
+<pre><code>sudo vim /etc/motd</code></pre>
+<p>然后把你想要的内用拷贝进去 退出服务器,重新登录就可以看到了</p>
+<pre><code>&lt; Hi, How are you &gt;
+ -----------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||  
+</code></pre>
+<h5 id="2、给Linux设置彩色界面"><a href="#2、给Linux设置彩色界面" class="headerlink" title="2、给Linux设置彩色界面"></a>2、给Linux设置彩色界面</h5><h6 id="查看当前终端支持集中颜色"><a href="#查看当前终端支持集中颜色" class="headerlink" title="查看当前终端支持集中颜色"></a>查看当前终端支持集中颜色</h6><p>使用<code>tput colors</code>命令即可查看当前终端支持几种颜色</p>
+<h6 id="查看当前终端类型"><a href="#查看当前终端类型" class="headerlink" title="查看当前终端类型"></a>查看当前终端类型</h6><p><code>$TERM</code>变量代表当前终端类型，可使用<code>echo $TERM</code>命令查看。</p>
+<h6 id="输出当前支持的颜色"><a href="#输出当前支持的颜色" class="headerlink" title="输出当前支持的颜色"></a>输出当前支持的颜色</h6><p>运行以下命令，若输出了完整的256种颜色，就说明当前终端支持256色：</p>
+<pre><code>(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)</code></pre>
+<p>若只有前8种颜色，说明当前配置是8色模式，默认情况下，Ubuntu中的Gnome-Terminal就只开启了8色支持。此时可通过修改<code>~/.bashrc</code>文件将其改为256色，在<code>.bashrc</code>文件最后中加入以下代码即可：</p>
+<pre><code>export TERM=vte-256color</code></pre>
+<p>如果没有<code>.bashrc</code>文件 可以选择<code>sudo vim .bashrc</code> 创建一个 也可以使用<code>sudo cp /etc/skel/.bashrc ./</code> 命令拷贝到home目录下</p>
+<p>最后输入命令source ~/.bashrc，一定要输入，不然配置文件无法生效(虽然source了但是退出登录进来后有没有了颜色)</p>
+<h6 id="解决-bashrc文件每次打开终端都需要source的问题"><a href="#解决-bashrc文件每次打开终端都需要source的问题" class="headerlink" title="解决.bashrc文件每次打开终端都需要source的问题"></a>解决.bashrc文件每次打开终端都需要source的问题</h6><p><code>sudo vim ~/.bash_profile</code>在文件内部输入</p>
+<pre><code># 加载.bashrc文件
+if test -f .bashrc ; then
+source .bashrc 
+fi</code></pre>
 
             </div>
             <hr/>
@@ -510,7 +524,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/08/zai-linux-fu-wu-qi-shang-an-zhuang-vim/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/08/zai-linux-fu-wu-qi-shang-an-zhuang-vim/</a>
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/08/gei-linux-fu-wu-qi-she-zhi-deng-lu-ti-shi/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/08/gei-linux-fu-wu-qi-she-zhi-deng-lu-ti-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,10 +564,6 @@
                             
                                 <a href="/tags/Linux/">
                                     <span class="chip bg-color">Linux</span>
-                                </a>
-                            
-                                <a href="/tags/Vim/">
-                                    <span class="chip bg-color">Vim</span>
                                 </a>
                             
                         </div>
@@ -724,7 +734,7 @@
         repo: 'Naruto-1996.github.io',
         owner: 'Naruto-1996',
         admin: ["Naruto-1996"],
-        id: '2020-12-08T16-56-02',
+        id: '2020-12-08T18-06-02',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -748,9 +758,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/12/08/gei-linux-fu-wu-qi-she-zhi-deng-lu-ti-shi/">
                     <div class="card-image">
@@ -773,9 +784,59 @@ sudo vim /etc/motd
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-08
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/12/08/zai-linux-fu-wu-qi-shang-an-zhuang-vim/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="在linux服务器上安装vim">
+                        
+                        <span class="card-title">在linux服务器上安装vim</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            在Linux服务器上 安装 vim 及 vundle ( install vim and vundle)1、 直接下载 这个文件 ,  并且解压,成为 home目录下的 .vim 即可.2、 下载  .vimrc, 保存到 home目录下。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -795,63 +856,8 @@ sudo vim /etc/motd
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/12/02/redis-shi-yong-xin-de/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="redis使用心得">
-                        
-                        <span class="card-title">redis使用心得</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Redis 使用1、在本地使用进入到redis的src目录中
-./redis-cli 
-
-一些常规操作
-
-LPUSH 是把新的元素从右侧插入到数组中
-LPUSH fruits apple   # =&gt; ["apple"]   把元素从
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Redis/" class="post-category">
-                                    Redis
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Redis/">
-                        <span class="chip bg-color">Redis</span>
-                    </a>
-                    
-                    <a href="/tags/Mac/">
-                        <span class="chip bg-color">Mac</span>
+                    <a href="/tags/Vim/">
+                        <span class="chip bg-color">Vim</span>
                     </a>
                     
                 </div>
