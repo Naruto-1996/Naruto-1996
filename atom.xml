@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2020-12-08T10:52:52.700Z</updated>
+  <updated>2020-12-09T02:47:18.624Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给服务器设置ssh免密码登录</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/09/gei-fu-wu-qi-she-zhi-ssh-mian-mi-ma-deng-lu/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/09/gei-fu-wu-qi-she-zhi-ssh-mian-mi-ma-deng-lu/</id>
+    <published>2020-12-09T01:25:02.000Z</published>
+    <updated>2020-12-09T02:47:18.624Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;给服务器设置ssh免密码登录&quot;&gt;&lt;a href=&quot;#给服务器设置ssh免密码登录&quot; class=&quot;headerlink&quot; title=&quot;给服务器设置ssh免密码登录&quot;&gt;&lt;/a&gt;给服务器设置ssh免密码登录&lt;/h4&gt;&lt;h4 id=&quot;SSH是什么？&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Linux/"/>
+    
+    <category term="SSH" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/SSH/"/>
+    
+  </entry>
   
   <entry>
     <title>给Linux服务器设置登录提示</title>
