@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2020-12-09T06:59:14.719Z</updated>
+  <updated>2020-12-09T07:56:39.682Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux(ubuntu) - 使用fail2ban 为nginx保驾护航</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/09/linux-ubuntu-shi-yong-fail2ban-wei-nginx-bao-jia-hu-hang/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/09/linux-ubuntu-shi-yong-fail2ban-wei-nginx-bao-jia-hu-hang/</id>
+    <published>2020-12-09T07:40:46.000Z</published>
+    <updated>2020-12-09T07:56:39.682Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;linux-ubuntu-使用fail2ban-为nginx保驾护航&quot;&gt;&lt;a href=&quot;#linux-ubuntu-使用fail2ban-为nginx保驾护航&quot; class=&quot;headerlink&quot; title=&quot;linux(ubuntu) -</summary>
+        
+      
+    
+    
+    
+    <category term="Fail2ban" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Fail2ban/"/>
+    
+    
+    <category term="Linux" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Linux/"/>
+    
+    <category term="ubuntu" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>给Linux安装nginx</title>
@@ -528,33 +555,6 @@
     <category term="jsDelivr" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/jsDelivr/"/>
     
     <category term="PicGo" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/PicGo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo+github搭建一个博客</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/hexo-github-da-jian-yi-ge-bo-ke/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/16/hexo-github-da-jian-yi-ge-bo-ke/</id>
-    <published>2020-10-16T10:57:25.000Z</published>
-    <updated>2020-10-18T09:58:26.292Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;使用Hexo-Github-搭建一个博客网站-Mac环境&quot;&gt;&lt;a href=&quot;#使用Hexo-Github-搭建一个博客网站-Mac环境&quot; class=&quot;headerlink&quot; title=&quot;使用Hexo + Github 搭建一个博客网站</summary>
-        
-      
-    
-    
-    
-    <category term="Mac" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Mac/"/>
-    
-    
-    <category term="hexo" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/hexo/"/>
-    
-    <category term="github" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/github/"/>
     
   </entry>
   
