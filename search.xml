@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>给Linux安装nginx</title>
+      <link href="2020/12/09/gei-linux-an-zhuang-nginx/"/>
+      <url>2020/12/09/gei-linux-an-zhuang-nginx/</url>
+      
+        <content type="html"><![CDATA[<h4 id="给Linux-ubuntu-服务器安装nginx"><a href="#给Linux-ubuntu-服务器安装nginx" class="headerlink" title="给Linux(ubuntu)服务器安装nginx"></a>给Linux(ubuntu)服务器安装nginx</h4><h5 id="1：检查80端口是否被占用。"><a href="#1：检查80端口是否被占用。" class="headerlink" title="1：检查80端口是否被占用。"></a>1：检查80端口是否被占用。</h5><h5 id="2：安装nginx"><a href="#2：安装nginx" class="headerlink" title="2：安装nginx"></a>2：安装nginx</h5><p>给nginx配置安装目录,就是nginx存放的目录</p><p>我一般安装软件都是安装在/usr/local下面的</p><pre><code>mkdir /usr/local/nginx</code></pre><p>进入nginx目录<code>cd /usr/local/nginx</code></p><p>使用wget命令下载nginx资源包</p><pre><code>wget http://nginx.org/download/nginx-1.12.2.tar.gz</code></pre><p>解压</p><pre class="line-numbers language-yaml"><code class="language-yaml">tar <span class="token punctuation">-</span>zxvf nginx<span class="token punctuation">-</span>1.5.9.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>执行<code> ./configure命令</code></p><pre><code>cd nginx-1.5.9sudo ./configure</code></pre><p>执行<code>./configure</code>可能会存在一下错误,如果出现请执行一下命令</p><blockquote><p>错误1</p><p>/configure: error: the HTTP rewrite module requires the PCRE library.</p></blockquote><p>解决方法</p><p>安装pcre-devel解决问题</p><pre><code>sudo apt-get updatesudo apt-get install libpcre3 libpcre3-dev</code></pre><blockquote><p>错误2</p><p>./configure: error: the HTTP cache module requires md5 functions<br>from OpenSSL library. You can either disable the module by using<br>–without-http-cache option, or install the OpenSSL library into the system,<br>or build the OpenSSL library statically from the source with nginx by using<br>–with-http_ssl_module –with-openssl=<path> options.</path></p></blockquote><p>解决办法：</p><pre><code>sudo apt-get install openssl libssl-dev</code></pre><blockquote><p>错误3 （如果出现这种检查不通过，则说明缺少某些依赖。）</p><p>ubuntu@VM-0-16-ubuntu:/usr/local/nginx/nginx-1.12.2$ sudo ./configure<br>checking for OS</p><p>Linux 4.15.0-118-generic x86_64<br>checking for C compiler … not found</p><p>./configure: error: C compiler cc is not found</p></blockquote><p>解决办法：</p><pre class="line-numbers language-yaml"><code class="language-yaml">sudo apt<span class="token punctuation">-</span>get install build<span class="token punctuation">-</span>essential<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p>错误4</p><p>error: the HTTP gzip module requires the zlib library.</p></blockquote><p>解决办法：</p><pre><code>apt-get install zlib1g-dev</code></pre><p>然后在执行<code> ./configure命令</code></p><pre><code>cd nginx-1.5.9sudo ./configure</code></pre><h5 id="3-编译"><a href="#3-编译" class="headerlink" title="3.编译"></a>3.编译</h5><p><code>make</code> 编译 （make的过程是把各种语言写的源码文件，变成可执行文件和各种库文件）</p><pre><code>cd /usr/local/nginx/nginx-1.5.9sudo make</code></pre><h5 id="4-make-install安装"><a href="#4-make-install安装" class="headerlink" title="4.make install安装"></a>4.make install安装</h5><p><code>make install</code> 安装 （<code>make install</code>是把这些编译出来的可执行文件和库文件复制到合适的地方）</p><pre><code>sudo make install</code></pre><h5 id="5-启动nginx服务"><a href="#5-启动nginx服务" class="headerlink" title="5.启动nginx服务"></a>5.启动nginx服务</h5><pre><code>cd /usr/local/nginx/sbinsudo ./nginx</code></pre><h5 id="6-看nginx服务是否启动"><a href="#6-看nginx服务是否启动" class="headerlink" title="6.看nginx服务是否启动"></a>6.看nginx服务是否启动</h5><pre><code>ubuntu@VM-0-16-ubuntu:/usr/local/nginx/sbin$ ps -ef | grep nginxroot      7183     1  0 14:53 ?        00:00:00 nginx: master process ./nginxnobody    7184  7183  0 14:53 ?        00:00:00 nginx: worker processubuntu    7252 23084  0 14:53 pts/1    00:00:00 grep --color=auto nginx</code></pre><p>我们看到服务已经起来了,输入ip即可访问我们nginx目录下面的html文件夹下面的index.html文件</p><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201209145642.png"></p><p>===================华丽的分割线======================</p><p><code>nginx -s reload </code>：修改配置后重新加载生效</p><p><code>nginx -s reopen</code> ：重新打开日志文件</p><p>关闭nginx：</p><p><code>nginx -s stop</code> :快速停止nginx</p><p><code>quit </code>：完整有序的停止nginx</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> nginx </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> linux </tag>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>给服务器设置ssh免密码登录</title>
       <link href="2020/12/09/gei-fu-wu-qi-she-zhi-ssh-mian-mi-ma-deng-lu/"/>
       <url>2020/12/09/gei-fu-wu-qi-she-zhi-ssh-mian-mi-ma-deng-lu/</url>
