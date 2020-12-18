@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2020-12-09T07:56:39.682Z</updated>
+  <updated>2020-12-18T08:50:55.507Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -17,18 +17,47 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android自定义EditText一键清除和密文查看</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/18/android-zi-ding-yi-edittext-yi-jian-qing-chu-he-mi-wen-cha-kan/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/18/android-zi-ding-yi-edittext-yi-jian-qing-chu-he-mi-wen-cha-kan/</id>
+    <published>2020-12-18T08:26:41.000Z</published>
+    <updated>2020-12-18T08:50:55.507Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;Android自定义EditText一键清除和密文查看&quot;&gt;&lt;a href=&quot;#Android自定义EditText一键清除和密文查看&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Android" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Android/"/>
+    
+    
+    <category term="EditText" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/EditText/"/>
+    
+    <category term="密文" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E5%AF%86%E6%96%87/"/>
+    
+    <category term="一键清除" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E4%B8%80%E9%94%AE%E6%B8%85%E9%99%A4/"/>
+    
+  </entry>
+  
+  <entry>
     <title>linux(ubuntu) - 使用fail2ban 为nginx保驾护航</title>
     <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/09/linux-ubuntu-shi-yong-fail2ban-wei-nginx-bao-jia-hu-hang/"/>
     <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/09/linux-ubuntu-shi-yong-fail2ban-wei-nginx-bao-jia-hu-hang/</id>
     <published>2020-12-09T07:40:46.000Z</published>
-    <updated>2020-12-09T07:56:39.682Z</updated>
+    <updated>2020-12-09T09:47:03.565Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;linux-ubuntu-使用fail2ban-为nginx保驾护航&quot;&gt;&lt;a href=&quot;#linux-ubuntu-使用fail2ban-为nginx保驾护航&quot; class=&quot;headerlink&quot; title=&quot;linux(ubuntu) -</summary>
+    <summary type="html">&lt;h4 id=&quot;Linux-ubuntu-使用fail2ban-为nginx保驾护航&quot;&gt;&lt;a href=&quot;#Linux-ubuntu-使用fail2ban-为nginx保驾护航&quot; class=&quot;headerlink&quot; title=&quot;Linux(ubuntu) -</summary>
         
       
     
@@ -526,35 +555,6 @@
     <category term="0u8" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/0u8/"/>
     
     <category term="字面量" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E5%AD%97%E9%9D%A2%E9%87%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>picture_bed</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/18/picture-bed/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/18/picture-bed/</id>
-    <published>2020-10-18T07:36:35.000Z</published>
-    <updated>2020-10-18T08:25:21.317Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Mac环境–如何做一个自用的图床&quot;&gt;&lt;a href=&quot;#Mac环境–如何做一个自用的图床&quot; class=&quot;headerlink&quot; title=&quot;Mac环境–如何做一个自用的图床&quot;&gt;&lt;/a&gt;Mac环境–如何做一个自用的图床&lt;/h3&gt;&lt;h4</summary>
-        
-      
-    
-    
-    
-    <category term="图床" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/%E5%9B%BE%E5%BA%8A/"/>
-    
-    
-    <category term="github" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/github/"/>
-    
-    <category term="jsDelivr" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/jsDelivr/"/>
-    
-    <category term="PicGo" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/PicGo/"/>
     
   </entry>
   
