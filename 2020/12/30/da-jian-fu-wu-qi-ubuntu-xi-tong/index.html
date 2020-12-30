@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Android-RecycleView内部item点击事件, 李文洋">
+    <meta name="keywords" content="搭建服务器ubuntu系统, 李文洋">
     <meta name="description" content="单身可撩、帅气的程序员小哥哥">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Android-RecycleView内部item点击事件 | 李文洋</title>
+    <title>搭建服务器ubuntu系统 | 李文洋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Android-RecycleView内部item点击事件</h1>
+                    <h1 class="description center-align post-title">搭建服务器ubuntu系统</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">安卓开发</span>
+                            <a href="/tags/ubuntu/">
+                                <span class="chip bg-color">ubuntu</span>
                             </a>
                         
-                            <a href="/tags/RecycleView/">
-                                <span class="chip bg-color">RecycleView</span>
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">
+                                <span class="chip bg-color">服务器搭建</span>
                             </a>
                         
                     </div>
@@ -450,8 +450,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Android/" class="post-category">
-                                Android
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
                             </a>
                         
                     </div>
@@ -463,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-21
+                    2020-12-30
                 </div>
                 
 
@@ -479,38 +479,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="RecyclerView的使用——Item内部控件的点击事件"><a href="#RecyclerView的使用——Item内部控件的点击事件" class="headerlink" title="RecyclerView的使用——Item内部控件的点击事件"></a>RecyclerView的使用——Item内部控件的点击事件</h4><h5 id="一、在adapter中写item点击事件的接口供外部的activity使用"><a href="#一、在adapter中写item点击事件的接口供外部的activity使用" class="headerlink" title="一、在adapter中写item点击事件的接口供外部的activity使用"></a>一、在adapter中写item点击事件的接口供外部的activity使用</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
-* item内部的监听接口
-*/</span>
-
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ItemInnerOnclickListener</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 这个String id 是点击item是想要传的参数</span>
-    <span class="token keyword">void</span> <span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> String id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">private</span> ItemInnerOnclickListener mItemInnerOnclickListener<span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setOnItemOnClickListener</span><span class="token punctuation">(</span>ItemInnerOnclickListener mItemInnerOnclickListener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>mItemInnerOnclickListener <span class="token operator">=</span> mItemInnerOnclickListener<span class="token punctuation">;</span>
-
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在holder中就可以这么去写：(这里我使用了CommonAdapter 所以holder的代码可能不太一样)</p>
-<pre class="line-numbers language-java"><code class="language-java">holder<span class="token punctuation">.</span><span class="token function">setOnClickListener</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>cancel_withdraw<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">OnMultiClickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token annotation punctuation">@Override</span>
-  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMultiClick</span><span class="token punctuation">(</span>View v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// record.id 是activity那边拿到数据后用bean来解析的 传递过来的数据</span>
-    <span class="token comment" spellcheck="true">// public class WithdrawRecordsAdapter extends CommonAdapter&lt;WithdrawRecordBean.Record></span>
-    mItemInnerOnclickListener<span class="token punctuation">.</span><span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span>position<span class="token punctuation">,</span> record<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="二、在activity中我们就可以这么去写"><a href="#二、在activity中我们就可以这么去写" class="headerlink" title="二、在activity中我们就可以这么去写"></a>二、在activity中我们就可以这么去写</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> WithdrawRecordsAdapter withdrawRecordsAdapter<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java">withdrawRecordsAdapter<span class="token punctuation">.</span><span class="token function">setOnItemOnClickListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WithdrawRecordsAdapter<span class="token punctuation">.</span>ItemInnerOnclickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token annotation punctuation">@Override</span>
-          <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> String id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token function">showDialog</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这里我们设置点击事件的时候去new了一个adapter中点击事件的接口，并且我们还可以拿到adapter中点击时想要传递的String id 去做一些事情</p>
+                <h4 id="购买完服务器后应该做哪些配置"><a href="#购买完服务器后应该做哪些配置" class="headerlink" title="购买完服务器后应该做哪些配置"></a>购买完服务器后应该做哪些配置</h4><h5 id="一-、安装apache"><a href="#一-、安装apache" class="headerlink" title="一 、安装apache"></a>一 、安装apache</h5><pre><code>sudo apt-get install apche2 apche2-doc</code></pre>
+<p>如果你已经安装完了nginx，你需要安装一个这个东西，当你在浏览器地址栏输入服务器公网ip的时候就会出现一个nginx的默认页面 就像这样的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201230160621.png"></p>
+<h5 id="二、安装mysql"><a href="#二、安装mysql" class="headerlink" title="二、安装mysql"></a>二、安装mysql</h5><pre><code>sudo apt-get install mysql-server mysql-client</code></pre>
+<p>在安装mysql的时候可能会提醒设置root账户密码</p>
+<h5 id="三、更改默认python版本："><a href="#三、更改默认python版本：" class="headerlink" title="三、更改默认python版本："></a>三、更改默认python版本：</h5><p>修改软连接</p>
+<p>1、进入到usr/bin目录下</p>
+<pre><code>cd /usr/bin</code></pre>
+<p>2、查看该目录下与python有关的项</p>
+<pre><code>ls -altrh | grep python</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201230174310.png"></p>
+<p>3、删除软连接并指向新的版本</p>
+<pre><code>sudo rm python
+sudo ln -s python3.6 python</code></pre>
+<p>4、最后结果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201230174848.png"></p>
 
             </div>
             <hr/>
@@ -536,7 +520,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-recycleview-nei-bu-item-dian-ji-shi-jian/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-recycleview-nei-bu-item-dian-ji-shi-jian/</a>
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/30/da-jian-fu-wu-qi-ubuntu-xi-tong/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/30/da-jian-fu-wu-qi-ubuntu-xi-tong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,12 +558,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">安卓开发</span>
+                                <a href="/tags/ubuntu/">
+                                    <span class="chip bg-color">ubuntu</span>
                                 </a>
                             
-                                <a href="/tags/RecycleView/">
-                                    <span class="chip bg-color">RecycleView</span>
+                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">
+                                    <span class="chip bg-color">服务器搭建</span>
                                 </a>
                             
                         </div>
@@ -750,7 +734,7 @@
         repo: 'Naruto-1996.github.io',
         owner: 'Naruto-1996',
         admin: ["Naruto-1996"],
-        id: '2020-10-21T16-11-14',
+        id: '2020-12-30T15-59-35',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -774,29 +758,87 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/10/21/android-ru-he-jian-ting-qian-hou-tai/">
+                <a href="/2020/12/30/da-jian-fu-wu-qi-ubuntu-xi-tong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Android-如何监听前后台">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="搭建服务器ubuntu系统">
                         
-                        <span class="card-title">Android-如何监听前后台</span>
+                        <span class="card-title">搭建服务器ubuntu系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Android-如何监听前后台简单讲讲android如何判断应用切换到后台和应用切换到前台。这个其实很简单，之前需要做一个功能，当app由后台进入前台时需要完成一些逻辑操作，所以在网上查找如何判断app由后台进入前台，最终是解决了问题。这里
+                            购买完服务器后应该做哪些配置一 、安装apachesudo apt-get install apche2 apche2-doc
+如果你已经安装完了nginx，你需要安装一个这个东西，当你在浏览器地址栏输入服务器公网ip的时候就会出现一个ng
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">
+                        <span class="chip bg-color">服务器搭建</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/12/18/android-yi-xie-chang-yong-de-bei-jing-tu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Android一些常用的背景图">
+                        
+                        <span class="card-title">Android一些常用的背景图</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Android中一些常用的xml背景图1、绿色背景 圆角为4dp的xml背景(颜色可自行修改)res/drawable 目录下 common_bg_4_radius_green.xml
+
+&lt;?xml version="1.0" enc
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -812,69 +854,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/10/21/rust-bi-bao/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Rust 闭包">
-                        
-                        <span class="card-title">Rust 闭包</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            快速掌握Rust闭包闭包(Closure) : 也叫Lambda表达式或匿名函数。
-不像普通函数，闭包可以对参数和返回类型进行推断，大多数时候都不需要写出来。以下定义都是合法的：
-|| 42;
-|x| x + 1;
-|x:i32| x + 
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Rust/" class="post-category">
-                                    Rust
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/closure/">
-                        <span class="chip bg-color">closure</span>
+                    <a href="/tags/%E8%83%8C%E6%99%AF%E5%9B%BE/">
+                        <span class="chip bg-color">背景图</span>
                     </a>
                     
-                    <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">函数式编程</span>
+                    <a href="/tags/Drawable/">
+                        <span class="chip bg-color">Drawable</span>
                     </a>
                     
-                    <a href="/tags/Rust-%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">Rust 编程</span>
+                    <a href="/tags/xml/">
+                        <span class="chip bg-color">xml</span>
                     </a>
                     
                 </div>

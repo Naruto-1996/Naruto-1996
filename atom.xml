@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2020-12-18T09:07:13.710Z</updated>
+  <updated>2020-12-30T09:49:27.002Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建服务器ubuntu系统</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/30/da-jian-fu-wu-qi-ubuntu-xi-tong/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/30/da-jian-fu-wu-qi-ubuntu-xi-tong/</id>
+    <published>2020-12-30T07:59:35.000Z</published>
+    <updated>2020-12-30T09:49:27.002Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;购买完服务器后应该做哪些配置&quot;&gt;&lt;a href=&quot;#购买完服务器后应该做哪些配置&quot; class=&quot;headerlink&quot; title=&quot;购买完服务器后应该做哪些配置&quot;&gt;&lt;/a&gt;购买完服务器后应该做哪些配置&lt;/h4&gt;&lt;h5 id=&quot;一-、安装apache&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Linux/"/>
+    
+    
+    <category term="ubuntu" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/ubuntu/"/>
+    
+    <category term="服务器搭建" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>Android一些常用的背景图</title>
@@ -530,33 +557,6 @@
     <category term="Linux" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Linux/"/>
     
     <category term="MacOs" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/MacOs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>什么是运行时(Runtime)</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/20/shi-me-shi-yun-xing-shi-runtime/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/20/shi-me-shi-yun-xing-shi-runtime/</id>
-    <published>2020-10-20T07:41:33.000Z</published>
-    <updated>2020-10-21T03:15:43.970Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;什么是运行时（Runtime）&quot;&gt;&lt;a href=&quot;#什么是运行时（Runtime）&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Java/"/>
-    
-    
-    <category term="Runtime" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Runtime/"/>
-    
-    <category term="Java" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Java/"/>
     
   </entry>
   

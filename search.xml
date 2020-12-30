@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>搭建服务器ubuntu系统</title>
+      <link href="2020/12/30/da-jian-fu-wu-qi-ubuntu-xi-tong/"/>
+      <url>2020/12/30/da-jian-fu-wu-qi-ubuntu-xi-tong/</url>
+      
+        <content type="html"><![CDATA[<h4 id="购买完服务器后应该做哪些配置"><a href="#购买完服务器后应该做哪些配置" class="headerlink" title="购买完服务器后应该做哪些配置"></a>购买完服务器后应该做哪些配置</h4><h5 id="一-、安装apache"><a href="#一-、安装apache" class="headerlink" title="一 、安装apache"></a>一 、安装apache</h5><pre><code>sudo apt-get install apche2 apche2-doc</code></pre><p>如果你已经安装完了nginx，你需要安装一个这个东西，当你在浏览器地址栏输入服务器公网ip的时候就会出现一个nginx的默认页面 就像这样的</p><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201230160621.png"></p><h5 id="二、安装mysql"><a href="#二、安装mysql" class="headerlink" title="二、安装mysql"></a>二、安装mysql</h5><pre><code>sudo apt-get install mysql-server mysql-client</code></pre><p>在安装mysql的时候可能会提醒设置root账户密码</p><h5 id="三、更改默认python版本："><a href="#三、更改默认python版本：" class="headerlink" title="三、更改默认python版本："></a>三、更改默认python版本：</h5><p>修改软连接</p><p>1、进入到usr/bin目录下</p><pre><code>cd /usr/bin</code></pre><p>2、查看该目录下与python有关的项</p><pre><code>ls -altrh | grep python</code></pre><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201230174310.png"></p><p>3、删除软连接并指向新的版本</p><pre><code>sudo rm pythonsudo ln -s python3.6 python</code></pre><p>4、最后结果</p><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20201230174848.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ubuntu </tag>
+            
+            <tag> 服务器搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android一些常用的背景图</title>
       <link href="2020/12/18/android-yi-xie-chang-yong-de-bei-jing-tu/"/>
       <url>2020/12/18/android-yi-xie-chang-yong-de-bei-jing-tu/</url>
