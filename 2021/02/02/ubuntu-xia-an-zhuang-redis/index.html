@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="zsh: permission denied: 解决办法, 李文洋">
+    <meta name="keywords" content="ubuntu下安装redis, 李文洋">
     <meta name="description" content="单身可撩、帅气的程序员小哥哥">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>zsh: permission denied: 解决办法 | 李文洋</title>
+    <title>ubuntu下安装redis | 李文洋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">zsh: permission denied: 解决办法</h1>
+                    <h1 class="description center-align post-title">ubuntu下安装redis</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/zsh/">
-                                <span class="chip bg-color">zsh</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
                             </a>
                         
-                            <a href="/tags/chmod/">
-                                <span class="chip bg-color">chmod</span>
+                            <a href="/tags/ubuntu/">
+                                <span class="chip bg-color">ubuntu</span>
                             </a>
                         
                     </div>
@@ -450,8 +450,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Mac/" class="post-category">
-                                Mac
+                            <a href="/categories/redis/" class="post-category">
+                                redis
                             </a>
                         
                     </div>
@@ -463,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-18
+                    2021-02-02
                 </div>
                 
 
@@ -479,11 +479,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1、出现原因"><a href="#1、出现原因" class="headerlink" title="1、出现原因"></a>1、出现原因</h3><pre class="line-numbers language-java"><code class="language-java">用户没有权限，所以才出现了这个错误，所以只需要用chmod修改一下权限<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="2、解决办法"><a href="#2、解决办法" class="headerlink" title="2、解决办法"></a>2、解决办法</h3><pre><code>chmod u+x *.sh</code></pre>
-<h3 id="3、说明"><a href="#3、说明" class="headerlink" title="3、说明"></a>3、说明</h3><pre><code>chmod是权限管理命令change the permissions mode of a file的缩写。
-u代表所有者。x代表执行权限。’+’ 表示增加权限。
-chmod u+x file.sh 就表示对当前目录下的file.sh文件的所有者增加可执行权限。</code></pre>
+                <h4 id="ubuntu下安装redis"><a href="#ubuntu下安装redis" class="headerlink" title="ubuntu下安装redis"></a>ubuntu下安装redis</h4><h5 id="1、使用apt安装"><a href="#1、使用apt安装" class="headerlink" title="1、使用apt安装"></a>1、使用apt安装</h5><p>在 Ubuntu 系统安装 Redi 可以使用以下命令:</p>
+<pre><code>$sudo apt-get update
+$sudo apt-get install redis-server</code></pre>
+<h5 id="2、启动redis"><a href="#2、启动redis" class="headerlink" title="2、启动redis"></a>2、启动redis</h5><pre><code>$ redis-server</code></pre>
+<h5 id="3、查看-redis-是否启动？"><a href="#3、查看-redis-是否启动？" class="headerlink" title="3、查看 redis 是否启动？"></a>3、查看 redis 是否启动？</h5><pre><code>$ redis-cli</code></pre>
+<p>以上命令将打开以下终端：</p>
+<pre><code>redis 127.0.0.1:6379&gt;</code></pre>
+<p>127.0.0.1 是本机 IP ，6379 是 redis 服务端口。现在我们输入 PING 命令。</p>
+<pre><code>redis 127.0.0.1:6379&gt; ping PONG</code></pre>
 
             </div>
             <hr/>
@@ -509,7 +513,7 @@ chmod u+x file.sh 就表示对当前目录下的file.sh文件的所有者增加�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/11/18/zsh-permission-denied-jie-jue-ban-fa/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/11/18/zsh-permission-denied-jie-jue-ban-fa/</a>
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/02/02/ubuntu-xia-an-zhuang-redis/">https://github.com/Naruto-1996/Naruto-1996.github.io/2021/02/02/ubuntu-xia-an-zhuang-redis/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -547,12 +551,12 @@ chmod u+x file.sh 就表示对当前目录下的file.sh文件的所有者增加�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/zsh/">
-                                    <span class="chip bg-color">zsh</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
                                 </a>
                             
-                                <a href="/tags/chmod/">
-                                    <span class="chip bg-color">chmod</span>
+                                <a href="/tags/ubuntu/">
+                                    <span class="chip bg-color">ubuntu</span>
                                 </a>
                             
                         </div>
@@ -723,7 +727,7 @@ chmod u+x file.sh 就表示对当前目录下的file.sh文件的所有者增加�
         repo: 'Naruto-1996.github.io',
         owner: 'Naruto-1996',
         admin: ["Naruto-1996"],
-        id: '2020-11-18T17-40-48',
+        id: '2021-02-02T13-57-48',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -747,53 +751,55 @@ chmod u+x file.sh 就表示对当前目录下的file.sh文件的所有者增加�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/12/01/rails-lian-jie-duo-ge-shu-ju-ku/">
+                <a href="/2021/02/02/ubuntu-xia-an-zhuang-redis/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="rails 连接多个数据库">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="ubuntu下安装redis">
                         
-                        <span class="card-title">rails 连接多个数据库</span>
+                        <span class="card-title">ubuntu下安装redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Rails项目中如何连接多个数据库1、修改config/database.yml文件default: &amp;default
-  adapter: mysql2
-  encoding: utf8
-  collation: utf8_gen
+                            ubuntu下安装redis1、使用apt安装在 Ubuntu 系统安装 Redi 可以使用以下命令:
+$sudo apt-get update
+$sudo apt-get install redis-server
+2、启动redis$ r
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/rails/" class="post-category">
-                                    rails
+                            <a href="/categories/redis/" class="post-category">
+                                    redis
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mysql/">
-                        <span class="chip bg-color">mysql</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
-                    <a href="/tags/rails/">
-                        <span class="chip bg-color">rails</span>
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
                     </a>
                     
                 </div>
@@ -807,31 +813,34 @@ chmod u+x file.sh 就表示对当前目录下的file.sh文件的所有者增加�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/21/android-intent-setflags-fang-fa-zhong-can-shu-zhi-de-han-yi/">
+                <a href="/2021/02/02/ubuntu-xia-an-zhuang-mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Android intent.setFlags方法中参数值的含义">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="ubuntu下安装mysql">
                         
-                        <span class="card-title">Android intent.setFlags方法中参数值的含义</span>
+                        <span class="card-title">ubuntu下安装mysql</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Android中intent.setFlags方法中参数值的含义一、FLAG_ACTIVITY_NEW_TASK:例如现在栈一的情况是：A    B   C(C位于栈顶)，C通过intent跳转到D，并且这个Intent添加了FLAG_AC
+                            ubuntu下安装mysql
+MySQL 的安装比较简单，只需要简单的几步就可以搞定，但它的一些配置却比较繁琐。下面以 Ubuntu 18.04（其他版本类似）为例，详细介绍 MySQL 数据库的安装和配置。
+
+1、安装mysql在 Ubu
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Android/" class="post-category">
-                                    Android
+                            <a href="/categories/mysql/" class="post-category">
+                                    mysql
                                 </a>
                             
                             
@@ -841,12 +850,8 @@ chmod u+x file.sh 就表示对当前目录下的file.sh文件的所有者增加�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Intent/">
-                        <span class="chip bg-color">Intent</span>
-                    </a>
-                    
-                    <a href="/tags/setFlags/">
-                        <span class="chip bg-color">setFlags</span>
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
                     </a>
                     
                 </div>
