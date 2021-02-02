@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2021-02-02T01:41:42.679Z</updated>
+  <updated>2021-02-02T04:09:20.759Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu下安装mysql</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/02/02/ubuntu-xia-an-zhuang-mysql/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2021/02/02/ubuntu-xia-an-zhuang-mysql/</id>
+    <published>2021-02-02T03:05:08.000Z</published>
+    <updated>2021-02-02T04:09:20.759Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;ubuntu下安装mysql&quot;&gt;&lt;a href=&quot;#ubuntu下安装mysql&quot; class=&quot;headerlink&quot; title=&quot;ubuntu下安装mysql&quot;&gt;&lt;/a&gt;ubuntu下安装mysql&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;MySQL</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/mysql/"/>
+    
+    
+    <category term="ubuntu" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu下彻底卸载mysql</title>
@@ -528,31 +554,6 @@
     
     
     <category term="IDEA" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/IDEA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Rust 琐碎知识记录板</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/rust-suo-sui-zhi-shi-ji-lu-ban/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/rust-suo-sui-zhi-shi-ji-lu-ban/</id>
-    <published>2020-10-21T03:03:59.000Z</published>
-    <updated>2020-10-21T03:15:43.965Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;下面是Rust的一些琐碎知识&quot;&gt;&lt;a href=&quot;#下面是Rust的一些琐碎知识&quot; class=&quot;headerlink&quot; title=&quot;下面是Rust的一些琐碎知识&quot;&gt;&lt;/a&gt;下面是Rust的一些琐碎知识&lt;/h3&gt;&lt;h5 id=&quot;1、format-宏&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Rust" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Rust/"/>
-    
-    
-    <category term="Rust" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Rust/"/>
     
   </entry>
   
