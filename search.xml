@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>在linux服务器上安装Ruby_On_Rails</title>
+      <link href="2021/02/02/zai-linux-fu-wu-qi-shang-an-zhuang-ruby-on-rails/"/>
+      <url>2021/02/02/zai-linux-fu-wu-qi-shang-an-zhuang-ruby-on-rails/</url>
+      
+        <content type="html"><![CDATA[<h4 id="在linux服务器上安装Ruby-On-Rails"><a href="#在linux服务器上安装Ruby-On-Rails" class="headerlink" title="在linux服务器上安装Ruby On Rails"></a>在linux服务器上安装Ruby On Rails</h4><h5 id="1、安装rbenv"><a href="#1、安装rbenv" class="headerlink" title="1、安装rbenv"></a>1、安装rbenv</h5><p>先安装git</p><pre><code># macbrew install git# centosyum install git# ubuntuapt-get install git</code></pre><p>然后安装rbenv</p><pre><code># 安装rbenv到~/.rbenv目录git clone git://github.com/sstephenson/rbenv.git ~/.rbenv</code></pre><p>下面安装一下rbenv的插件</p><pre><code># 用来编译安装 rubygit clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build# 用来管理 gemset, 可选, 因为有 bundler 也没什么必要git clone git://github.com/jamis/rbenv-gemset.git  ~/.rbenv/plugins/rbenv-gemset# 通过 gem 命令安装完 gem 后无需手动输入 rbenv rehash 命令, 推荐git clone git://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash# 通过 rbenv update 命令来更新 rbenv 以及所有插件, 推荐git clone git://github.com/rkh/rbenv-update.git ~/.rbenv/plugins/rbenv-update# 使用 Ruby China 的镜像安装 Ruby, 国内用户推荐git clone git://github.com/AndorChen/rbenv-china-mirror.git ~/.rbenv/plugins/rbenv-china-mirror</code></pre><p>然后需要将下面两句代码放在bash的配置文件中：</p><pre><code>export PATH="$HOME/.rbenv/bin:$PATH"eval "$(rbenv init -)"</code></pre><p>linux是一般是放在<del>/.bashrc中，mac是放在</del>/.bash_profile中</p><p>修改完成后，执行下面的命令使其生效</p><pre><code># linuxsource ~/.bashrc# macsource ~/.bash_profile</code></pre><h4 id="2、安装ruby"><a href="#2、安装ruby" class="headerlink" title="2、安装ruby"></a>2、安装ruby</h4><p>rbenv install –list  # 列出所有 ruby 版本</p><p>例如安装2.7.2</p><pre><code>rbenv install 2.7.2</code></pre><p>设置使用的ruby版本, 有以下三种设置方式</p><pre><code>rbenv global 2.3.3      # 默认使用2.3.3rbenv shell 2.3.3       # 当前的 shell 使用2.3.3, 会设置一个 `RBENV_VERSION` 环境变量rbenv local 2.3.3      # 当前目录使用2.3.3, 会生成一个 `.rbenv-version` 文件</code></pre><h4 id="3-安装rails"><a href="#3-安装rails" class="headerlink" title="3. 安装rails"></a>3. 安装rails</h4><p>设置ruby版本后，安装rails：</p><pre><code># 在当前的ruby版本中安装railsgem install rails</code></pre><p>好了，这样就完成了rails的安装，rails已经可以使用了，但是为了更好的使用，请继续看后面的教程。</p><h3 id="配置RubyGems镜像"><a href="#配置RubyGems镜像" class="headerlink" title="配置RubyGems镜像"></a>配置RubyGems镜像</h3><p>gem是ruby管理依赖包的工具，而RubyGems的默认地址因为万恶的墙的关系很难访问到，因此需要配置RubyGems 镜像。这里使用的是<a href="https://gems.ruby-china.com/">Ruby China</a>的镜像地址</p><p>命令行输入</p><pre><code>gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/</code></pre><p>可以通过下面这个命令查看设置的结果是不是<a href="https://gems.ruby-china.com：">https://gems.ruby-china.com：</a></p><pre><code>gem sources -l</code></pre><h3 id="修改bundle的源地址"><a href="#修改bundle的源地址" class="headerlink" title="修改bundle的源地址"></a>修改bundle的源地址</h3><p>bundler是rails管理gem依赖的工具，同样的，也需要修改其地址为ruby china的镜像</p><p>命令行输入</p><pre><code>bundle config mirror.https://rubygems.org https://gems.ruby-china.com</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> rails </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> ubuntu </tag>
+            
+            <tag> ruby </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ubuntu下安装redis</title>
       <link href="2021/02/02/ubuntu-xia-an-zhuang-redis/"/>
       <url>2021/02/02/ubuntu-xia-an-zhuang-redis/</url>

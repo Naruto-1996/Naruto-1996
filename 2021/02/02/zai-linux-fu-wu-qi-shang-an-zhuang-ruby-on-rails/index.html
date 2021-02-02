@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Android-RecycleView内部item点击事件, 李文洋">
+    <meta name="keywords" content="在linux服务器上安装Ruby_On_Rails, 李文洋">
     <meta name="description" content="单身可撩、帅气的程序员小哥哥">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Android-RecycleView内部item点击事件 | 李文洋</title>
+    <title>在linux服务器上安装Ruby_On_Rails | 李文洋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Android-RecycleView内部item点击事件</h1>
+                    <h1 class="description center-align post-title">在linux服务器上安装Ruby_On_Rails</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">安卓开发</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
                             </a>
                         
-                            <a href="/tags/RecycleView/">
-                                <span class="chip bg-color">RecycleView</span>
+                            <a href="/tags/ubuntu/">
+                                <span class="chip bg-color">ubuntu</span>
+                            </a>
+                        
+                            <a href="/tags/ruby/">
+                                <span class="chip bg-color">ruby</span>
                             </a>
                         
                     </div>
@@ -450,8 +454,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Android/" class="post-category">
-                                Android
+                            <a href="/categories/rails/" class="post-category">
+                                rails
                             </a>
                         
                     </div>
@@ -463,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-21
+                    2021-02-02
                 </div>
                 
 
@@ -479,38 +483,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="RecyclerView的使用——Item内部控件的点击事件"><a href="#RecyclerView的使用——Item内部控件的点击事件" class="headerlink" title="RecyclerView的使用——Item内部控件的点击事件"></a>RecyclerView的使用——Item内部控件的点击事件</h4><h5 id="一、在adapter中写item点击事件的接口供外部的activity使用"><a href="#一、在adapter中写item点击事件的接口供外部的activity使用" class="headerlink" title="一、在adapter中写item点击事件的接口供外部的activity使用"></a>一、在adapter中写item点击事件的接口供外部的activity使用</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
-* item内部的监听接口
-*/</span>
+                <h4 id="在linux服务器上安装Ruby-On-Rails"><a href="#在linux服务器上安装Ruby-On-Rails" class="headerlink" title="在linux服务器上安装Ruby On Rails"></a>在linux服务器上安装Ruby On Rails</h4><h5 id="1、安装rbenv"><a href="#1、安装rbenv" class="headerlink" title="1、安装rbenv"></a>1、安装rbenv</h5><p>先安装git</p>
+<pre><code># mac
+brew install git
+# centos
+yum install git
+# ubuntu
+apt-get install git</code></pre>
+<p>然后安装rbenv</p>
+<pre><code># 安装rbenv到~/.rbenv目录
+git clone git://github.com/sstephenson/rbenv.git ~/.rbenv</code></pre>
+<p>下面安装一下rbenv的插件</p>
+<pre><code># 用来编译安装 ruby
+git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ItemInnerOnclickListener</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 这个String id 是点击item是想要传的参数</span>
-    <span class="token keyword">void</span> <span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> String id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+# 用来管理 gemset, 可选, 因为有 bundler 也没什么必要
+git clone git://github.com/jamis/rbenv-gemset.git  ~/.rbenv/plugins/rbenv-gemset
 
-<span class="token keyword">private</span> ItemInnerOnclickListener mItemInnerOnclickListener<span class="token punctuation">;</span>
+# 通过 gem 命令安装完 gem 后无需手动输入 rbenv rehash 命令, 推荐
+git clone git://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setOnItemOnClickListener</span><span class="token punctuation">(</span>ItemInnerOnclickListener mItemInnerOnclickListener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>mItemInnerOnclickListener <span class="token operator">=</span> mItemInnerOnclickListener<span class="token punctuation">;</span>
+# 通过 rbenv update 命令来更新 rbenv 以及所有插件, 推荐
+git clone git://github.com/rkh/rbenv-update.git ~/.rbenv/plugins/rbenv-update
 
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在holder中就可以这么去写：(这里我使用了CommonAdapter 所以holder的代码可能不太一样)</p>
-<pre class="line-numbers language-java"><code class="language-java">holder<span class="token punctuation">.</span><span class="token function">setOnClickListener</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>cancel_withdraw<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">OnMultiClickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token annotation punctuation">@Override</span>
-  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMultiClick</span><span class="token punctuation">(</span>View v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// record.id 是activity那边拿到数据后用bean来解析的 传递过来的数据</span>
-    <span class="token comment" spellcheck="true">// public class WithdrawRecordsAdapter extends CommonAdapter&lt;WithdrawRecordBean.Record></span>
-    mItemInnerOnclickListener<span class="token punctuation">.</span><span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span>position<span class="token punctuation">,</span> record<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="二、在activity中我们就可以这么去写"><a href="#二、在activity中我们就可以这么去写" class="headerlink" title="二、在activity中我们就可以这么去写"></a>二、在activity中我们就可以这么去写</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> WithdrawRecordsAdapter withdrawRecordsAdapter<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-java"><code class="language-java">withdrawRecordsAdapter<span class="token punctuation">.</span><span class="token function">setOnItemOnClickListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WithdrawRecordsAdapter<span class="token punctuation">.</span>ItemInnerOnclickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token annotation punctuation">@Override</span>
-          <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onItemInnerOnClick</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> String id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token function">showDialog</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这里我们设置点击事件的时候去new了一个adapter中点击事件的接口，并且我们还可以拿到adapter中点击时想要传递的String id 去做一些事情</p>
+# 使用 Ruby China 的镜像安装 Ruby, 国内用户推荐
+git clone git://github.com/AndorChen/rbenv-china-mirror.git ~/.rbenv/plugins/rbenv-china-mirror</code></pre>
+<p>然后需要将下面两句代码放在bash的配置文件中：</p>
+<pre><code>export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"</code></pre>
+<p>linux是一般是放在<del>/.bashrc中，mac是放在</del>/.bash_profile中</p>
+<p>修改完成后，执行下面的命令使其生效</p>
+<pre><code># linux
+source ~/.bashrc
+# mac
+source ~/.bash_profile</code></pre>
+<h4 id="2、安装ruby"><a href="#2、安装ruby" class="headerlink" title="2、安装ruby"></a>2、安装ruby</h4><p>rbenv install –list  # 列出所有 ruby 版本</p>
+<p>例如安装2.7.2</p>
+<pre><code>rbenv install 2.7.2</code></pre>
+<p>设置使用的ruby版本, 有以下三种设置方式</p>
+<pre><code>rbenv global 2.3.3      # 默认使用2.3.3
+rbenv shell 2.3.3       # 当前的 shell 使用2.3.3, 会设置一个 `RBENV_VERSION` 环境变量
+rbenv local 2.3.3      # 当前目录使用2.3.3, 会生成一个 `.rbenv-version` 文件</code></pre>
+<h4 id="3-安装rails"><a href="#3-安装rails" class="headerlink" title="3. 安装rails"></a>3. 安装rails</h4><p>设置ruby版本后，安装rails：</p>
+<pre><code># 在当前的ruby版本中安装rails
+gem install rails</code></pre>
+<p>好了，这样就完成了rails的安装，rails已经可以使用了，但是为了更好的使用，请继续看后面的教程。</p>
+<h3 id="配置RubyGems镜像"><a href="#配置RubyGems镜像" class="headerlink" title="配置RubyGems镜像"></a>配置RubyGems镜像</h3><p>gem是ruby管理依赖包的工具，而RubyGems的默认地址因为万恶的墙的关系很难访问到，因此需要配置RubyGems 镜像。这里使用的是<a target="_blank" rel="noopener" href="https://gems.ruby-china.com/">Ruby China</a>的镜像地址</p>
+<p>命令行输入</p>
+<pre><code>gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/</code></pre>
+<p>可以通过下面这个命令查看设置的结果是不是<a href="https://gems.ruby-china.com：">https://gems.ruby-china.com：</a></p>
+<pre><code>gem sources -l</code></pre>
+<h3 id="修改bundle的源地址"><a href="#修改bundle的源地址" class="headerlink" title="修改bundle的源地址"></a>修改bundle的源地址</h3><p>bundler是rails管理gem依赖的工具，同样的，也需要修改其地址为ruby china的镜像</p>
+<p>命令行输入</p>
+<pre><code>bundle config mirror.https://rubygems.org https://gems.ruby-china.com</code></pre>
 
             </div>
             <hr/>
@@ -536,7 +561,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-recycleview-nei-bu-item-dian-ji-shi-jian/">https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-recycleview-nei-bu-item-dian-ji-shi-jian/</a>
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/02/02/zai-linux-fu-wu-qi-shang-an-zhuang-ruby-on-rails/">https://github.com/Naruto-1996/Naruto-1996.github.io/2021/02/02/zai-linux-fu-wu-qi-shang-an-zhuang-ruby-on-rails/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,12 +599,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">安卓开发</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
                                 </a>
                             
-                                <a href="/tags/RecycleView/">
-                                    <span class="chip bg-color">RecycleView</span>
+                                <a href="/tags/ubuntu/">
+                                    <span class="chip bg-color">ubuntu</span>
+                                </a>
+                            
+                                <a href="/tags/ruby/">
+                                    <span class="chip bg-color">ruby</span>
                                 </a>
                             
                         </div>
@@ -750,7 +779,7 @@
         repo: 'Naruto-1996.github.io',
         owner: 'Naruto-1996',
         admin: ["Naruto-1996"],
-        id: '2020-10-21T16-11-14',
+        id: '2021-02-02T18-21-58',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -774,46 +803,63 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/10/21/android-ru-he-jian-ting-qian-hou-tai/">
+                <a href="/2021/02/02/zai-linux-fu-wu-qi-shang-an-zhuang-ruby-on-rails/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Android-如何监听前后台">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="在linux服务器上安装Ruby_On_Rails">
                         
-                        <span class="card-title">Android-如何监听前后台</span>
+                        <span class="card-title">在linux服务器上安装Ruby_On_Rails</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Android-如何监听前后台简单讲讲android如何判断应用切换到后台和应用切换到前台。这个其实很简单，之前需要做一个功能，当app由后台进入前台时需要完成一些逻辑操作，所以在网上查找如何判断app由后台进入前台，最终是解决了问题。这里
+                            在linux服务器上安装Ruby On Rails1、安装rbenv先安装git
+# mac
+brew install git
+# centos
+yum install git
+# ubuntu
+apt-get install git
+然后
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Android/" class="post-category">
-                                    Android
+                            <a href="/categories/rails/" class="post-category">
+                                    rails
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/ruby/">
+                        <span class="chip bg-color">ruby</span>
                     </a>
                     
                 </div>
@@ -827,35 +873,34 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/21/rust-bi-bao/">
+                <a href="/2021/02/02/ubuntu-xia-an-zhuang-redis/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Rust 闭包">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="ubuntu下安装redis">
                         
-                        <span class="card-title">Rust 闭包</span>
+                        <span class="card-title">ubuntu下安装redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            快速掌握Rust闭包闭包(Closure) : 也叫Lambda表达式或匿名函数。
-不像普通函数，闭包可以对参数和返回类型进行推断，大多数时候都不需要写出来。以下定义都是合法的：
-|| 42;
-|x| x + 1;
-|x:i32| x + 
+                            ubuntu下安装redis1、使用apt安装在 Ubuntu 系统安装 Redi 可以使用以下命令:
+$sudo apt-get update
+$sudo apt-get install redis-server
+2、启动redis$ r
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Rust/" class="post-category">
-                                    Rust
+                            <a href="/categories/redis/" class="post-category">
+                                    redis
                                 </a>
                             
                             
@@ -865,16 +910,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/closure/">
-                        <span class="chip bg-color">closure</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
-                    <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">函数式编程</span>
-                    </a>
-                    
-                    <a href="/tags/Rust-%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">Rust 编程</span>
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
                     </a>
                     
                 </div>
