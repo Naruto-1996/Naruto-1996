@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ubuntu下彻底卸载mysql</title>
+      <link href="2021/02/02/ubuntu-xia-che-di-xie-zai-mysql/"/>
+      <url>2021/02/02/ubuntu-xia-che-di-xie-zai-mysql/</url>
+      
+        <content type="html"><![CDATA[<h4 id="Ubuntu下彻底卸载mysql"><a href="#Ubuntu下彻底卸载mysql" class="headerlink" title="Ubuntu下彻底卸载mysql"></a>Ubuntu下彻底卸载mysql</h4><blockquote><p>采用sudo apt install mysql-server命令的方式默认安装的是MySQL5.7，MySQL5.7版本最高只适配到Ubuntu17.04，<br>不支持Ubuntu18.04，MySQL8.0可适配到Ubuntu18.04故如果系统使用的Ubuntu18.04，<br>只能安装MySQL8.0，而且加密方式需要选择5.x的加密，因为有兼容性问题，如果你已经执行了上边的命令，安装了MySQL5.7，需要先卸载。</p></blockquote><h5 id="1、首先在系统终端中查看MySQL的依赖项，运行命令：dpkg-list-grep-mysql"><a href="#1、首先在系统终端中查看MySQL的依赖项，运行命令：dpkg-list-grep-mysql" class="headerlink" title="1、首先在系统终端中查看MySQL的依赖项，运行命令：dpkg --list|grep mysql"></a>1、首先在系统终端中查看MySQL的依赖项，运行命令：<code>dpkg --list|grep mysql</code></h5><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210202093257.png"></p><h5 id="2、卸载-sudo-apt-get-remove-mysql-common"><a href="#2、卸载-sudo-apt-get-remove-mysql-common" class="headerlink" title="2、卸载 sudo apt-get remove mysql-common"></a>2、卸载 <code>sudo apt-get remove mysql-common</code></h5><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210202093512.png"></p><p>卸载 <code>sudo apt-get autoremove --purge mysql-server-5.7</code></p><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210202093713.png"></p><h4 id="3、清除残留数据，运行命令：dpkg-l-grep-rc-awk-39-print-2-39-sudo-xargs-dpkg-P"><a href="#3、清除残留数据，运行命令：dpkg-l-grep-rc-awk-39-print-2-39-sudo-xargs-dpkg-P" class="headerlink" title="3、清除残留数据，运行命令：dpkg -l|grep ^rc|awk '{print$2}'|sudo xargs dpkg -P"></a>3、清除残留数据，运行命令：<code>dpkg -l|grep ^rc|awk '{print$2}'|sudo xargs dpkg -P</code></h4><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210202093832.png"></p><h4 id="4、再次查看MySQL的剩余依赖项，运行命令：dpkg-list-grep-mysql"><a href="#4、再次查看MySQL的剩余依赖项，运行命令：dpkg-list-grep-mysql" class="headerlink" title="4、再次查看MySQL的剩余依赖项，运行命令：dpkg --list|grep mysql"></a>4、再次查看MySQL的剩余依赖项，运行命令：<code>dpkg --list|grep mysql</code></h4><blockquote><p> 如果还有依赖项 就继续删除剩余依赖项，比如：sudo apt-get autoremove –purge mysql-apt-config<br> 如果没有那就表示删除干净了</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>搭建服务器ubuntu系统</title>
       <link href="2020/12/30/da-jian-fu-wu-qi-ubuntu-xi-tong/"/>
       <url>2020/12/30/da-jian-fu-wu-qi-ubuntu-xi-tong/</url>
