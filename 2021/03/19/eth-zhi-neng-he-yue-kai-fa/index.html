@@ -1,0 +1,1789 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ETH智能合约开发, 李文洋">
+    <meta name="description" content="帅气的程序员小哥哥、目前已脱单">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ETH智能合约开发 | 李文洋</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="李文洋" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">李文洋</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">李文洋</div>
+        <div class="logo-desc">
+            
+            帅气的程序员小哥哥、目前已脱单
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Naruto-1996" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Naruto-1996" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ETH智能合约开发</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Mac/">
+                                <span class="chip bg-color">Mac</span>
+                            </a>
+                        
+                            <a href="/tags/Solidity/">
+                                <span class="chip bg-color">Solidity</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ETH%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" class="post-category">
+                                ETH智能合约
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-19
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="ETH智能合约开发-vue-智能合约"><a href="#ETH智能合约开发-vue-智能合约" class="headerlink" title="ETH智能合约开发(vue + 智能合约)"></a>ETH智能合约开发(vue + 智能合约)</h2><h3 id="一、什么是ETH智能合约"><a href="#一、什么是ETH智能合约" class="headerlink" title="一、什么是ETH智能合约"></a>一、什么是ETH智能合约</h3><blockquote>
+<p>说白了就是一段可以运行在以太坊平台上的代码，应用中，我们可以使用 Solidity 来编写和区块链交互的智能合约，<br>合约编写好之后，我们通过一个有余额的外部账户将合约部署到以太坊节点上，<br>并运行合约（使用 Truffle 框架可以更好的帮助我们做这些事情）</p>
+</blockquote>
+<h3 id="二、Truffle-和-ganache-cli-简介"><a href="#二、Truffle-和-ganache-cli-简介" class="headerlink" title="二、Truffle 和 ganache-cli 简介"></a>二、Truffle 和 ganache-cli 简介</h3><blockquote>
+<p>Truffle Truffle是Dapp开发框架，他可以帮我们处理掉大量无关紧要的小事情，<br>让我们可以迅速开始写代码-编译-部署-测试-打包DApp这个流程。<br>Truffle是使用Nodejs开发的，我们首先需要安装Nodejs运行环境。</p>
+</blockquote>
+<blockquote>
+<p>ganache-cli是以太坊节点仿真器软件ganache的命令行版本，可以方便开发者快速进行以太坊DApp的开发与测试。</p>
+</blockquote>
+<p>1、Truffle安装</p>
+<p>查看node版本 没有安装node的请自行google安装</p>
+<pre><code># Nodejs版本
+&gt; npm -v
+6.0.0
+&gt; node -v
+v8.9.4</code></pre>
+<p>全局安装Truffle工具。</p>
+<pre><code>npm install -g truffle</code></pre>
+<p>安装完成后查看命令行是否安装成功</p>
+<pre><code>&gt; truffle
+Truffle v4.1.12 - a development framework for Ethereum
+
+Usage: truffle  [options]
+
+Commands:
+  init      Initialize new and empty Ethereum project
+  compile   Compile contract source files
+  migrate   Run migrations to deploy contracts
+  deploy    (alias for migrate)
+  build     Execute build pipeline (if configuration present)
+  test      Run JavaScript and Solidity tests
+  debug     Interactively debug any transaction on the blockchain (experimental)
+  opcode    Print the compiled opcodes for a given contract
+  console   Run a console with contract abstractions and commands available
+  develop   Open a console with a local development blockchain
+  create    Helper to create new contracts, migrations and tests
+  install   Install a package from the Ethereum Package Registry
+  publish   Publish a package to the Ethereum Package Registry
+  networks  Show addresses for deployed contracts on each network
+  watch     Watch filesystem for changes and rebuild the project automatically
+  serve     Serve the build directory on localhost and watch for changes
+  exec      Execute a JS module within this Truffle environment
+  unbox     Download a Truffle Box, a pre-built Truffle project
+  version   Show version number and exit
+
+See more at http://truffleframework.com/docs</code></pre>
+<p>2、全局安装ganache-cli</p>
+<pre><code>npm install -g ganache-cli</code></pre>
+<h3 id="三、创建项目"><a href="#三、创建项目" class="headerlink" title="三、创建项目"></a>三、创建项目</h3><pre><code>&gt; cd ~
+&gt; mkdir truffle-crowdfund
+&gt; cd truffle-crowdfund
+# 初始化项目
+&gt; truffle init
+Downloading...
+Unpacking...
+Setting up...
+Unbox successful. Sweet!
+
+Commands:
+
+  Compile:        truffle compile
+  Migrate:        truffle migrate
+  Test contracts: truffle test</code></pre>
+<h3 id="四、启动测试节点"><a href="#四、启动测试节点" class="headerlink" title="四、启动测试节点"></a>四、启动测试节点</h3><pre><code>ganache-cli</code></pre>
+<p>它会自动给我们生成10个带有100个eth的账户</p>
+<h3 id="五、接下来写合约代码并部署到测试网络上"><a href="#五、接下来写合约代码并部署到测试网络上" class="headerlink" title="五、接下来写合约代码并部署到测试网络上"></a>五、接下来写合约代码并部署到测试网络上</h3><h4 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h4><blockquote>
+<p>假设我准备出版一本区块练技术书籍，但是不确定有多少人愿意购买这本书，于是我发起了一个众筹， 如果在一个月内，<br>  能筹集到 10 个 ETH，我就进行写作，并给参与的读者每人赠送一本书，如果未能筹到足够的资金，<br>  参与的读者赎回之前投入的资金。<br>  同时，为了让读者积极参与，初始时，参与众筹的价格非常低（0.02 ETH），每筹集满 1 个 ETH 时，价格上涨 0.002ETH。<br>  归纳出合约三个对外动作（函数）：</p>
+</blockquote>
+<blockquote>
+<p>1、汇款进合约，可通过实现合约的回退函数来实现。</p>
+<p>2、读者赎回汇款，这个函数仅仅在众筹未达标之后，由读者本人调用生效。</p>
+<p>3、创作者提取资金，这个函数需要在众筹达标之后，由创作者调用。</p>
+</blockquote>
+<blockquote>
+<p>除此之外，还需要一个状态变量来保存以下状态：</p>
+</blockquote>
+<blockquote>
+<p>1、用户众筹的金额，使用一个 mapping 来保存。</p>
+<p>2、当前众筹的价格，以及一个相应的内部函数逐步上涨价格。价格可以使用一个 uint 来保存。</p>
+<p>3、合约众筹的截止时间，用 uint 来保存， 在合约创建时往后追加 30 天，在构造函数中完成。</p>
+<p>4、记录合约众筹的收益者，即创作者，在合约创建时在构造函数中进行赋值，合约创建者就是创作者。</p>
+<p>5、再加入众筹状态，如果众筹停止阻止用户在参与。创作者提取资金时及时关闭众筹。</p>
+</blockquote>
+<h4 id="实现众筹合约"><a href="#实现众筹合约" class="headerlink" title="实现众筹合约"></a>实现众筹合约</h4><p>我们进入到上面使用<code>truffle init</code>命令创建的项目中去</p>
+<p>在 contracts 下创建一个合约文件 Crowdfunding.sol:</p>
+<pre><code>pragma solidity &gt;=0.4.21 &lt;0.7.0;
+
+
+contract Crowdfunding {
+    // 创作者
+    address public author;
+
+    // 参与金额
+    mapping(address =&gt; uint) public joined;
+
+    // 众筹目标
+    uint constant Target = 10 ether;
+
+    // 众筹截止时间
+    uint public endTime;
+
+    // 记录当前众筹价格
+    uint public price  = 0.02 ether ;
+
+    // 作者提取资金之后，关闭众筹
+    bool public closed = false;
+
+    // 部署合约时调用，初始化作者以及众筹结束时间
+    constructor() public {
+        author = msg.sender;
+        endTime = now + 30 days;
+    }
+
+    // 更新价格，这是一个内部函数
+    function updatePrice() internal {
+        uint rise = address(this).balance / 1 ether * 0.002 ether;
+        price = 0.02 ether + rise;
+    }
+
+    // 用户向合约转账时 触发的回调函数
+    function () external payable {
+        require(now &lt; endTime &amp;&amp; !closed  , "众筹已结束");
+        require(joined[msg.sender] == 0 , "你已经参与过众筹");
+
+        require (msg.value &gt;= price, "出价太低了");
+        joined[msg.sender] = msg.value;
+
+        updatePrice();
+    } 
+
+    // 作者提取资金
+    function withdrawFund() external {
+        require(msg.sender == author, "你不是作者");
+        require(address(this).balance &gt;= Target, "未达到众筹目标");
+        closed = true;   
+        msg.sender.transfer(address(this).balance);
+    }
+
+    // 读者赎回资金
+    function withdraw() external {
+        require(now &gt; endTime, "还未到众筹结束时间");
+        require(!closed, "众筹达标，众筹资金已提取");
+        require(Target &gt; address(this).balance, "众筹达标，你没法提取资金");
+
+        msg.sender.transfer(joined[msg.sender]);
+    }
+
+}</code></pre>
+<p>代码的介绍，在合约代码中，使用到了 Solidity 语言中的一些知识点：</p>
+<p>ether : 这是货币单位。<br>days : 这是时间单位，1 days 对应 1 天的秒数。<br>now : 这是一个 Solidity 的内置属性，用于获取当前的时间戳，单位是秒。<br>require : 如果条件不满足回退交易。<br>address.transfer(value) : 对某一个地址进行转账。<br>有关 Solidity 语言入门推荐大家使用官网课程 <a target="_blank" rel="noopener" href="https://cryptozombies.io/zh/course/">僵尸游戏</a></p>
+<h4 id="合约部署"><a href="#合约部署" class="headerlink" title="合约部署"></a>合约部署</h4><p>部署之前我们使用 <code>truffle compile</code> 命令来进行编译</p>
+<p>之后，在 migrations 下创建一个部署脚本 2_crowfunding.js ，内容如下：</p>
+<pre><code>const crowd = artifacts.require("Crowdfunding");
+
+module.exports = function(deployer) {
+  deployer.deploy(crowd);
+};</code></pre>
+<p>接下来你的文件目录应该是这样的:</p>
+<pre><code>├── build
+│&nbsp;&nbsp; └── contracts
+│&nbsp;&nbsp;     ├── CrowdFunding.json
+│&nbsp;&nbsp;     └── Migrations.json
+├── contracts
+│&nbsp;&nbsp; ├── CrowdFunding.sol
+│&nbsp;&nbsp; └── Migrations.sol
+├── migrations
+│&nbsp;&nbsp; ├── 1_initial_migration.js
+│&nbsp;&nbsp; └── 2_crowdfunding_migration.js
+├── test
+└── truffle-config.js
+</code></pre>
+<p>注意一下这个<code>1_initial_migration.js</code>文件和 <code>Migrations.sol</code>文件 这是我们在使用<code>truffle init</code>命令初始化项目时<br>它为我们生成的文件 这两个文件是不能删除的否则会无法进行部署，我们在<code>migrations</code>文件夹下面创建的文件要按照 1_xxx.js,<br>2_xxx.js 在部署的时候是按照这个顺序进行的。</p>
+<p>下面我们配置部署脚本<code>truffle-config.js</code></p>
+<p>配置之前 我们还需要做一些事情：</p>
+<p>1、注册infura获取PROJECT-ID</p>
+<p><a target="_blank" rel="noopener" href="https://infura.io/">infura</a>是基于ETH的chain公共API服务，为开发者提供链上数据查询、交易广播等功能。</p>
+<p>注册成功之后需要创建项目</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210325100549.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210325100631.png"></p>
+<p>项目名字是随便起的无所谓</p>
+<p>项目创建完之后你就能看到PROJECT-ID了这个我们待会要用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210325100830.png"></p>
+<p>2、我们还需要一个浏览器插件 <a target="_blank" rel="noopener" href="https://metamask.io/">MetaMask</a> 推荐大家使用Chrome浏览器 </p>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210325101145.png"></p>
+<p>按照步骤注册账户，并将助记词保存下来， 我们下面要用到</p>
+<p>我们需要获取ETH，以为部署是要gas费的, 测试网络可以每天给我们5个ETH 这足够我们使用了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210325103044.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210325103155.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210325103316.png"></p>
+<p>3、安装 <code>truffle-hdwallet-provider</code></p>
+<p>由于需要将合约部署到测试网Ropsten，此过程需要部署者私钥进行签名再将数据进行广播，<br><code>truffle-hdwallet-provider</code>是truffle上提供交易离线签名的模块</p>
+<p>注：必须在truffle框架的代码目录下安装，否则不生效</p>
+<pre><code>&gt; cd truffle-crowdfund
+&gt; npm install truffle-hdwallet-provider</code></pre>
+<p>4、我们终于可以进行修改<code>truffle-config.js</code>部署脚本了</p>
+<pre><code>/**
+ * Use this file to configure your truffle project. It's seeded with some
+ * common settings for different networks and features like migrations,
+ * compilation and testing. Uncomment the ones you need or modify
+ * them to suit your project as necessary.
+ *
+ * More information about configuration can be found at:
+ *
+ * trufflesuite.com/docs/advanced/configuration
+ *
+ * To deploy via Infura you'll need a wallet provider (like @truffle/hdwallet-provider)
+ * to sign your transactions before they're sent to a remote public node. Infura accounts
+ * are available for free at: infura.io/register.
+ *
+ * You'll also need a mnemonic - the twelve word phrase the wallet uses to generate
+ * public/private key pairs. If you're publishing your code to GitHub make sure you load this
+ * phrase from a file you've .gitignored so it doesn't accidentally become public.
+ *
+ */
+
+const HDWalletProvider = require('truffle-hdwallet-provider');
+// const infuraKey = "fj4jll3k.....";
+//
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim();
+
+module.exports = {
+  /**
+   * Networks define how you connect to your ethereum client and let you set the
+   * defaults web3 uses to send transactions. If you don't specify one truffle
+   * will spin up a development blockchain for you on port 9545 when you
+   * run `develop` or `test`. You can ask a truffle command to use a specific
+   * network from the command line, e.g
+   *
+   * $ truffle test --network &lt;network-name&gt;
+   */
+
+  networks: {
+    // Useful for testing. The `development` name is special - truffle uses it by default
+    // if it's defined here and no other network is specified at the command line.
+    // You should run a client (like ganache-cli, geth or parity) in a separate terminal
+    // tab if you use this network and you must also set the `host`, `port` and `network_id`
+    // options below to some value.
+    //
+    mainnet: {
+      provider: function () {
+        // Setting the provider with the Infura Rinkeby address and Token
+        return new HDWalletProvider(mnemonic, "https://mainnet.infura.io/v3/xxxx1cabc499dc5d569")
+      },
+      network_id: 1
+    },
+    // development: {
+    //  host: "127.0.0.1",     // Localhost (default: none)
+    //  port: 8545,            // Standard Ethereum port (default: none)
+    //  network_id: "*",       // Any network (default: none)
+    // },
+    // Another network with more advanced options...
+    // advanced: {
+    // port: 8777,             // Custom port
+    // network_id: 1342,       // Custom network
+    // gas: 8500000,           // Gas sent with each transaction (default: ~6700000)
+    // gasPrice: 20000000000,  // 20 gwei (in wei) (default: 100 gwei)
+    // from: &lt;address&gt;,        // Account to send txs from (default: accounts[0])
+    // websocket: true        // Enable EventEmitter interface for web3 (default: false)
+    // },
+    // Useful for deploying to a public network.
+    // NB: It's important to wrap the provider as a function.
+    ropsten: {
+      provider: () =&gt; new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/xxxx1cabc499dc5d569"),
+      network_id: 3,       // Ropsten's id
+      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    },
+    // Useful for private networks
+    // private: {
+    // provider: () =&gt; new HDWalletProvider(mnemonic, `https://network.io`),
+    // network_id: 2111,   // This network is yours, in the cloud.
+    // production: true    // Treats this network as if it was a public net. (default: false)
+    // }
+  },
+
+  // Set default mocha options here, use special reporters etc.
+  mocha: {
+    // timeout: 100000
+  },
+
+  // Configure your compilers
+  compilers: {
+    solc: {
+      // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
+      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
+      // settings: {          // See the solidity docs for advice about optimization and evmVersion
+      //  optimizer: {
+      //    enabled: false,
+      //    runs: 200
+      //  },
+      //  evmVersion: "byzantium"
+      // }
+    }
+  },
+
+  // Truffle DB is currently disabled by default; to enable it, change enabled: false to enabled: true
+  //
+  // Note: if you migrated your contracts prior to enabling this field in your Truffle project and want
+  // those previously migrated contracts available in the .db directory, you will need to run the following:
+  // $ truffle migrate --reset --compile-all
+
+  db: {
+    enabled: false
+  }
+};
+</code></pre>
+<p>注意这几行 </p>
+<pre><code>const HDWalletProvider = require('truffle-hdwallet-provider');
+// const infuraKey = "fj4jll3k.....";
+//
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim();
+
+...
+
+ropsten: {
+  provider: () =&gt; new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/xxxx1cabc499dc5d569"),
+  network_id: 3,       // Ropsten's id
+  gas: 5500000,        // Ropsten has a lower block limit than mainnet
+  confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+  timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+  skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+},</code></pre>
+<p>这里我们用到了 助记词 和 PROJECT-ID 我这里是在项目的根目录下创建了一个<code>.secret</code>文件 把助记词放到了文件里, 这样比较好，<br>你也可以使用变量进行保存 <code>const infuraKey = "fj4jll3k....."</code></p>
+<p>5、部署到Ropsten测试网络</p>
+<p>执行<code>truffle migrate --network ropsten</code> 即可部署至Ropsten</p>
+<p>如需要重新编译所有合约，可执行<code>truffle migrate --network ropsten --reset --compile-all</code></p>
+<pre><code>Compiling your contracts...
+===========================
+&gt; Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+&gt; Network name:    'ropsten'
+&gt; Network id:      3
+&gt; Block gas limit: 8000000 (0x7a1200)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   &gt; transaction hash:    0xe27c86dc48219fa193d23843b301d6878a6820dcc93fd92a20e24d1ec9c49b31
+   &gt; Blocks: 3            Seconds: 14
+   &gt; contract address:    0x2e2982D9d1914b6580139Ec4E356B708478C875F
+   &gt; block number:        9898882
+   &gt; block timestamp:     1616554032
+   &gt; account:             0x270dF7D1f4612063abA065389b3fCbeF7993caA9
+   &gt; balance:             4.93502452
+   &gt; gas used:            193243 (0x2f2db)
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00386486 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   &gt; confirmation number: 1 (block: 9898884)
+   &gt; confirmation number: 2 (block: 9898885)
+
+   &gt; Saving migration to chain.
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00386486 ETH
+
+
+2_crowdfunding_migration.js
+===========================
+
+   Deploying 'CrowdFunding'
+   ------------------------
+   &gt; transaction hash:    0x0f787b4d1567a00a8da4b28970632238fc50eb43ee7e33fb8d5c3d92fcbf5880
+   &gt; Blocks: 2            Seconds: 25
+   &gt; contract address:    0x3e32bF1e0Af404ed7DbCEf538BEba75ea2a76510
+   &gt; block number:        9898889
+   &gt; block timestamp:     1616554105
+   &gt; account:             0x270dF7D1f4612063abA065389b3fCbeF7993caA9
+   &gt; balance:             4.9224565
+   &gt; gas used:            582663 (0x8e407)
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.01165326 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   &gt; confirmation number: 1 (block: 9898890)
+   &gt; confirmation number: 2 (block: 9898891)
+
+   &gt; Saving migration to chain.
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.01165326 ETH
+
+
+Summary
+=======
+&gt; Total deployments:   2
+&gt; Final cost:          0.01551812 ETH
+</code></pre>
+<h3 id="六、使用vue项目与合约进行交互"><a href="#六、使用vue项目与合约进行交互" class="headerlink" title="六、使用vue项目与合约进行交互"></a>六、使用vue项目与合约进行交互</h3><blockquote>
+<p>利用 CrowdFund.vue 来众筹界面，众筹界面需要显示以下几个部分：</p>
+</blockquote>
+<blockquote>
+<p> 1、当前众筹到金额。</p>
+<p> 2、众筹的截止时间。</p>
+<p> 3、当前众筹的价格，参与众筹按钮。</p>
+<p> 4、如果是已经参与，显示其参与的价格以及赎回按钮。</p>
+<p> 5、如果是创作者，显示一个提取资金按钮。</p>
+</blockquote>
+<p>1、 依然是创建一个vue项目</p>
+<pre><code>vue create crowd_funding_vue</code></pre>
+<p>我们在components文件夹下创建一个<code>CrowdFunding.vue</code>文件 我们整个的<code>CrowdFunding.vue</code>文件就像是这样</p>
+<pre><code>&lt;template&gt;
+    &lt;div class="content"&gt;
+        &lt;h3&gt; 新书众筹&lt;/h3&gt;
+        &lt;span&gt;以最低的价格获取我的新书 &lt;/span&gt;
+
+        &lt;div class="status"&gt;
+            &lt;div v-if="!closed"&gt;已众筹资金：&lt;b&gt;{{ total }} ETH &lt;/b&gt;&lt;/div&gt;
+            &lt;div v-if="closed"&gt; 众筹已完成&lt;/div&gt;
+            &lt;div&gt;众筹截止时间：{{ endDate }}&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div v-if="joined" class="card-bkg"&gt;
+            &lt;div class="award-des"&gt;
+                &lt;span&gt; 参与价格 &lt;/span&gt;
+                &lt;b&gt; {{ joinPrice }} ETH &lt;/b&gt;
+            &lt;/div&gt;
+
+            &lt;button :disabled="closed" @click="withdraw"&gt;赎回&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div v-if="!joined" class="card-bkg"&gt;
+            &lt;div class="award-des"&gt;
+                &lt;span&gt; 当前众筹价格 &lt;/span&gt;
+                &lt;b&gt; {{ price }} ETH &lt;/b&gt;
+            &lt;/div&gt;
+
+            &lt;button :disabled="closed" @click="join"&gt;参与众筹&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div v-if="isAuthor"&gt;
+            &lt;button :disabled="closed" @click="withdrawFund"&gt; 提取资金&lt;/button&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    import contract from "truffle-contract";
+    import crowd from '../../public/build/contracts/CrowdFunding.json';
+
+    const Web3 = require('web3');
+
+    export default {
+        name: 'CrowdFund',
+        // 定义上面HTML模板中使用的变量
+        data() {
+            return {
+                price: null,
+                total: 0,
+                closed: true,
+                joinPrice: null,
+                joined: false,
+                endDate: "null",
+                isAuthor: true,
+            }
+        },
+        // 当前Vue组件被创建时回调的hook 函数
+        async created() {
+            //  初始化 web3及账号
+            await this.initWeb3Account()
+            //  初始化合约实例
+            await this.initContract()
+            //  获取合约的状态信息
+            await this.getCrowdInfo()
+        },
+        methods: {
+            async initWeb3Account() {
+                console.log("initWeb3Account 方法执行了-------");
+                // 检查新版MetaMask
+                if (window.ethereum) {
+                    this.provider = window.ethereum;
+                    try {
+                        // 请求用户账号授权
+                        await window.ethereum.enable();
+                    } catch (error) {
+                        // 用户拒绝了访问
+                        console.log("User denied account access");
+                    }
+                }
+                // 老版 MetaMask
+                else if (window.web3) {
+                    this.provider = window.web3.currentProvider;
+                }
+                // 如果没有注入的web3实例，回退到使用 Ganache
+                else {
+                    alert("请安装MetaMask!");
+                     this.provider = new Web3.providers.HttpProvider("http://127.0.0.1:7545");
+                }
+                this.web3 = new Web3(this.provider);
+                this.web3.eth.getAccounts().then(accs =&gt; {
+                    this.account = accs[0]
+                    console.log(accs)
+                })
+            },
+            async initContract() {
+                const crowdContract = contract(crowd)
+                crowdContract.setProvider(this.provider)
+                this.crowdFund = await crowdContract.deployed()
+            },
+            async getCrowdInfo() {
+                // 获取合约的余额
+                this.web3.eth.getBalance(this.crowdFund.address).then(
+                    r =&gt; {
+                        this.total = this.web3.utils.fromWei(r)
+                    }
+                )
+
+                // 获取读者的参与金额
+                this.crowdFund.joined(this.account).then(
+                    r =&gt; {
+                        if (r &gt; 0) {
+                            this.joined = true
+                            this.joinPrice = this.web3.utils.fromWei(r)
+                        }
+                    }
+                )
+
+                // 获取合约的关闭状态
+                this.crowdFund.closed().then(
+                    r =&gt; this.closed = r
+                )
+
+                // 获取当前的众筹价格
+                this.crowdFund.price().then(
+                    r =&gt; this.price = this.web3.utils.fromWei(r)
+                )
+
+                // 获取众筹截止时间
+                this.crowdFund.endTime().then(r =&gt; {
+                    var endTime = new Date(r * 1000)
+                    // 把时间戳转化为本地时间
+                    this.endDate = endTime.toLocaleDateString().replace(/\//g, "-") + " " + endTime.toTimeString().substr(0, 8);
+                })
+
+                // 获取众筹创作者地址
+                this.crowdFund.author().then(r =&gt; {
+                    if (this.account === r) {
+                        this.isAuthor = true
+                    } else {
+                        this.isAuthor = false
+                    }
+                })
+            },
+            // 读者参与众筹的 join()函数
+            join() {
+                this.web3.eth.sendTransaction({
+                    from: this.account,
+                    to: this.crowdFund.address,
+                    value: this.web3.utils.toWei(this.price)
+                }).then(() =&gt;
+                    this.getCrowdInfo()
+                )
+            },
+            // 读者赎回的 withdraw()函数
+            withdraw() {
+                this.crowdFund.withdraw({
+                    from: this.account
+                }).then(() =&gt; {
+                    this.getCrowdInfo()
+                })
+            },
+            // 创作者提取资金的 withdrawFund()函数
+            withdrawFund() {
+                this.crowdFund.withdrawFund({
+                    from: this.account
+                }).then(() =&gt; {
+                    this.getCrowdInfo()
+                })
+            }
+        }
+    }
+&lt;/script&gt;</code></pre>
+<p>2、与合约进行交互</p>
+<p>前端界面与合约进行交互时，需要使用到 <code>truffle-contract</code> 及 <code>web3</code> ，因为 Vue 工程本身也是通过 NPM 进行包管理，<br>因此可以直接通过 npm 进行安装，命令如下：</p>
+<pre><code>npm install --save truffle-contract web3</code></pre>
+<p>如果创建vue项目的时候已经启动了vue项目 那么你需要重新启动一下vue项目 因为安装了包之后需要重新启动 这样使用import导入包的时候<br>才不会报错。</p>
+<p>3、将智能合约项目编译产生的<code>build</code>文件夹放进vue项目中的<code>public</code>文件夹下 注意看上面的这句话</p>
+<pre><code>import crowd from '../../public/build/contracts/CrowdFunding.json';</code></pre>
+<p>4、启动vue项目进行交互 看起来就像这样</p>
+<pre><code>npm run serve</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210325105129.png"></p>
+<h4 id="特别感谢一下博文"><a href="#特别感谢一下博文" class="headerlink" title="特别感谢一下博文"></a>特别感谢一下博文</h4><p>1、<a target="_blank" rel="noopener" href="https://learnblockchain.cn/2019/12/20/vue-dapp">如何使用Vue.js 开发以太坊DApp</a></p>
+<p>2、<a target="_blank" rel="noopener" href="https://blog.csdn.net/u010159567/article/details/104895457">以太坊ETH-智能合约开发-solidity源码分析-truffle进阶</a></p>
+<p>3、<a target="_blank" rel="noopener" href="https://blog.csdn.net/TurkeyCock/article/details/85103434">Infura：一键接入以太坊</a></p>
+<p>4、<a target="_blank" rel="noopener" href="https://learnblockchain.cn/docs/truffle/getting-started/truffle-with-metamask.html">Truffle 和 MetaMask 配合</a></p>
+<p>5、<a target="_blank" rel="noopener" href="https://www.chainnews.com/articles/823921189500.htm">详解 Truffle Migrations （迁移）- 合约部署不再困惑</a></p>
+<p>6、<a target="_blank" rel="noopener" href="http://blog.hubwiz.com/2019/09/13/ethereum-dev-tools-2019/#%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8">以太坊开发资源全面指南</a></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">李文洋</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/19/eth-zhi-neng-he-yue-kai-fa/">https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/19/eth-zhi-neng-he-yue-kai-fa/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">李文洋</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Mac/">
+                                    <span class="chip bg-color">Mac</span>
+                                </a>
+                            
+                                <a href="/tags/Solidity/">
+                                    <span class="chip bg-color">Solidity</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '486c1f37a7d0d7b0b140',
+        clientSecret: '3a4cb9df6e92eb3d2a8508bf402b6338e3101d4e',
+        repo: 'Naruto-1996.github.io',
+        owner: 'Naruto-1996',
+        admin: ["Naruto-1996"],
+        id: '2021-03-19T16-35-19',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/03/19/eth-zhi-neng-he-yue-kai-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="ETH智能合约开发">
+                        
+                        <span class="card-title">ETH智能合约开发</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ETH智能合约开发(vue + 智能合约)一、什么是ETH智能合约
+说白了就是一段可以运行在以太坊平台上的代码，应用中，我们可以使用 Solidity 来编写和区块链交互的智能合约，合约编写好之后，我们通过一个有余额的外部账户将合约部署到以
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ETH%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" class="post-category">
+                                    ETH智能合约
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Mac/">
+                        <span class="chip bg-color">Mac</span>
+                    </a>
+                    
+                    <a href="/tags/Solidity/">
+                        <span class="chip bg-color">Solidity</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/02/zai-linux-fu-wu-qi-shang-an-zhuang-ruby-on-rails/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="在linux服务器上安装Ruby_On_Rails">
+                        
+                        <span class="card-title">在linux服务器上安装Ruby_On_Rails</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            在linux服务器上安装Ruby On Rails1、安装rbenv先安装git
+# mac
+brew install git
+# centos
+yum install git
+# ubuntu
+apt-get install git
+然后
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/rails/" class="post-category">
+                                    rails
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/ruby/">
+                        <span class="chip bg-color">ruby</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">李文洋</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Naruto-1996" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:924365319@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=924365319" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 924365319" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
