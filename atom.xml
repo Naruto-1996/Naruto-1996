@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2021-03-25T03:09:50.048Z</updated>
+  <updated>2021-03-29T01:36:13.865Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决服务器连不上github的问题</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/</id>
+    <published>2021-03-29T01:24:26.000Z</published>
+    <updated>2021-03-29T01:36:13.865Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;解决服务器连不上github的问题&quot;&gt;&lt;a href=&quot;#解决服务器连不上github的问题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="github" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/github/"/>
+    
+    
+    <category term="腾讯云服务器" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E8%85%BE%E8%AE%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>ETH智能合约开发</title>
@@ -531,31 +556,6 @@
     
     
     <category term="ImageView" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/ImageView/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android-如何监听前后台</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-ru-he-jian-ting-qian-hou-tai/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-ru-he-jian-ting-qian-hou-tai/</id>
-    <published>2020-10-21T08:32:40.000Z</published>
-    <updated>2020-10-21T08:58:50.246Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;Android-如何监听前后台&quot;&gt;&lt;a href=&quot;#Android-如何监听前后台&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Android" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Android/"/>
-    
-    
-    <category term="Android" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Android/"/>
     
   </entry>
   

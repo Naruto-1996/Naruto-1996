@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>解决服务器连不上github的问题</title>
+      <link href="2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/"/>
+      <url>2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h3 id="解决服务器连不上github的问题"><a href="#解决服务器连不上github的问题" class="headerlink" title="解决服务器连不上github的问题"></a>解决服务器连不上github的问题</h3><p>报错信息:</p><pre><code>fatal: unable to access 'https://github.com/ohmyzsh/ohmyzsh.git/': Empty reply from serverError: git clone of oh-my-zsh repo failed</code></pre><p>本来想改变一下服务器终端的主题，一直都是黑白色 有些单调，就想着安装一个 <code>on my zsh</code> 结果死活连不上<code>github</code></p><p>一向贫穷的我怎么买的起香港的服务器当跳板呢，所以绞尽脑汁看各种资料 终于还是发现了</p><p>具体步骤如下:</p><p>1、首先我们去查一下<code>github.com</code>的ip地址</p><p><a href="https://www.ipaddress.com/ip-lookup">https://www.ipaddress.com/ip-lookup</a></p><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210329093225.png"></p><p>2、我们进入自己的服务器的<code>/etc</code> 目录下</p><pre><code>cd /etcsudo vim hosts</code></pre><p>在<code>hosts</code>文件最后一行 加上下面这行，并保存退出服务器 重新进一下</p><pre class="line-numbers language-xml"><code class="language-xml">GitHub的IP   github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>GitHub的IP 是我们刚才查到的</p><p>发现可以连上了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 腾讯云服务器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ETH智能合约开发</title>
       <link href="2021/03/19/eth-zhi-neng-he-yue-kai-fa/"/>
       <url>2021/03/19/eth-zhi-neng-he-yue-kai-fa/</url>
