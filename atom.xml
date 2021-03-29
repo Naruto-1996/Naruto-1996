@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2021-03-29T01:36:13.865Z</updated>
+  <updated>2021-03-29T02:12:22.479Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>服务器安装oh_my_zsh</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/fu-wu-qi-an-zhuang-oh-my-zsh/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/fu-wu-qi-an-zhuang-oh-my-zsh/</id>
+    <published>2021-03-29T01:58:30.000Z</published>
+    <updated>2021-03-29T02:12:22.479Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;给自己的服务器安装-oh-my-zsh&quot;&gt;&lt;a href=&quot;#给自己的服务器安装-oh-my-zsh&quot; class=&quot;headerlink&quot; title=&quot;给自己的服务器安装 oh my zsh&quot;&gt;&lt;/a&gt;给自己的服务器安装 oh my zsh&lt;/h3&gt;&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="oh my zsh" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/oh-my-zsh/"/>
+    
+    
+    <category term="linux" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解决服务器连不上github的问题</title>
     <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/"/>
     <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/</id>
     <published>2021-03-29T01:24:26.000Z</published>
-    <updated>2021-03-29T01:36:13.865Z</updated>
+    <updated>2021-03-29T01:37:05.099Z</updated>
     
     
       
@@ -531,31 +558,6 @@
     <category term="Intent" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Intent/"/>
     
     <category term="setFlags" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/setFlags/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android ImageView设置background和src的区别</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-imageview-she-zhi-background-he-src-de-qu-bie/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-imageview-she-zhi-background-he-src-de-qu-bie/</id>
-    <published>2020-10-21T09:03:01.000Z</published>
-    <updated>2020-10-21T09:16:22.392Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;一、ImageView设置background和src的区别。&quot;&gt;&lt;a href=&quot;#一、ImageView设置background和src的区别。&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Android" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Android/"/>
-    
-    
-    <category term="ImageView" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/ImageView/"/>
     
   </entry>
   

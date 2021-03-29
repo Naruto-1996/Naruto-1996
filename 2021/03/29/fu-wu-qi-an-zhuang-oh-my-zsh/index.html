@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="解决服务器连不上github的问题, 李文洋">
+    <meta name="keywords" content="服务器安装oh_my_zsh, 李文洋">
     <meta name="description" content="帅气的程序员小哥哥、目前单身">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>解决服务器连不上github的问题 | 李文洋</title>
+    <title>服务器安装oh_my_zsh | 李文洋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">解决服务器连不上github的问题</h1>
+                    <h1 class="description center-align post-title">服务器安装oh_my_zsh</h1>
                 </div>
             </div>
         </div>
@@ -434,8 +434,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                <span class="chip bg-color">腾讯云服务器</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                            <a href="/tags/ubuntu/">
+                                <span class="chip bg-color">ubuntu</span>
                             </a>
                         
                     </div>
@@ -446,8 +450,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/github/" class="post-category">
-                                github
+                            <a href="/categories/oh-my-zsh/" class="post-category">
+                                oh my zsh
                             </a>
                         
                     </div>
@@ -475,22 +479,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="解决服务器连不上github的问题"><a href="#解决服务器连不上github的问题" class="headerlink" title="解决服务器连不上github的问题"></a>解决服务器连不上github的问题</h3><p>报错信息:</p>
-<pre><code>fatal: unable to access 'https://github.com/ohmyzsh/ohmyzsh.git/': Empty reply from server
-Error: git clone of oh-my-zsh repo failed</code></pre>
-<p>本来想改变一下服务器终端的主题，一直都是黑白色 有些单调，就想着安装一个 <code>on my zsh</code> 结果死活连不上<code>github</code></p>
-<p>一向贫穷的我怎么买的起香港的服务器当跳板呢，所以绞尽脑汁看各种资料 终于还是发现了</p>
-<p>具体步骤如下:</p>
-<p>1、首先我们去查一下<code>github.com</code>的ip地址</p>
-<p><a target="_blank" rel="noopener" href="https://www.ipaddress.com/ip-lookup">https://www.ipaddress.com/ip-lookup</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210329093225.png"></p>
-<p>2、我们进入自己的服务器的<code>/etc</code> 目录下</p>
-<pre><code>cd /etc
-sudo vim hosts</code></pre>
-<p>在<code>hosts</code>文件最后一行 加上下面这行，并保存退出服务器 重新进一下</p>
-<pre><code>GitHub的IP   github.com</code></pre>
-<p>GitHub的IP 是我们刚才查到的</p>
-<p>发现可以连上了。</p>
+                <h3 id="给自己的服务器安装-oh-my-zsh"><a href="#给自己的服务器安装-oh-my-zsh" class="headerlink" title="给自己的服务器安装 oh my zsh"></a>给自己的服务器安装 oh my zsh</h3><h4 id="1、安装zsh"><a href="#1、安装zsh" class="headerlink" title="1、安装zsh"></a>1、安装zsh</h4><p><code>oh my zsh</code> 需要先安装<code>zsh</code> 所以如果你没有装<code>zsh</code>的话需要先装一下</p>
+<pre><code>cd ~
+sudo apt install zsh</code></pre>
+<h3 id="2、安装git"><a href="#2、安装git" class="headerlink" title="2、安装git"></a>2、安装git</h3><p>需要安装<code>git</code>因为在装<code>oh my zsh</code>的时候会去clone它的仓库，所以需要装个<code>git</code></p>
+<pre><code>sudo apt install git</code></pre>
+<h3 id="3、安装oh-my-zsh"><a href="#3、安装oh-my-zsh" class="headerlink" title="3、安装oh my zsh"></a>3、安装<code>oh my zsh</code></h3><p>这个过程中可能会出现无法连接github的问题，我之前的博客也有解决方案 可以搜一下关键字 <code>解决服务器连不上github的问题</code></p>
+<pre><code>sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210329100744.png"></p>
+<p>在安装的过程中会问你是否设为默认终端 选择<code>y</code>就行了</p>
+<h3 id="4、更换主题"><a href="#4、更换主题" class="headerlink" title="4、更换主题"></a>4、更换主题</h3><pre><code>cd ~
+sudo vim .zshrc</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210329101040.png"></p>
+<p>这里去改一下主题名称，保存并退出  然后 <code>source .zshrc</code> 就可以了</p>
 
             </div>
             <hr/>
@@ -516,7 +517,7 @@ sudo vim hosts</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/">https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/</a>
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/fu-wu-qi-an-zhuang-oh-my-zsh/">https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/fu-wu-qi-an-zhuang-oh-my-zsh/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,8 +555,12 @@ sudo vim hosts</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                    <span class="chip bg-color">腾讯云服务器</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                                <a href="/tags/ubuntu/">
+                                    <span class="chip bg-color">ubuntu</span>
                                 </a>
                             
                         </div>
@@ -726,7 +731,7 @@ sudo vim hosts</code></pre>
         repo: 'Naruto-1996.github.io',
         owner: 'Naruto-1996',
         admin: ["Naruto-1996"],
-        id: '2021-03-29T09-24-26',
+        id: '2021-03-29T09-58-30',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -750,9 +755,10 @@ sudo vim hosts</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/29/fu-wu-qi-an-zhuang-oh-my-zsh/">
                     <div class="card-image">
@@ -773,9 +779,9 @@ sudo apt install zsh
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -788,6 +794,7 @@ sudo apt install zsh
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -810,32 +817,33 @@ sudo apt install zsh
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/19/eth-zhi-neng-he-yue-kai-fa/">
+                <a href="/2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="ETH智能合约开发">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="解决服务器连不上github的问题">
                         
-                        <span class="card-title">ETH智能合约开发</span>
+                        <span class="card-title">解决服务器连不上github的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ETH智能合约开发(vue + 智能合约)一、什么是ETH智能合约
-说白了就是一段可以运行在以太坊平台上的代码，应用中，我们可以使用 Solidity 来编写和区块链交互的智能合约，合约编写好之后，我们通过一个有余额的外部账户将合约部署到以
+                            解决服务器连不上github的问题报错信息:
+fatal: unable to access 'https://github.com/ohmyzsh/ohmyzsh.git/': Empty reply from server
+Error:
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ETH%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" class="post-category">
-                                    ETH智能合约
+                            <a href="/categories/github/" class="post-category">
+                                    github
                                 </a>
                             
                             
@@ -845,12 +853,8 @@ sudo apt install zsh
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Mac/">
-                        <span class="chip bg-color">Mac</span>
-                    </a>
-                    
-                    <a href="/tags/Solidity/">
-                        <span class="chip bg-color">Solidity</span>
+                    <a href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">腾讯云服务器</span>
                     </a>
                     
                 </div>

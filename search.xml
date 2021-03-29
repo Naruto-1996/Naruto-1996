@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>服务器安装oh_my_zsh</title>
+      <link href="2021/03/29/fu-wu-qi-an-zhuang-oh-my-zsh/"/>
+      <url>2021/03/29/fu-wu-qi-an-zhuang-oh-my-zsh/</url>
+      
+        <content type="html"><![CDATA[<h3 id="给自己的服务器安装-oh-my-zsh"><a href="#给自己的服务器安装-oh-my-zsh" class="headerlink" title="给自己的服务器安装 oh my zsh"></a>给自己的服务器安装 oh my zsh</h3><h4 id="1、安装zsh"><a href="#1、安装zsh" class="headerlink" title="1、安装zsh"></a>1、安装zsh</h4><p><code>oh my zsh</code> 需要先安装<code>zsh</code> 所以如果你没有装<code>zsh</code>的话需要先装一下</p><pre><code>cd ~sudo apt install zsh</code></pre><h3 id="2、安装git"><a href="#2、安装git" class="headerlink" title="2、安装git"></a>2、安装git</h3><p>需要安装<code>git</code>因为在装<code>oh my zsh</code>的时候会去clone它的仓库，所以需要装个<code>git</code></p><pre><code>sudo apt install git</code></pre><h3 id="3、安装oh-my-zsh"><a href="#3、安装oh-my-zsh" class="headerlink" title="3、安装oh my zsh"></a>3、安装<code>oh my zsh</code></h3><p>这个过程中可能会出现无法连接github的问题，我之前的博客也有解决方案 可以搜一下关键字 <code>解决服务器连不上github的问题</code></p><pre><code>sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code></pre><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210329100744.png"></p><p>在安装的过程中会问你是否设为默认终端 选择<code>y</code>就行了</p><h3 id="4、更换主题"><a href="#4、更换主题" class="headerlink" title="4、更换主题"></a>4、更换主题</h3><pre><code>cd ~sudo vim .zshrc</code></pre><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210329101040.png"></p><p>这里去改一下主题名称，保存并退出  然后 <code>source .zshrc</code> 就可以了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> oh my zsh </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决服务器连不上github的问题</title>
       <link href="2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/"/>
       <url>2021/03/29/jie-jue-fu-wu-qi-lian-bu-shang-github-de-wen-ti/</url>
       
-        <content type="html"><![CDATA[<h3 id="解决服务器连不上github的问题"><a href="#解决服务器连不上github的问题" class="headerlink" title="解决服务器连不上github的问题"></a>解决服务器连不上github的问题</h3><p>报错信息:</p><pre><code>fatal: unable to access 'https://github.com/ohmyzsh/ohmyzsh.git/': Empty reply from serverError: git clone of oh-my-zsh repo failed</code></pre><p>本来想改变一下服务器终端的主题，一直都是黑白色 有些单调，就想着安装一个 <code>on my zsh</code> 结果死活连不上<code>github</code></p><p>一向贫穷的我怎么买的起香港的服务器当跳板呢，所以绞尽脑汁看各种资料 终于还是发现了</p><p>具体步骤如下:</p><p>1、首先我们去查一下<code>github.com</code>的ip地址</p><p><a href="https://www.ipaddress.com/ip-lookup">https://www.ipaddress.com/ip-lookup</a></p><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210329093225.png"></p><p>2、我们进入自己的服务器的<code>/etc</code> 目录下</p><pre><code>cd /etcsudo vim hosts</code></pre><p>在<code>hosts</code>文件最后一行 加上下面这行，并保存退出服务器 重新进一下</p><pre class="line-numbers language-xml"><code class="language-xml">GitHub的IP   github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>GitHub的IP 是我们刚才查到的</p><p>发现可以连上了。</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="解决服务器连不上github的问题"><a href="#解决服务器连不上github的问题" class="headerlink" title="解决服务器连不上github的问题"></a>解决服务器连不上github的问题</h3><p>报错信息:</p><pre><code>fatal: unable to access 'https://github.com/ohmyzsh/ohmyzsh.git/': Empty reply from serverError: git clone of oh-my-zsh repo failed</code></pre><p>本来想改变一下服务器终端的主题，一直都是黑白色 有些单调，就想着安装一个 <code>on my zsh</code> 结果死活连不上<code>github</code></p><p>一向贫穷的我怎么买的起香港的服务器当跳板呢，所以绞尽脑汁看各种资料 终于还是发现了</p><p>具体步骤如下:</p><p>1、首先我们去查一下<code>github.com</code>的ip地址</p><p><a href="https://www.ipaddress.com/ip-lookup">https://www.ipaddress.com/ip-lookup</a></p><p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210329093225.png"></p><p>2、我们进入自己的服务器的<code>/etc</code> 目录下</p><pre><code>cd /etcsudo vim hosts</code></pre><p>在<code>hosts</code>文件最后一行 加上下面这行，并保存退出服务器 重新进一下</p><pre><code>GitHub的IP   github.com</code></pre><p>GitHub的IP 是我们刚才查到的</p><p>发现可以连上了。</p>]]></content>
       
       
       <categories>
