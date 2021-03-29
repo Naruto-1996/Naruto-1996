@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2021-03-29T02:12:22.479Z</updated>
+  <updated>2021-03-29T09:08:50.055Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu权限详解</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/ubuntu-quan-xian-xiang-jie/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2021/03/29/ubuntu-quan-xian-xiang-jie/</id>
+    <published>2021-03-29T08:40:43.000Z</published>
+    <updated>2021-03-29T09:08:50.055Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Ubuntu权限详解&quot;&gt;&lt;a href=&quot;#Ubuntu权限详解&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Linux/"/>
+    
+    
+    <category term="ubuntu" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>服务器安装oh_my_zsh</title>
@@ -531,33 +556,6 @@
     <category term="zsh" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/zsh/"/>
     
     <category term="chmod" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/chmod/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android intent.setFlags方法中参数值的含义</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-intent-setflags-fang-fa-zhong-can-shu-zhi-de-han-yi/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/10/21/android-intent-setflags-fang-fa-zhong-can-shu-zhi-de-han-yi/</id>
-    <published>2020-10-21T09:17:58.000Z</published>
-    <updated>2020-10-21T09:26:50.698Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;Android中intent-setFlags方法中参数值的含义&quot;&gt;&lt;a href=&quot;#Android中intent-setFlags方法中参数值的含义&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Android" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Android/"/>
-    
-    
-    <category term="Intent" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Intent/"/>
-    
-    <category term="setFlags" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/setFlags/"/>
     
   </entry>
   
