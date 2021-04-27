@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>recycleView去掉滑动边界阴影</title>
+      <link href="2021/04/27/recycleview-qu-diao-hua-dong-bian-jie-yin-ying/"/>
+      <url>2021/04/27/recycleview-qu-diao-hua-dong-bian-jie-yin-ying/</url>
+      
+        <content type="html"><![CDATA[<h4 id="RecycleView-去掉滑动边界的阴影"><a href="#RecycleView-去掉滑动边界的阴影" class="headerlink" title="RecycleView 去掉滑动边界的阴影"></a>RecycleView 去掉滑动边界的阴影</h4><pre><code>&lt;android.support.v7.widget.RecyclerView    android:layout_width="match_parent"    android:layout_height="match_parent"    android:overScrollMode="never" /&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> recycleView </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Ubuntu权限详解</title>
       <link href="2021/03/29/ubuntu-quan-xian-xiang-jie/"/>
       <url>2021/03/29/ubuntu-quan-xian-xiang-jie/</url>

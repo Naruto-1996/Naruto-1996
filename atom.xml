@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2021-03-29T09:08:50.055Z</updated>
+  <updated>2021-04-27T01:13:52.066Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>recycleView去掉滑动边界阴影</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/04/27/recycleview-qu-diao-hua-dong-bian-jie-yin-ying/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2021/04/27/recycleview-qu-diao-hua-dong-bian-jie-yin-ying/</id>
+    <published>2021-04-27T01:10:31.000Z</published>
+    <updated>2021-04-27T01:13:52.066Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;RecycleView-去掉滑动边界的阴影&quot;&gt;&lt;a href=&quot;#RecycleView-去掉滑动边界的阴影&quot; class=&quot;headerlink&quot; title=&quot;RecycleView 去掉滑动边界的阴影&quot;&gt;&lt;/a&gt;RecycleView</summary>
+        
+      
+    
+    
+    
+    <category term="Android" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Android/"/>
+    
+    
+    <category term="recycleView" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/recycleView/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu权限详解</title>
@@ -529,33 +554,6 @@
     <category term="mysql" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/mysql/"/>
     
     <category term="rails" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/rails/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>zsh: permission denied: 解决办法</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/11/18/zsh-permission-denied-jie-jue-ban-fa/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/11/18/zsh-permission-denied-jie-jue-ban-fa/</id>
-    <published>2020-11-18T09:40:48.000Z</published>
-    <updated>2020-11-18T09:44:26.503Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;1、出现原因&quot;&gt;&lt;a href=&quot;#1、出现原因&quot; class=&quot;headerlink&quot; title=&quot;1、出现原因&quot;&gt;&lt;/a&gt;1、出现原因&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-java&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="Mac" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Mac/"/>
-    
-    
-    <category term="zsh" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/zsh/"/>
-    
-    <category term="chmod" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/chmod/"/>
     
   </entry>
   
