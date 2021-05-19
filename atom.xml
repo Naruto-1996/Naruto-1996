@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2021-04-27T01:13:52.066Z</updated>
+  <updated>2021-05-19T10:16:56.069Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android 逆向工程</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/05/19/android-ni-xiang-gong-cheng/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2021/05/19/android-ni-xiang-gong-cheng/</id>
+    <published>2021-05-19T09:30:53.000Z</published>
+    <updated>2021-05-19T10:16:56.069Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Android-逆向工程&quot;&gt;&lt;a href=&quot;#Android-逆向工程&quot; class=&quot;headerlink&quot; title=&quot;Android 逆向工程&quot;&gt;&lt;/a&gt;Android 逆向工程&lt;/h3&gt;&lt;h4 id=&quot;一、需要的工具&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Android" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Android/"/>
+    
+    
+    <category term="Mac" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Mac/"/>
+    
+    <category term="逆向工程" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>recycleView去掉滑动边界阴影</title>
@@ -527,33 +554,6 @@
     <category term="防火墙" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
     <category term="Linux命令" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Linux%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>rails 连接多个数据库</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/01/rails-lian-jie-duo-ge-shu-ju-ku/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/01/rails-lian-jie-duo-ge-shu-ju-ku/</id>
-    <published>2020-12-01T09:08:53.000Z</published>
-    <updated>2020-12-01T09:25:43.729Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;Rails项目中如何连接多个数据库&quot;&gt;&lt;a href=&quot;#Rails项目中如何连接多个数据库&quot; class=&quot;headerlink&quot; title=&quot;Rails项目中如何连接多个数据库&quot;&gt;&lt;/a&gt;Rails项目中如何连接多个数据库&lt;/h4&gt;&lt;h5</summary>
-        
-      
-    
-    
-    
-    <category term="rails" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/rails/"/>
-    
-    
-    <category term="mysql" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/mysql/"/>
-    
-    <category term="rails" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/rails/"/>
     
   </entry>
   
