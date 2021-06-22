@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Android 知识总结, 李文洋">
+    <meta name="keywords" content="Android 中的单例模式, 李文洋">
     <meta name="description" content="帅气的程序员小哥哥、目前单身">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Android 知识总结 | 李文洋</title>
+    <title>Android 中的单例模式 | 李文洋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Android 知识总结</h1>
+                    <h1 class="description center-align post-title">Android 中的单例模式</h1>
                 </div>
             </div>
         </div>
@@ -434,8 +434,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                <span class="chip bg-color">总结</span>
+                            <a href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+                                <span class="chip bg-color">单例模式</span>
                             </a>
                         
                     </div>
@@ -475,17 +475,143 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Android-细碎知识总结"><a href="#Android-细碎知识总结" class="headerlink" title="Android 细碎知识总结"></a>Android 细碎知识总结</h3><h5 id="1、implementation、api-的区别"><a href="#1、implementation、api-的区别" class="headerlink" title="1、implementation、api 的区别"></a>1、implementation、api 的区别</h5><blockquote>
-<p>android studio 3.0 版本之后 gradle 也升级为了3.x版本</p>
-<p>compile已过时，已被 implementation 和api 取代</p>
-</blockquote>
-<p>那么，他们之间的区别在哪？</p>
+                <h3 id="Android-中的单例模式"><a href="#Android-中的单例模式" class="headerlink" title="Android 中的单例模式"></a>Android 中的单例模式</h3><h4 id="单例模式的优缺点"><a href="#单例模式的优缺点" class="headerlink" title="单例模式的优缺点"></a>单例模式的优缺点</h4><p>1、主要优点:</p>
 <ul>
-<li><p>implementation: 只能在内部使用此模块，比如我在一个libiary中使用implementation依赖了gson库，然后我的主项目依赖了libiary，那么，我的主项目就无法访问gson库中的方法。<br>这样的好处是编译速度会加快，推荐使用implementation的方式去依赖，</p>
-</li>
-<li><p>api: 如果你需要提供给外部访问，那么就使用api依赖即可</p>
-</li>
+<li>提供了对唯一实例的受控访问。</li>
+<li>由于在系统内存中只存在一个对象，因此可以节约系统资源，对于一些需要频繁创建和销毁的对象单例模式无疑可以提高系统的性能。</li>
+<li>允许可变数目的实例</li>
 </ul>
+<p>2、主要缺点:</p>
+<ul>
+<li>由于单利模式中没有抽象层，因此单例类的扩展有很大的困难。</li>
+<li>单例类的职责过重，在一定程度上违背了“单一职责原则”。</li>
+<li>滥用单例将带来一些负面问题，如为了节省资源将数据库连接池对象设计为的单例类，可能会导致共享连接池对象的程序过多而出现连接池溢出；如果实例化的对象长时间不被利用，系统会认为是垃圾而被回收，这将导致对象状态的丢失。</li>
+</ul>
+<h4 id="Java中的几种单例模式"><a href="#Java中的几种单例模式" class="headerlink" title="Java中的几种单例模式"></a>Java中的几种单例模式</h4><blockquote>
+<p>懒汉式、 饿汉式、 DCL双重校验模式、 静态内部类单例模式、 枚举单例、 使用容器实现单例模式</p>
+</blockquote>
+<h4 id="懒汉式-线程不安全"><a href="#懒汉式-线程不安全" class="headerlink" title="懒汉式(线程不安全)"></a>懒汉式(线程不安全)</h4><pre class="line-numbers language-java"><code class="language-java">
+<span class="token comment" spellcheck="true">//懒汉式单例类.在第一次调用的时候实例化自己   </span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>  
+    <span class="token comment" spellcheck="true">//私有的构造函数</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+    <span class="token comment" spellcheck="true">//私有的静态变量 </span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton single <span class="token operator">=</span> null<span class="token punctuation">;</span>  
+    <span class="token comment" spellcheck="true">//暴露的公有静态方法   </span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>single <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+             single <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+         <span class="token punctuation">}</span>    
+        <span class="token keyword">return</span> single<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>如果多个线程同时调用 getInstance 方法，可能存在同时判断 instance 变量是否为空的情况，上面的代码中很容易导致重复创建多个实例，这违背了单例模式的目的。</li>
+<li>这种方式创建的缺点是存在线程不安全的问题，解决的办法就是使用synchronized 关键字，便是单例模式的第二种写法了。</li>
+</ul>
+<h4 id="懒汉式-线程安全"><a href="#懒汉式-线程安全" class="headerlink" title="懒汉式(线程安全)"></a>懒汉式(线程安全)</h4><pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>  
+    <span class="token comment" spellcheck="true">//私有的静态变量</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton instance<span class="token punctuation">;</span>  
+    <span class="token comment" spellcheck="true">//私有的构造方法</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//公有的同步静态方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+    <span class="token keyword">return</span> instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这种单例实现方式的getInstance（）方法中添加了synchronized 关键字，也就是告诉Java（JVM）getInstance是一个同步方法。</li>
+<li>同步的意思是当两个并发线程访问同一个类中的这个synchronized同步方法时，一个时间内只能有一个线程得到执行，另一个线程必须等待当前线程执行完才能执行，因此同步方法使得线程安全，保证了单例只有唯一个实例。</li>
+<li>缺点也很明显 每次每次调用getInstance（）都进行同步，造成了不必要的同步开销。这种模式一般不建议使用。效率低</li>
+</ul>
+<h4 id="饿汉式-天生线程安全"><a href="#饿汉式-天生线程安全" class="headerlink" title="饿汉式(天生线程安全)"></a>饿汉式(天生线程安全)</h4><pre class="line-numbers language-java"><code class="language-java">
+<span class="token comment" spellcheck="true">//饿汉式单例类.在类初始化时，已经自行实例化   </span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>  
+    <span class="token comment" spellcheck="true">//static修饰的静态变量在内存中一旦创建，便永久存在</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword">private</span> <span class="token function">Singleton</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>  
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">return</span> instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>饿汉式的例子一看就懂，不管三七二十一先创建了对象再说，不同的进程通过 getInstance 获取的都是同一个对象，所以是线程安全的。</li>
+<li>缺点: 如果某个类创建过程会消耗很多资源，但程序运行中没有调用过 getInstance 方法，那么就存在资源浪费的情况，如果一个系统存在非常多此类情况那么这个系统可能存在性能上的问题。</li>
+<li>所以，我们需要的是一种延迟加载的功能。</li>
+</ul>
+<h4 id="DCL双重校验模式-推荐使用"><a href="#DCL双重校验模式-推荐使用" class="headerlink" title="DCL双重校验模式(推荐使用)"></a>DCL双重校验模式(推荐使用)</h4><pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span> Singleton singleton<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//静态变量</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">//私有构造函数</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//第一层校验</span>
+          <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>Singleton<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//第二层校验</span>
+              singleton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+          <span class="token punctuation">}</span>  
+        <span class="token punctuation">}</span>  
+      <span class="token punctuation">}</span>  
+    <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这种写法也是用的最多的 增加了效率的同时 也是线程安全的</li>
+</ul>
+<h4 id="静态内部类-推荐使用"><a href="#静态内部类-推荐使用" class="headerlink" title="静态内部类(推荐使用)"></a>静态内部类(推荐使用)</h4><pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">private</span> <span class="token function">Singleton</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">;</span><span class="token comment" spellcheck="true">//私有的构造函数</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">return</span> SingletonHolder<span class="token punctuation">.</span>INSTANCE<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+    <span class="token comment" spellcheck="true">//定义的静态内部类</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">SingletonHolder</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Singleton INSTANCE <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//创建实例的地方</span>
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这种方法也可以做到延迟加载，但是它又不同于饿汉式。</li>
+<li>因为只有调用 getInstance 时，SingletonHolder 才会进行初始化。</li>
+<li>Android中涉及到图片缓存加载的时候经常会看到一些开源组件有各类 ImageHolder 的代码，原理正是如此。</li>
+</ul>
+<h4 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h4><pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">enum</span> Singleton <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//enum枚举类</span>
+    INSTANCE<span class="token punctuation">;</span>  
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">whateverMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>枚举单例模式最大的优点就是写法简单，枚举在java中与普通的类是一样的，不仅能够有字段，还能够有自己的方法，最重要的是默认枚举实例是线程安全的，并且在任何情况下，它都是一个单例。即使是在反序列化的过程，枚举单例也不会重新生成新的实例。</li>
+</ul>
+<p>我们只需要 Singleton.INSTANCE.whateverMethod() 来访问实例的方法，这比调用getInstance()方法简单多了</p>
+<h4 id="容器式"><a href="#容器式" class="headerlink" title="容器式"></a>容器式</h4><pre><code>
+public class SingletonManager { 
+　　private static Map&lt;String, Object&gt; objMap = new HashMap&lt;String,Object&gt;();//使用HashMap作为缓存容器
+　　private Singleton() { }
+　　public static void registerService(String key, Objectinstance) {
+　　　　if (!objMap.containsKey(key) ) {
+　　　　　　objMap.put(key, instance) ;//第一次是存入Map
+　　　　}
+　　}
+　　public static ObjectgetService(String key) {
+　　　　return objMap.get(key) ;//返回与key相对应的对象
+　　}
+}
+</code></pre>
+<ul>
+<li>在程序的初始，将多种单例模式注入到一个统一的管理类中，在使用时根据key获取对应类型的对象。</li>
+</ul>
+<p>总结 推荐使用 DCL 和 静态内部类的方式</p>
 
             </div>
             <hr/>
@@ -511,7 +637,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/06/22/android-zhi-shi-zong-jie/">https://github.com/Naruto-1996/Naruto-1996.github.io/2021/06/22/android-zhi-shi-zong-jie/</a>
+                    <a href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/06/22/android-zhong-de-dan-li-mo-shi/">https://github.com/Naruto-1996/Naruto-1996.github.io/2021/06/22/android-zhong-de-dan-li-mo-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -549,8 +675,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                    <span class="chip bg-color">总结</span>
+                                <a href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+                                    <span class="chip bg-color">单例模式</span>
                                 </a>
                             
                         </div>
@@ -721,7 +847,7 @@
         repo: 'Naruto-1996.github.io',
         owner: 'Naruto-1996',
         admin: ["Naruto-1996"],
-        id: '2021-06-22T14-37-27',
+        id: '2021-06-22T15-01-37',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -745,9 +871,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/06/22/android-zhong-de-dan-li-mo-shi/">
                     <div class="card-image">
@@ -771,9 +898,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -786,6 +913,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -804,31 +932,28 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/19/android-ni-xiang-gong-cheng/">
+                <a href="/2021/06/22/android-zhi-shi-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Android 逆向工程">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Android 知识总结">
                         
-                        <span class="card-title">Android 逆向工程</span>
+                        <span class="card-title">Android 知识总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Android 逆向工程一、需要的工具1、Apktool
+                            Android 细碎知识总结1、implementation、api 的区别
+android studio 3.0 版本之后 gradle 也升级为了3.x版本
+compile已过时，已被 implementation 和api 取代
 
-是一款应用在Apk上的逆向工程的工具，它有编译、反编译、签名等功能
-
-使用HomeBrew安装Apktool 
-这里给出其他安装方式
-cd ~
-brew install apkto
+那
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-22
                             </span>
                         <span class="publish-author">
                             
@@ -845,12 +970,8 @@ brew install apkto
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Mac/">
-                        <span class="chip bg-color">Mac</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/">
-                        <span class="chip bg-color">逆向工程</span>
+                    <a href="/tags/%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">总结</span>
                     </a>
                     
                 </div>
