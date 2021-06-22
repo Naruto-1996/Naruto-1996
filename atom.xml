@@ -6,7 +6,7 @@
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/"/>
-  <updated>2021-05-19T10:16:56.069Z</updated>
+  <updated>2021-06-22T06:43:23.192Z</updated>
   <id>https://github.com/Naruto-1996/Naruto-1996.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android 知识总结</title>
+    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2021/06/22/android-zhi-shi-zong-jie/"/>
+    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2021/06/22/android-zhi-shi-zong-jie/</id>
+    <published>2021-06-22T06:37:27.000Z</published>
+    <updated>2021-06-22T06:43:23.192Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Android-细碎知识总结&quot;&gt;&lt;a href=&quot;#Android-细碎知识总结&quot; class=&quot;headerlink&quot; title=&quot;Android 细碎知识总结&quot;&gt;&lt;/a&gt;Android 细碎知识总结&lt;/h3&gt;&lt;h5</summary>
+        
+      
+    
+    
+    
+    <category term="Android" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Android/"/>
+    
+    
+    <category term="总结" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>Android 逆向工程</title>
@@ -525,35 +550,6 @@
     <category term="Redis" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Redis/"/>
     
     <category term="Mac" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 运维方面的知识</title>
-    <link href="https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/02/linux-yun-wei-fang-mian-de-zhi-shi/"/>
-    <id>https://github.com/Naruto-1996/Naruto-1996.github.io/2020/12/02/linux-yun-wei-fang-mian-de-zhi-shi/</id>
-    <published>2020-12-02T03:50:46.000Z</published>
-    <updated>2020-12-02T04:05:05.798Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Linux-常用命令&quot;&gt;&lt;a href=&quot;#Linux-常用命令&quot; class=&quot;headerlink&quot; title=&quot;Linux 常用命令&quot;&gt;&lt;/a&gt;Linux 常用命令&lt;/h3&gt;&lt;h5 id=&quot;1、怎么看Linux系统版本&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/categories/Linux/"/>
-    
-    
-    <category term="运维" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
-    
-    <category term="防火墙" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
-    
-    <category term="Linux命令" scheme="https://github.com/Naruto-1996/Naruto-1996.github.io/tags/Linux%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   

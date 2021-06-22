@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Android 知识总结</title>
+      <link href="2021/06/22/android-zhi-shi-zong-jie/"/>
+      <url>2021/06/22/android-zhi-shi-zong-jie/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Android-细碎知识总结"><a href="#Android-细碎知识总结" class="headerlink" title="Android 细碎知识总结"></a>Android 细碎知识总结</h3><h5 id="1、implementation、api-的区别"><a href="#1、implementation、api-的区别" class="headerlink" title="1、implementation、api 的区别"></a>1、implementation、api 的区别</h5><blockquote><p>android studio 3.0 版本之后 gradle 也升级为了3.x版本</p><p>compile已过时，已被 implementation 和api 取代</p></blockquote><p>那么，他们之间的区别在哪？</p><ul><li><p>implementation: 只能在内部使用此模块，比如我在一个libiary中使用implementation依赖了gson库，然后我的主项目依赖了libiary，那么，我的主项目就无法访问gson库中的方法。<br>这样的好处是编译速度会加快，推荐使用implementation的方式去依赖，</p></li><li><p>api: 如果你需要提供给外部访问，那么就使用api依赖即可</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android 逆向工程</title>
       <link href="2021/05/19/android-ni-xiang-gong-cheng/"/>
       <url>2021/05/19/android-ni-xiang-gong-cheng/</url>
