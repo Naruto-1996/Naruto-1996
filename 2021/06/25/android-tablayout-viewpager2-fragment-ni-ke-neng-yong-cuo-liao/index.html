@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="李文洋" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="李文洋" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -504,211 +504,211 @@
 <p>如果使用 一定要使用viewPager 也可以做到 fragment 懒加载 主要是对<code>fragment</code>做手脚 结合生命周期方法和setUserVisibleHint状态，控制数据延迟加载，而布局只能提前进入</p>
 <h3 id="viewPager2基本使用"><a href="#viewPager2基本使用" class="headerlink" title="viewPager2基本使用"></a>viewPager2基本使用</h3><p>1、 承载tabLayout 和 viewPager2 需要一个 fragment 或者 activity 这里我们使用 fragment</p>
 <p><code>HomeFragment</code> 如下:</p>
-<pre><code>
-public class HomeFragment extends Fragment {
+<pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HomeFragment</span> <span class="token keyword">extends</span> <span class="token class-name">Fragment</span> <span class="token punctuation">{</span>
 
-  private HomeViewModel homeViewModel;
-  private TabLayout tabLayout;
-  private ViewPager2 viewPager2;
+  <span class="token keyword">private</span> HomeViewModel homeViewModel<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> TabLayout tabLayout<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> ViewPager2 viewPager2<span class="token punctuation">;</span>
 
-  private final ArrayList&lt;String&gt; tabTitles = new ArrayList&lt;&gt;();
+  <span class="token keyword">private</span> <span class="token keyword">final</span> ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> tabTitles <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  // 用List 存放fragment 不推荐使用 用不好 导致内存泄漏
-  private ArrayList&lt;BlankFragment&gt; fragments = new ArrayList&lt;&gt;();
-
-
-
-  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
-    View root = inflater.inflate(R.layout.fragment_home, container, false);
-
-    tabLayout = root.findViewById(R.id.tabs);
-    viewPager2 = root.findViewById(R.id.viewPager);
-    return root;
-  }
+  <span class="token comment" spellcheck="true">// 用List 存放fragment 不推荐使用 用不好 导致内存泄漏</span>
+  <span class="token keyword">private</span> ArrayList<span class="token operator">&lt;</span>BlankFragment<span class="token operator">></span> fragments <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-  @Override
-  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-    super.onViewCreated(view, savedInstanceState);
 
-    // 初始化 tabTitles 和 fragments
-    for (int i = 0; i &lt; 15; i++) {
-      tabTitles.add(String.valueOf(i));
-      fragments.add(BlankFragment.newInstance(tabTitles.get(i)));
-    }
+  <span class="token keyword">public</span> View <span class="token function">onCreateView</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> LayoutInflater inflater<span class="token punctuation">,</span> ViewGroup container<span class="token punctuation">,</span> Bundle savedInstanceState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    homeViewModel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ViewModelProvider</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>HomeViewModel<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    View root <span class="token operator">=</span> inflater<span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>fragment_home<span class="token punctuation">,</span> container<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    // 关闭预加载
-    viewPager2.setOffscreenPageLimit(ViewPager2.OFFSCREEN_PAGE_LIMIT_DEFAULT);  // 可以不设置 因为默认是 -1 默认不进行预加载
-    // 这个必须设置 不然仍然会启用预加载
-    ((RecyclerView)viewPager2.getChildAt(0)).getLayoutManager().setItemPrefetchEnabled(false);
-    // 设置缓存数量，对应 RecyclerView 中的 mCachedViews，即屏幕外的视图数量
-    ((RecyclerView)viewPager2.getChildAt(0)).setItemViewCacheSize(0);
-
-    // 第一种方法 (可能会内存泄漏)
-    //FragmentAdapter adapter = new FragmentAdapter(this, fragments);
-    //viewPager2.setAdapter(adapter);
-
-    // 这里使用第二种方法
-    viewPager2.setAdapter(new FragmentStateAdapter(this) {
-      @NonNull
-      @Override
-      public Fragment createFragment(int position) {
-        return BlankFragment.newInstance(tabTitles.get(position));
-      }
-
-      @Override
-      public int getItemCount() {
-        return tabTitles.size();
-      }
-
-    });
-    // viewPager2 滑动监听
-    viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-      @Override
-      public void onPageSelected(int position) {
-        super.onPageSelected(position);
-
-      }
-    });
-
-    // 这里第四个参数一定要设置为false  如果设置为true时 我们在滑动时 BlankFragment的创建 和 销毁 都很正常
-    // 一旦 我们通过 点击tabLayout时 如果两个tab距离过远  那么所有划过的tabLayout 都会创建和销毁BlankFragment 这显然不是我们想要的
-
-    // tabLayout 和 viewPager 联动
-    new TabLayoutMediator(tabLayout, viewPager2,true,false, new TabLayoutMediator.TabConfigurationStrategy() {
-      @Override
-      public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-        tab.setText(tabTitles.get(position));
-      }
-    }).attach();
+    tabLayout <span class="token operator">=</span> root<span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>tabs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    viewPager2 <span class="token operator">=</span> root<span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>viewPager<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
 
-  }
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onViewCreated</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> View view<span class="token punctuation">,</span> <span class="token annotation punctuation">@Nullable</span> Bundle savedInstanceState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onViewCreated</span><span class="token punctuation">(</span>view<span class="token punctuation">,</span> savedInstanceState<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-}
-</code></pre>
+    <span class="token comment" spellcheck="true">// 初始化 tabTitles 和 fragments</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">15</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      tabTitles<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      fragments<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>BlankFragment<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span>tabTitles<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 关闭预加载</span>
+    viewPager2<span class="token punctuation">.</span><span class="token function">setOffscreenPageLimit</span><span class="token punctuation">(</span>ViewPager2<span class="token punctuation">.</span>OFFSCREEN_PAGE_LIMIT_DEFAULT<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 可以不设置 因为默认是 -1 默认不进行预加载</span>
+    <span class="token comment" spellcheck="true">// 这个必须设置 不然仍然会启用预加载</span>
+    <span class="token punctuation">(</span><span class="token punctuation">(</span>RecyclerView<span class="token punctuation">)</span>viewPager2<span class="token punctuation">.</span><span class="token function">getChildAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getLayoutManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setItemPrefetchEnabled</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 设置缓存数量，对应 RecyclerView 中的 mCachedViews，即屏幕外的视图数量</span>
+    <span class="token punctuation">(</span><span class="token punctuation">(</span>RecyclerView<span class="token punctuation">)</span>viewPager2<span class="token punctuation">.</span><span class="token function">getChildAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setItemViewCacheSize</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 第一种方法 (可能会内存泄漏)</span>
+    <span class="token comment" spellcheck="true">//FragmentAdapter adapter = new FragmentAdapter(this, fragments);</span>
+    <span class="token comment" spellcheck="true">//viewPager2.setAdapter(adapter);</span>
+
+    <span class="token comment" spellcheck="true">// 这里使用第二种方法</span>
+    viewPager2<span class="token punctuation">.</span><span class="token function">setAdapter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FragmentStateAdapter</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@NonNull</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> Fragment <span class="token function">createFragment</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> BlankFragment<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span>tabTitles<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getItemCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> tabTitles<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// viewPager2 滑动监听</span>
+    viewPager2<span class="token punctuation">.</span><span class="token function">registerOnPageChangeCallback</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ViewPager2<span class="token punctuation">.</span>OnPageChangeCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onPageSelected</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onPageSelected</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 这里第四个参数一定要设置为false  如果设置为true时 我们在滑动时 BlankFragment的创建 和 销毁 都很正常</span>
+    <span class="token comment" spellcheck="true">// 一旦 我们通过 点击tabLayout时 如果两个tab距离过远  那么所有划过的tabLayout 都会创建和销毁BlankFragment 这显然不是我们想要的</span>
+
+    <span class="token comment" spellcheck="true">// tabLayout 和 viewPager 联动</span>
+    <span class="token keyword">new</span> <span class="token class-name">TabLayoutMediator</span><span class="token punctuation">(</span>tabLayout<span class="token punctuation">,</span> viewPager2<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">TabLayoutMediator<span class="token punctuation">.</span>TabConfigurationStrategy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onConfigureTab</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> TabLayout<span class="token punctuation">.</span>Tab tab<span class="token punctuation">,</span> <span class="token keyword">int</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        tab<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>tabTitles<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>fragment_home.xml</code> 布局文件:</p>
-<pre><code>
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:orientation="vertical"
-  android:layout_height="match_parent"
-  tools:context=".ui.home.HomeFragment"&gt;
+<pre class="line-numbers language-xml"><code class="language-xml">
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LinearLayout</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">xmlns:</span>app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res-auto<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">xmlns:</span>tools</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/tools<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vertical<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">tools:</span>context</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>.ui.home.HomeFragment<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-  &lt;com.google.android.material.tabs.TabLayout
-    android:id="@+id/tabs"
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    app:tabGravity="center"
-    app:tabIndicatorColor="#ff678f"
-    app:tabIndicatorFullWidth="false"
-    app:tabIndicatorHeight="2dp"
-    app:tabMode="scrollable"
-    android:layout_marginTop="0dp"
-    app:tabSelectedTextColor="#ff678f"
-    app:tabTextColor="#333333"
-    app:tabUnboundedRipple="true" /&gt;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>com.google.android.material.tabs.TabLayout</span>
+    <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/tabs<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>40dp<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">app:</span>tabGravity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">app:</span>tabIndicatorColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#ff678f<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">app:</span>tabIndicatorFullWidth</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">app:</span>tabIndicatorHeight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2dp<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">app:</span>tabMode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scrollable<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_marginTop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0dp<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">app:</span>tabSelectedTextColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#ff678f<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">app:</span>tabTextColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#333333<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">app:</span>tabUnboundedRipple</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
 
 
-  &lt;androidx.viewpager2.widget.ViewPager2
-    android:id="@+id/viewPager"
-    android:layout_width="match_parent"
-    android:background="@color/purple_200"
-    android:layout_height="0dp"
-    android:layout_weight="1"/&gt;
-&lt;/LinearLayout&gt;
-</code></pre>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>androidx.viewpager2.widget.ViewPager2</span>
+    <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/viewPager<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/purple_200<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0dp<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_weight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>LinearLayout</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2、viewPager2的 FragmentStateAdapter 创建fragment时 我们 复用一个fragment</p>
 <p><code>BlankFragment</code> 如下:</p>
-<pre><code>
-public class BlankFragment extends Fragment {
+<pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BlankFragment</span> <span class="token keyword">extends</span> <span class="token class-name">Fragment</span> <span class="token punctuation">{</span>
 
-  private String mParam1;
-  private TextView mTextView;
+  <span class="token keyword">private</span> String mParam1<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> TextView mTextView<span class="token punctuation">;</span>
 
-  public static BlankFragment newInstance(String param1) {
-    BlankFragment fragment = new BlankFragment();
-    Bundle args = new Bundle();
-    args.putString("param1", param1);
-    fragment.setArguments(args);
-    return fragment;
-  }
+  <span class="token keyword">public</span> <span class="token keyword">static</span> BlankFragment <span class="token function">newInstance</span><span class="token punctuation">(</span>String param1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    BlankFragment fragment <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BlankFragment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Bundle args <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bundle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    args<span class="token punctuation">.</span><span class="token function">putString</span><span class="token punctuation">(</span><span class="token string">"param1"</span><span class="token punctuation">,</span> param1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    fragment<span class="token punctuation">.</span><span class="token function">setArguments</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> fragment<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  @Override
-  public void onPause() {
-    super.onPause();
-    Log.i("TAG=======onPause", mParam1);
-  }
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"TAG=======onPause"</span><span class="token punctuation">,</span> mParam1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    if (getArguments() != null) {
-      mParam1 = getArguments().getString("param1");
-    }
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onCreate</span><span class="token punctuation">(</span>Bundle savedInstanceState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">getArguments</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      mParam1 <span class="token operator">=</span> <span class="token function">getArguments</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"param1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    Log.i("TAG=======onCreate", mParam1);
-    Toast.makeText(getContext(), mParam1, Toast.LENGTH_SHORT).show();
-  }
+    Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"TAG=======onCreate"</span><span class="token punctuation">,</span> mParam1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Toast<span class="token punctuation">.</span><span class="token function">makeText</span><span class="token punctuation">(</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mParam1<span class="token punctuation">,</span> Toast<span class="token punctuation">.</span>LENGTH_SHORT<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
 
 
-  @Override
-  public void onDestroy() {
-    super.onDestroy();
-    Log.i("TAG=======onDestroy", mParam1);
-  }
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"TAG=======onDestroy"</span><span class="token punctuation">,</span> mParam1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
-    View root = inflater.inflate(R.layout.fragment_blank, container, false);
-    mTextView = root.findViewById(R.id.text1);
-    mTextView.setText(mParam1);
-    Log.i("TAG=======onCreateView", mParam1);
-    return root;
-  }
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> View <span class="token function">onCreateView</span><span class="token punctuation">(</span>LayoutInflater inflater<span class="token punctuation">,</span> ViewGroup container<span class="token punctuation">,</span> Bundle savedInstanceState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Inflate the layout for this fragment</span>
+    View root <span class="token operator">=</span> inflater<span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>fragment_blank<span class="token punctuation">,</span> container<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mTextView <span class="token operator">=</span> root<span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>text1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mTextView<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>mParam1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"TAG=======onCreateView"</span><span class="token punctuation">,</span> mParam1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  // 对外提供一个刷新Ui的方法
-  public void refreshUi() {
-    if (getArguments() != null) {
-      mParam1 = getArguments().getString("param1");
-      mTextView.setText(mParam1 + "ddd");
-    }
+  <span class="token comment" spellcheck="true">// 对外提供一个刷新Ui的方法</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">refreshUi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">getArguments</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      mParam1 <span class="token operator">=</span> <span class="token function">getArguments</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"param1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      mTextView<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>mParam1 <span class="token operator">+</span> <span class="token string">"ddd"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-  }
+  <span class="token punctuation">}</span>
 
-  @Override
-  public void onDestroyView() {
-    super.onDestroyView();
-    Log.i("TAG======onDestroyView", mParam1);
-  }
-}
-</code></pre>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onDestroyView</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onDestroyView</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"TAG======onDestroyView"</span><span class="token punctuation">,</span> mParam1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>fragment_blank.xml</code> 如下:</p>
-<pre><code>
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:orientation="vertical"
-  android:gravity="center"
-  tools:context=".ui.BlankFragment"&gt;
+<pre class="line-numbers language-xml"><code class="language-xml">
+<span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>LinearLayout</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">xmlns:</span>tools</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/tools<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vertical<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">android:</span>gravity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span>
+  <span class="token attr-name"><span class="token namespace">tools:</span>context</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>.ui.BlankFragment<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-  &lt;TextView
-    android:id="@+id/text1"
-    android:textSize="26sp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="black"/&gt;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TextView</span>
+    <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/text1<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>textSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>26sp<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>black<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 
-&lt;/LinearLayout&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>LinearLayout</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>至此 我们已经完成了 tabLayout + viewPager2 + fragment </p>
 <h3 id="viewPager2常用方法"><a href="#viewPager2常用方法" class="headerlink" title="viewPager2常用方法"></a>viewPager2常用方法</h3><ul>
 <li><code>setAdapter()</code> 设置适配器</li>
@@ -728,34 +728,34 @@ public class BlankFragment extends Fragment {
 <p><img src="https://cdn.jsdelivr.net/gh/Naruto-1996/picture/images/20210625182426.png"></p>
 <p><strong>如何关闭预加载、并设置缓存数量</strong></p>
 <p><strong>常见设置如下</strong></p>
-<pre><code>
-//设置应保留在当前可见页面两侧的页面数
-viewPager2.setOffscreenPageLimit(4);
+<pre class="line-numbers language-java"><code class="language-java">
+<span class="token comment" spellcheck="true">//设置应保留在当前可见页面两侧的页面数</span>
+viewPager2<span class="token punctuation">.</span><span class="token function">setOffscreenPageLimit</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-//关闭预加载
-((RecyclerView)viewPager2.getChildAt(0)).getLayoutManager().setItemPrefetchEnabled(false);
+<span class="token comment" spellcheck="true">//关闭预加载</span>
+<span class="token punctuation">(</span><span class="token punctuation">(</span>RecyclerView<span class="token punctuation">)</span>viewPager2<span class="token punctuation">.</span><span class="token function">getChildAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getLayoutManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setItemPrefetchEnabled</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-//设置缓存数量，对应 RecyclerView 中的 mCachedViews，即屏幕外的视图数量
-((RecyclerView)viewPager2.getChildAt(0)).setItemViewCacheSize(4);
-</code></pre>
+<span class="token comment" spellcheck="true">//设置缓存数量，对应 RecyclerView 中的 mCachedViews，即屏幕外的视图数量</span>
+<span class="token punctuation">(</span><span class="token punctuation">(</span>RecyclerView<span class="token punctuation">)</span>viewPager2<span class="token punctuation">.</span><span class="token function">getChildAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setItemViewCacheSize</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>viewPager2</code> 会默认缓存2个<code>ItemView</code></p>
 <p>我们将<code>((RecyclerView)viewPager2.getChildAt(0)).setItemViewCacheSize(0);</code> 设置为<code>0</code>即可 这样我们每次滑动一个新的<code>tab</code>时 会创建<br>新的<code>fragment</code>并销毁上一个<code>fragment</code></p>
 <h3 id="viewPager2-对-fragment-的支持"><a href="#viewPager2-对-fragment-的支持" class="headerlink" title="viewPager2 对 fragment 的支持"></a>viewPager2 对 fragment 的支持</h3><p>目前，<code>ViewPager2</code>对<code>Fragment</code>的支持只能使用<code>FragmentStateAdapter</code>，使用起来也是非常简单：</p>
-<pre><code>
-viewPager2.setAdapter(new FragmentStateAdapter(this) {
-  @NonNull
-  @Override
-  public Fragment createFragment(int position) {
-    return BlankFragment.newInstance(tabTitles.get(position));
-  }
+<pre class="line-numbers language-java"><code class="language-java">
+viewPager2<span class="token punctuation">.</span><span class="token function">setAdapter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FragmentStateAdapter</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@NonNull</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> Fragment <span class="token function">createFragment</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> BlankFragment<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span>tabTitles<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  @Override
-  public int getItemCount() {
-    return tabTitles.size();
-  }
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getItemCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> tabTitles<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-});
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="另外还有一个小坑"><a href="#另外还有一个小坑" class="headerlink" title="另外还有一个小坑"></a>另外还有一个小坑</h3><p><strong>ViewPager2+TabLayout懒加载问题，Fragment被创建多次</strong></p>
 <p><code>ViewPager2</code>默认只加载当前页面，相当于官方处理了<code>Fragment</code>的懒加载问题，当你使用代码</p>
 <pre><code>
@@ -775,19 +775,19 @@ new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfi
 <p>但是当你手动点击<code>TabLayout</code>时，此时懒加载就会失效，<code>onCreateView()</code>会被执行多次，</p>
 <p>原因就是…此时<code>ViewPager2</code>默认是平滑滚动的，滚动滑过的<code>Fragment</code>都会被加载，</p>
 <p><strong>只需修改代码:</strong></p>
-<pre><code>
-new TabLayoutMediator(tabLayout, viewPager, true,false, new TabLayoutMediator.TabConfigurationStrategy() {
+<pre class="line-numbers language-java"><code class="language-java">
+<span class="token keyword">new</span> <span class="token class-name">TabLayoutMediator</span><span class="token punctuation">(</span>tabLayout<span class="token punctuation">,</span> viewPager<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">TabLayoutMediator<span class="token punctuation">.</span>TabConfigurationStrategy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token annotation punctuation">@Override</span>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onConfigureTab</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NonNull</span> TabLayout<span class="token punctuation">.</span>Tab tab<span class="token punctuation">,</span> <span class="token keyword">int</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tab.setText(titles.get(position));
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>tab<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>titles<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token punctuation">}</span>
 
-}).attach();
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中，第二个<code>boolean</code>参数为<code>smoothScroll</code> 一定要填<code>false</code>  这时点击 哪个<code>tab</code> 就会创建 哪个 <code>fragment</code></p>
 <p>但是页面看起来没有那么平滑了 各有利弊吧</p>
 <p><strong>—————————————————————————————</strong></p>
@@ -1137,7 +1137,17 @@ new TabLayoutMediator(tabLayout, viewPager, true,false, new TabLayoutMediator.Ta
 
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+    <span class="token comment" spellcheck="true">// viewPager2 滑动监听 设置tab选中</span>
+    viewPager2<span class="token punctuation">.</span><span class="token function">registerOnPageChangeCallback</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ViewPager2<span class="token punctuation">.</span>OnPageChangeCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token annotation punctuation">@Override</span>
+      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onPageSelected</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        tabLayout<span class="token punctuation">.</span><span class="token function">selectTab</span><span class="token punctuation">(</span>tabLayout<span class="token punctuation">.</span><span class="token function">getTabAt</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>viewPager2的优点还是有目共睹的, 但是还是要去踩坑啊，我之前也是用<code>viewPager2</code> 但是没用对的话是会产生内存泄露的<br>所以就研究了一下 在这里记录一下问题 参考了很多博客 基本上都不咋解决问题</p>
 <p>只有下面这四篇有帮助 感谢!!!</p>
 <p>第一篇、 <a target="_blank" rel="noopener" href="https://hitendev.github.io/2019/05/14/ViewPager2%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0%EF%BC%8C%E6%94%AF%E6%8C%81offscreenPageLimit/">ViewPager2重大更新</a></p>
